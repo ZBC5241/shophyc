@@ -1,0 +1,372 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+华阳城门店业绩看板 —— 数据抽取器
+从《华阳城X月任务进度.xlsx》的「华阳城销售」表抽取全部指标，生成 data.json
+
+原则：只提取，不计算。表格里是什么数，就输出什么数。
+      仅做必要的格式清洗（#DIV/0! -> null，"85%" -> 0.85，去千分位）
+
+用法：
+    python build_data.py /path/to/华阳城9月任务进度.xlsx [输出.json]
+"""
+import sys, os, json, datetime, calendar
+import openpyxl
+
+
+def _days_in_month(d):
+    return calendar.monthrange(d.year, d.month)[1]
+
+
+def _is_formula(cell):
+    v = cell.value
+    return isinstance(v, str) and v.startswith("=")
+
+
+def load_people(xlsx):
+    """从底表「月任务」sheet B4:B7 动态读取人员名单（空名跳过），
+    田蕊固定追加（不背任务）。设置模块级 PEOPLE_ORDER / P1~P4_ROWS。
+    行号映射规律：
+      月任务 row 4~7  → P1: row4~8(田蕊=8)  P2: row14~18(田蕊=18)
+                       P3: row28~32(田蕊=32) P4: row38~41(无田蕊)
+    """
+    global PEOPLE_ORDER, P1_ROWS, P2_ROWS, P3_ROWS, P4_ROWS
+    import openpyxl as _opx
+    wbf = _opx.load_workbook(xlsx, data_only=False)
+    tk = wbf[[s for s in wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
+    task_people, task_rows = [], {}
+    for r in range(4, 8):                   # B4~B7
+        nm = tk.cell(r, 2).value
+        if nm and str(nm).strip():
+            nm = str(nm).strip()
+            # 底表「合计」行是汇总值（已并入顶层卡片），不当人员 tab
+            if nm == "合计":
+                continue
+            task_people.append(nm)
+            task_rows[nm] = r
+    PEOPLE_ORDER = task_people + ["田蕊"]
+    # P1: 任务行号直接用月任务行号，田蕊=8
+    P1_ROWS = dict(task_rows)
+    P1_ROWS["田蕊"] = 8
+    # P2: 任务行号 + 10，田蕊=18
+    P2_ROWS = {n: r + 10 for n, r in task_rows.items()}
+    P2_ROWS["田蕊"] = 18
+    # P3: 任务行号 + 24，田蕊=32
+    P3_ROWS = {n: r + 24 for n, r in task_rows.items()}
+    P3_ROWS["田蕊"] = 32
+    # P4: 任务行号 + 34，无田蕊
+    P4_ROWS = {n: r + 34 for n, r in task_rows.items()}
+
+
+SHEET = "华阳城销售"
+
+# ---------- 表格坐标（1-based 行号，0-based 列索引） ----------
+ROW_TIME = 1                       # 时间进度行：B1=日期, I1=进度
+PEOPLE_ORDER = []                   # 动态填充
+TASK_XLSX_DEFAULT = "/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+
+# 以下 P1~P4 行号映射由 load_people() 动态设置
+P1_ROWS = {}
+P1_TOTAL_ROW = 9
+P1_BLOCKS = [("毛利", 1), ("手机", 5), ("PC", 9), ("平板", 13), ("穿戴", 17),
+             ("音频", 21), ("HD", 25), ("智慧办公", 29), ("音频穿戴", 33), ("销额", 37)]
+P1_SCORE_COL = 41                  # 绩效
+
+P2_ROWS = {}
+P2_TOTAL_ROW = 19
+
+P3_ROWS = {}
+P3_TOTAL_ROW = 33
+P3_LABEL_ROW = 26                  # 项目名所在行
+P3_TITLE_CELL = (25, 2)            # B25 = "08-09达成"
+
+P4_ROWS = {}                       # 每日缺口（不含田蕊）
+P4_TOTAL_ROW = 42
+P4_LABEL_ROW = 36
+
+
+def num(v):
+    """清洗成数字或 None。不做任何运算。"""
+    if v is None:
+        return None
+    if isinstance(v, bool):
+        return None
+    if isinstance(v, (int, float)):
+        return float(v)
+    s = str(v).strip()
+    if s == "" or s.startswith("#"):      # #DIV/0! #N/A #VALUE!
+        return None
+    s = s.replace(",", "").replace("¥", "").replace("￥", "")
+    pct = s.endswith("%")
+    if pct:
+        s = s[:-1]
+    try:
+        f = float(s)
+    except ValueError:
+        return None
+    return f / 100 if pct else f
+
+
+def r4(ws, row, col):
+    """读取「任务/完成/缺口/完成率」四连列"""
+    return {
+        "task": num(ws.cell(row, col + 1).value),
+        "done": num(ws.cell(row, col + 2).value),
+        "gap":  num(ws.cell(row, col + 3).value),
+        "rate": num(ws.cell(row, col + 4).value),
+    }
+
+
+def cell(ws, row, col0):
+    """col0 为 0-based 列索引"""
+    return num(ws.cell(row, col0 + 1).value)
+
+
+def read_perf(ws, row):
+    d = {name: r4(ws, row, col) for name, col in P1_BLOCKS}
+    d["绩效"] = cell(ws, row, P1_SCORE_COL)
+    return d
+
+
+def read_qcs(ws, row):
+    return {
+        "合约":       {"task": cell(ws, row, 1), "done": cell(ws, row, 2),
+                     "gap": cell(ws, row, 3), "rate": cell(ws, row, 4)},
+        "会员搭售率": {"terminal": cell(ws, row, 5), "care": cell(ws, row, 6),
+                     "gap": cell(ws, row, 7), "rate": cell(ws, row, 8)},
+        "回收搭售率": {"orders": cell(ws, row, 9), "gap": cell(ws, row, 10),
+                     "rate": cell(ws, row, 11)},
+        "贴膜率":     {"orders": cell(ws, row, 12), "gap": cell(ws, row, 13),
+                     "rate": cell(ws, row, 14)},
+        # 摄影课（列15/16）按需求不再提取
+        "考核机型":   {"task": cell(ws, row, 17), "gap": cell(ws, row, 18)},
+        "乐机收":     {"orders": cell(ws, row, 19), "amount": cell(ws, row, 20),
+                     "增值": cell(ws, row, 21)},
+        "太力回收":   {"orders": cell(ws, row, 22), "amount": cell(ws, row, 23),
+                     "增值": cell(ws, row, 24)},
+        "增值":       {"task": cell(ws, row, 25), "done": cell(ws, row, 26),
+                     "gap": cell(ws, row, 27), "rate": cell(ws, row, 28)},
+        "健康度":     {"coupon": cell(ws, row, 29), "ratio": cell(ws, row, 30),
+                     "grossMargin": cell(ws, row, 31), "增值率": cell(ws, row, 32)},
+        "星联会员":   {"优享": cell(ws, row, 33), "尊享": cell(ws, row, 34),
+                     "合计": cell(ws, row, 35)},
+    }
+
+
+def read_labels(ws, label_row, start=1, end=15):
+    out = []
+    for c in range(start, end):
+        v = ws.cell(label_row, c + 1).value
+        out.append(str(v).strip() if v else None)
+    return out
+
+
+# 渠道挂账「完成额」严格对齐《华阳城9月任务进度.xlsx》「渠道挂账」sheet 的 C 列数组公式：
+#   =SUM(SUMIFS(销售分析!$AM:$AM, 销售分析!$G:$G, A{r}, 销售分析!$P:$P,
+#              {"三大地图","小红书","大众点评","异业","社区","企业上门购"}))
+# 即从「销售分析」sheet 按 营业员(G列)+6获客渠道(P列) 实时聚合 销售净额(AM列)。
+# 不剔除任何业务类型（与表格公式一致）。返回 {营业员名: 金额}。
+QUDAO_CHANNELS = ["三大地图", "小红书", "大众点评", "异业", "社区", "企业上门购"]
+
+
+def _agg_qudao_done(wb):
+    """实时复算「渠道挂账」C 列公式（SUMIFS 聚合销售分析），拿到最新完成额。"""
+    if "销售分析" not in wb.sheetnames:
+        return {}
+    ws = wb["销售分析"]
+    hdr = 2  # 表头在第2行
+    G, P, AM = 7, 16, 39
+    cols = [ws.cell(hdr, c).value for c in range(1, ws.max_column + 1)]
+    def _find(*keys):
+        for i, v in enumerate(cols, 1):
+            if v and all(k in str(v) for k in keys):
+                return i
+        return None
+    g = _find("营业员名称") or G
+    p = _find("华为获客渠道名称") or P
+    am = _find("销售净额") or AM
+    agg = {}
+    for r in range(hdr + 1, ws.max_row + 1):
+        e = ws.cell(r, g).value
+        if not e:
+            continue
+        e = str(e).strip()
+        ch = str(ws.cell(r, p).value or "").strip()
+        if ch in QUDAO_CHANNELS:
+            agg[e] = agg.get(e, 0.0) + float(ws.cell(r, am).value or 0)
+    return agg
+
+
+def read_qudao(wb, wb_f=None):
+    """读取「渠道挂账」sheet：时间进度 + 合计行 + 逐人。只提取不计算。
+    wb_f 为 data_only=False 的工作簿，用于识别 B1/E1 是否为公式(=TODAY())，
+    若是则按今天取值，避免读到陈旧缓存。"""
+    name = "渠道挂账"
+    if name not in wb.sheetnames:
+        return None
+    ws = wb[name]
+    ws_f = wb_f[name] if (wb_f and name in wb_f.sheetnames) else None
+    today = datetime.date.today()
+
+    # 时间进度：B1=日期, E1=进度率
+    if ws_f and _is_formula(ws_f.cell(1, 2)):
+        date_str = today.strftime("%Y-%m-%d")
+    else:
+        raw_date = ws.cell(1, 2).value
+        if isinstance(raw_date, (datetime.datetime, datetime.date)):
+            date_str = raw_date.strftime("%Y-%m-%d")
+        else:
+            date_str = str(raw_date).strip()[:10] if raw_date else ""
+    if ws_f and _is_formula(ws_f.cell(1, 5)):
+        tp = today.day / _days_in_month(today)
+    else:
+        tp = num(ws.cell(1, 5).value)
+
+    # 定位表头行（B列=任务 且 C列=完成）
+    hrow = None
+    for r in range(1, min(ws.max_row, 40) + 1):
+        if (str(ws.cell(r, 2).value or "").strip() == "任务"
+                and str(ws.cell(r, 3).value or "").strip() == "完成"):
+            hrow = r
+            break
+    if not hrow:
+        return None
+
+    # 完成额(done)：直接取「渠道挂账」sheet C 列「完成」已拉取/填入的值
+    # （即「最先拉取的数据」），不再实时复算销售分析。
+    # 仅当整列 C 均无值时，回退复算一次，避免空表报错。
+    c_vals = [ws.cell(r, 3).value for r in range(hrow + 1, ws.max_row + 1)]
+    use_sheet = any(v is not None for v in c_vals)
+    agg = _agg_qudao_done(wb) if not use_sheet else {}
+    people, t_task = [], 0.0
+    for r in range(hrow + 1, ws.max_row + 1):
+        nm = ws.cell(r, 1).value
+        if nm is None:
+            continue
+        nm = str(nm).strip()
+        if nm == "" or nm == "合计":
+            continue
+        task = num(ws.cell(r, 2).value)        # 任务额：本 sheet B 列
+        if use_sheet:
+            done = num(ws.cell(r, 3).value) or 0.0   # 完成额：取 sheet C 列「最先拉取」的值
+        else:
+            done = round(agg.get(nm, 0.0), 2)  # 回退：实时复算 C 列
+        done = round(done, 2)
+        if task:
+            gap = round(task - done, 2)
+            rate = round(done / task, 6)
+        else:
+            gap = 0.0
+            rate = None                         # 无任务
+        t_task += (task or 0)
+        people.append({"name": nm, "task": task, "done": done,
+                       "gap": gap, "rate": rate})
+    t_done = sum(p["done"] for p in people)
+    total = {
+        "task": t_task,
+        "done": round(t_done, 2),
+        "gap": round(t_task - t_done, 2),
+        "rate": round(t_done / t_task, 6) if t_task else 0.0,
+    }
+    return {"timeDate": date_str, "timeRate": tp, "total": total, "people": people}
+
+
+# 不再提取的指标（按需求剔除）
+DROP_KEYS = {"摄影课"}
+
+
+def read_flat(ws, row, labels, start=1):
+    d = {}
+    for i, lab in enumerate(labels):
+        if lab and lab not in DROP_KEYS:
+            d[lab] = cell(ws, row, start + i)
+    return d
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("用法: python build_data.py <xlsx路径> [输出json]")
+        sys.exit(1)
+    src = sys.argv[1]
+    out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "data.json")
+
+    load_people(src)  # 动态读取人员名单 + 行号映射
+
+    wb = openpyxl.load_workbook(src, data_only=True)
+    wb_f = openpyxl.load_workbook(src, data_only=False)  # 仅用于识别公式
+    if SHEET not in wb.sheetnames:
+        print(f"❌ 找不到工作表「{SHEET}」，现有：{wb.sheetnames}")
+        sys.exit(1)
+    ws = wb[SHEET]
+    ws_f = wb_f[SHEET]
+    today = datetime.date.today()
+
+    # --- 元信息 ---
+    # B1/I1 若为公式(=TODAY() 等)，按今天取值，避免读到陈旧缓存值
+    if _is_formula(ws_f.cell(ROW_TIME, 2)):
+        date_str = today.strftime("%Y-%m-%d")
+    else:
+        raw_date = ws.cell(ROW_TIME, 2).value
+        if isinstance(raw_date, (datetime.datetime, datetime.date)):
+            date_str = raw_date.strftime("%Y-%m-%d")
+        else:
+            date_str = str(raw_date).strip()[:10] if raw_date else ""
+    if _is_formula(ws_f.cell(ROW_TIME, 9)):
+        tp = today.day / _days_in_month(today)
+    else:
+        tp = num(ws.cell(ROW_TIME, 9).value)
+
+    d3_labels = read_labels(ws, P3_LABEL_ROW)
+    d4_labels = read_labels(ws, P4_LABEL_ROW)
+    day_title = ws.cell(*P3_TITLE_CELL).value or ""
+
+    data = {
+        "meta": {
+            "storeName": "华为华阳城合作店",
+            "date": date_str,
+            "dayTitle": str(day_title).strip(),
+            "timeProgress": tp,
+            "employees": PEOPLE_ORDER,
+            "sourceFile": os.path.basename(src),
+            "fetchTime": datetime.datetime.now().strftime("%H:%M"),
+            "isToday": (date_str == today.strftime("%Y-%m-%d")),
+            "generatedAt": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        },
+        "store": {
+            "performance": read_perf(ws, P1_TOTAL_ROW),
+            "qcs":         read_qcs(ws, P2_TOTAL_ROW),
+            "dailyDone":   read_flat(ws, P3_TOTAL_ROW, d3_labels),
+            "dailyGap":    read_flat(ws, P4_TOTAL_ROW, d4_labels),
+        },
+        "people": {},
+    }
+
+    for name in PEOPLE_ORDER:
+        data["people"][name] = {
+            "performance": read_perf(ws, P1_ROWS[name]),
+            "qcs":         read_qcs(ws, P2_ROWS[name]),
+            "dailyDone":   read_flat(ws, P3_ROWS[name], d3_labels),
+            "dailyGap":    read_flat(ws, P4_ROWS[name], d4_labels) if name in P4_ROWS else {},
+        }
+
+    qd = read_qudao(wb, wb_f)
+    if qd:
+        data["qudao"] = qd
+
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+
+    # --- 体检报告 ---
+    print(f"✅ 已生成 {out}")
+    print(f"   数据日期 {date_str} | 时间进度 {tp:.1%}" if tp else f"   数据日期 {date_str}")
+    g = data["store"]["performance"]["毛利"]
+    print(f"   门店毛利 任务{g['task']} 完成{g['done']} 达成{(g['rate'] or 0):.1%}")
+    for n in PEOPLE_ORDER:
+        pg = data["people"][n]["performance"]["毛利"]
+        tag = "（未分配任务）" if pg["task"] in (None, 0) else ""
+        print(f"   - {n}: 完成 {pg['done']}  {tag}")
+
+
+if __name__ == "__main__":
+    main()
