@@ -106,6 +106,10 @@ def main():
     base = os.path.splitext(os.path.basename(xlsx))[0]
     bak = os.path.join(bak_dir, f"{base}_手工项清零前{stamp}.xlsx")
     shutil.copy2(xlsx, bak)
+    # 只保留最近一次备份（2026-09-20：减轻储存压力）
+    for old in [f for f in os.listdir(bak_dir) if f.startswith(base) and f.endswith(".xlsx")]:
+        if old != os.path.basename(bak):
+            os.remove(os.path.join(bak_dir, old))
     print(f"→ 已备份: {os.path.basename(bak)}")
 
     out = xlsx + ".tmp"

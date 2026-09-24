@@ -25,6 +25,7 @@ fetch_sales_analysis_hyc.py —— 拉「华为华阳城合作店」的销售分
 """
 import json, os, sys, ssl, time, datetime, urllib.request, urllib.error, re
 import collections
+import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 YY_BASE = "https://c3.yonyoucloud.com"
@@ -34,6 +35,9 @@ BILLNUM = "rm_saleanalysis"
 STORE_NAME = "华为华阳城合作店"
 STORE_KEY = "华阳城"          # 宽松匹配键（防门店名写法微调）
 SN_FIELD = "oid_userDefine_2419863036093267976"  # 序列号
+# 【2026-09-20】门店 ID —— condition.commonVOs 精准锁单店用（实测 1 页 37s 拿本店全量）
+#   取自接口返回行的 store 字段；换店改这里或设 SA_STORE_ID 环境变量
+STORE_ID = os.environ.get("SA_STORE_ID", "2390871010418622469")
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 # 经理账号登录态（店长账号看不到华阳城）
@@ -45,11 +49,27 @@ OUT_CACHE = os.path.join(BASE, "sa_aug_cache.json")
 OUT_WAREHOUSE = os.path.join(BASE, "sa_warehouse_hyc.json")
 OUT_TSV = os.path.join(BASE, "sa_raw.tsv")
 
-PAGE_SIZE = 5000
-MAX_WORKERS = 5          # 并发页（服务端单页约 60s，串行 46 页要 45 分钟）
+# ---------------------------------------------------------------
+# 分页参数（2026-09-20 实测调优）
+#
+# 血泪事实：该接口服务端每页有 ~50s 固定开销，返回行数几乎不影响耗时。
+#   旧参数 pageSize=5000 × 46 页 并发 5  → 实测 612s
+#   新参数 pageSize=20000 × 12 页 并发 8 → 实测 206s（省 66%）
+#
+# 另：接口按【门店】分组排序，同一门店的行**连续**，全公司 22.9 万行里
+# 华阳城只落在其中 2 页（pageSize=20000 时为 11、12 页）。
+# 故再有「页定位」缓存在 `sa_page_map.json`：日常只拉命中页 ± 1 页兜底，
+# 约 130s（省 79%）；行数校验不过自动降级全量重扫。
+# ---------------------------------------------------------------
+PAGE_SIZE = int(os.environ.get("SA_PAGE_SIZE", "20000"))
+MAX_WORKERS = int(os.environ.get("SA_WORKERS", "8"))
 CACHE_MAX_AGE = 6 * 3600
+PAGE_MAP = os.path.join(BASE, "sa_page_map.json")   # 华阳城所在页映射（定位缓存）
+MAP_TOLERANCE = 0.35                                # 定位命中行数允许 ±35% 漂移
 
 USE_CACHE = "--use-cache" in sys.argv
+NO_LOCATE = "--no-locate" in sys.argv        # 强制全量扫描（不用页定位缓存）
+NO_CONDITION = "--no-condition" in sys.argv  # 禁用 condition 精准模式（退回页定位/全量）
 MONTH = None
 if "--month" in sys.argv:
     MONTH = sys.argv[sys.argv.index("--month") + 1]
@@ -88,11 +108,16 @@ def build_headers(ck):
     }
 
 
-def fetch_page(hdr, page_index, retries=3, timeout=240):
-    body = json.dumps({
+def fetch_page(hdr, page_index, retries=3, timeout=240, use_condition=False):
+    payload = {
         "billnum": BILLNUM,
         "page": {"pageIndex": page_index, "pageSize": PAGE_SIZE},
-    }).encode("utf-8")
+    }
+    # 【2026-09-20 提速】condition.commonVOs 可精准锁单店：
+    #   实测 recordCount 229603(全公司/3页/101s) → 14483(单店/1页/37s)
+    if use_condition and STORE_ID:
+        payload["condition"] = {"commonVOs": [{"itemName": "store", "value1": STORE_ID}]}
+    body = json.dumps(payload).encode("utf-8")
     last = None
     for attempt in range(1, retries + 1):
         try:
@@ -106,7 +131,7 @@ def fetch_page(hdr, page_index, retries=3, timeout=240):
             return dd.get("recordCount"), (dd.get("recordList") or [])
         except urllib.error.HTTPError as e:
             if e.code in (401, 403):
-                raise SystemExit("✗ HTTP_%d 登录态失效，请先跑 relogin_mgr.sh 重登经理账号" % e.code)
+                raise SystemExit("✗ HTTP_%d 登录态失效（运行中段），请跑 relogin_mgr_py.py 重登经理账号" % e.code)
             last = e
         except SystemExit:
             raise
@@ -120,6 +145,39 @@ def fetch_page(hdr, page_index, retries=3, timeout=240):
 def is_hyc(rec):
     s = str(rec.get("store_name") or "")
     return STORE_KEY in s
+
+
+def fetch_pages(hdr, pages, use_condition=False):
+    """并发拉取指定页集合，返回 {page: [records]}。
+
+    任一路失败即抛异常 —— 由上层决定「降级全量」而非静默漏页
+    （漏页 = 渠道数字偏低，是比报错严重得多的事故）。
+    """
+    pages = [p for p in pages if p >= 1]
+    if not pages:
+        return {}
+    out = {}
+    with ThreadPoolExecutor(max_workers=min(MAX_WORKERS, len(pages))) as pool:
+        futs = {pool.submit(fetch_page, hdr, p, 3, 240, use_condition): p for p in pages}
+        for fut in as_completed(futs):
+            p = futs[fut]
+            _, rl = fut.result()
+            out[p] = rl
+    return out
+
+
+def write_page_map(pages, n_pages, total, hyc_raw):
+    """记录华阳城命中页，供下次「页定位」直接复用。"""
+    try:
+        atomic_write_json(PAGE_MAP, {
+            "page_size": PAGE_SIZE, "total_pages": n_pages, "record_count": total,
+            "pages": sorted(pages), "hyc_raw_rows": len(hyc_raw),
+            "updated_at": time.time(),
+        })
+        print("  [定位] 页映射已更新: 命中页 %s / 共 %d 页（%d 行）"
+              % (sorted(pages), n_pages, len(hyc_raw)))
+    except Exception as e:
+        print("  [定位] 写页映射失败(不影响本次): %s" % e)
 
 
 def dedup(records):
@@ -144,13 +202,61 @@ def atomic_write_json(path, obj):
     os.replace(tmp, path)
 
 
+def auth_probe_mgr(hdr):
+    """【2026-09-21 自愈】拉数前探活：401/失效时自动无头重登（playwright 版，钥匙串取密不落日志）再试。
+    移植自李家村 mem17 auth_probe（wecom_api.py），根治 15 小时空窗后首档 401 静默断更。"""
+    payload = {"billnum": BILLNUM, "page": {"pageIndex": 1, "pageSize": 1}}
+    if STORE_ID:
+        payload["condition"] = {"commonVOs": [{"itemName": "store", "value1": STORE_ID}]}
+    body = json.dumps(payload).encode("utf-8")
+    try:
+        req = urllib.request.Request(SA_URL, data=body, headers=hdr, method="POST")
+        with urllib.request.urlopen(req, timeout=60,
+                                    context=ssl.create_default_context()) as resp:
+            j = json.loads(resp.read())
+        if j.get("code") == 200:
+            rc = (j.get("data") or {}).get("recordCount")
+            print("  [auth] 探针 OK recordCount=%s" % rc)
+            return hdr
+        raise RuntimeError("探针 code=%s" % j.get("code"))
+    except SystemExit:
+        raise
+    except Exception as e:
+        print("  [auth] 探针失败（%s），自动无头重登经理号..." % str(e)[:90], flush=True)
+    # relogin 需 playwright：固定用 TeleAgent python（有 playwright，与李家村 mem17 同款）；
+    # 本脚本自身可能由 WorkBuddy python 运行（无 playwright），不可用 sys.executable
+    RELOGIN_INTERP = "/Users/mac/.local/share/TeleAgent/runtimes/python/bin/python3"
+    if not os.path.exists(RELOGIN_INTERP):
+        RELOGIN_INTERP = sys.executable
+    r = subprocess.run([RELOGIN_INTERP, os.path.join(BASE, "relogin_mgr_py.py")],
+                       capture_output=True, text=True, timeout=180)
+    print("  [auth] relogin:", (r.stdout or r.stderr).strip()[:120], flush=True)
+    if "LOGGED_IN" not in (r.stdout or ""):
+        raise SystemExit("✗ 自动重登失败，登录态不可用（详见上方 relogin 输出）")
+    if not os.path.exists(STATE):
+        raise SystemExit("✗ 重登后仍找不到登录态文件")
+    ck2 = load_cookies(STATE)
+    if "yht_access_token" not in ck2:
+        raise SystemExit("✗ 重登后登录态仍缺少 yht_access_token")
+    hdr2 = build_headers(ck2)
+    req = urllib.request.Request(SA_URL, data=body, headers=hdr2, method="POST")
+    with urllib.request.urlopen(req, timeout=60,
+                                context=ssl.create_default_context()) as resp:
+        j = json.loads(resp.read())
+    rc = (j.get("data") or {}).get("recordCount")
+    if j.get("code") != 200 or rc is None:
+        raise SystemExit("✗ 重登后探针仍失败 code=%s" % j.get("code"))
+    print("  [auth] 探针恢复 OK recordCount=%s" % rc)
+    return hdr2
+
+
 def main():
     if not os.path.exists(STATE):
         sys.exit("✗ 找不到经理账号登录态: %s（先跑 relogin_mgr.sh）" % STATE)
     ck = load_cookies(STATE)
     if "yht_access_token" not in ck:
         sys.exit("✗ 登录态缺少 yht_access_token，请重登")
-    hdr = build_headers(ck)
+    hdr = auth_probe_mgr(build_headers(ck))
 
     print("▶ 拉取销售分析（经理号 %s）→ 本地过滤 store_name 含 '%s'"
           % (os.path.basename(STATE), STORE_KEY))
@@ -170,32 +276,107 @@ def main():
         except Exception as e:
             print("  [仓] 读取失败，转联网: %s" % e)
 
+    # ---- 【新】condition 精准模式：直锁本店（1 页 ~37s）----
+    #   2026-09-20 实测：condition.commonVOs 传 store ID 可把 recordCount 从
+    #   229603(全公司/3页) 缩到 14483(单店/1页)；无需页定位/全量扫描。
+    #   校验不过（本店占比 <90%）自动退回常规流程，绝不静默出错。
+    if not hyc_all and not NO_CONDITION and STORE_ID:
+        t0 = time.time()
+        print("  [精准] condition[store=%s] 直锁本店…" % STORE_ID)
+        try:
+            total, rows = fetch_page(hdr, 1, use_condition=True)
+            n_pages = (total + PAGE_SIZE - 1) // PAGE_SIZE if total else 1
+            if n_pages > 1:
+                extra = fetch_pages(hdr, range(2, n_pages + 1), use_condition=True)
+                for p in sorted(extra):
+                    rows = rows + extra[p]
+            n_hyc = sum(1 for r in rows if is_hyc(r))
+            ratio = (n_hyc / len(rows)) if rows else 0
+            print("  [精准] recordCount=%s（%d 页）共 %d 行，其中本店 %d 行（%.0f%%）（%.0fs）"
+                  % (total, n_pages, len(rows), n_hyc, ratio * 100, time.time() - t0))
+            if n_hyc > 0 and ratio > 0.9:
+                hyc_all = dedup(rows)
+                print("  [精准] ✅ 命中并去重 %d 行（%.0fs）" % (len(hyc_all), time.time() - t0))
+                try:
+                    atomic_write_json(OUT_WAREHOUSE, {"fetched_at": time.time(),
+                                                      "store": STORE_NAME, "records": hyc_all})
+                except Exception as e:
+                    print("  [仓] 写仓失败(不影响本次): %s" % e)
+            else:
+                print("  [精准] ✗ 命中异常（本店占比 %.0f%%），退回常规流程" % (ratio * 100))
+        except SystemExit:
+            raise
+        except Exception as e:
+            print("  [精准] ✗ 失败(%s)，退回常规流程" % str(e)[:100])
+
+    # ---- 页定位模式：复用上次命中的页，只拉这几页 ±1 页兜底 ----
+    if not hyc_all and not NO_LOCATE and os.path.exists(PAGE_MAP):
+        try:
+            pm = json.load(open(PAGE_MAP, encoding="utf-8"))
+            if pm.get("page_size") != PAGE_SIZE:
+                print("  [定位] 页映射 pageSize=%s ≠ 当前 %s，转全量重扫"
+                      % (pm.get("page_size"), PAGE_SIZE))
+            else:
+                hit = sorted(set(pm.get("pages") or []))
+                n_cached = int(pm.get("total_pages") or 0)
+                wide = sorted({p for h in hit
+                               for p in (h - 1, h, h + 1) if 1 <= p <= max(n_cached, h)})
+                print("  [定位] 复用页映射 命中页 %s → 实拉 %s（%d 页，%.0f 分钟前）"
+                      % (hit, wide, len(wide), (time.time() - pm.get("updated_at", 0)) / 60))
+                t0 = time.time()
+                got = fetch_pages(hdr, wide)
+                cand = [r for p in wide for r in got.get(p, []) if is_hyc(r)]
+                exp = int(pm.get("hyc_raw_rows") or 0)
+                if cand and exp * (1 - MAP_TOLERANCE) <= len(cand) <= exp * (1 + MAP_TOLERANCE):
+                    print("  [定位] ✅ 命中 %d 行（预期 %d，容差 ±%.0f%%），跳过全量扫描（%.0fs）"
+                          % (len(cand), exp, MAP_TOLERANCE * 100, time.time() - t0))
+                    # 边界体检：命中页的首/末行若仍是华阳城，说明门店块可能被页边界截断
+                    fp, lp = min(wide), max(wide)
+                    if got.get(fp) and is_hyc(got[fp][0]):
+                        print("  ⚠️ [定位] 首页(page%d)首行即华阳城，块起点可能更靠前" % fp)
+                    if lp < n_cached and got.get(lp) and is_hyc(got[lp][-1]):
+                        print("  ⚠️ [定位] 末页(page%d)末行仍是华阳城，块终点可能更靠后" % lp)
+                    write_page_map([p for p in wide if any(is_hyc(r) for r in got.get(p, []))],
+                                   n_cached, pm.get("record_count"), cand)
+                    hyc_all = dedup(cand)
+                    print("  [去重] %d → %d 行" % (len(cand), len(hyc_all)))
+                else:
+                    print("  [定位] ❌ 命中 %d 行，超出预期 %d 的 ±%.0f%% 容差，降级全量重扫"
+                          % (len(cand), exp, MAP_TOLERANCE * 100))
+        except SystemExit:
+            raise
+        except Exception as e:
+            print("  [定位] 复用失败，降级全量: %s" % e)
+
+    # ---- 全量扫描（首次 / 定位不可用 / 校验不过）----
     if not hyc_all:
         t0 = time.time()
         total, page1 = fetch_page(hdr, 1)
         n_pages = (total + PAGE_SIZE - 1) // PAGE_SIZE
         print("  接口 recordCount=%s（全公司）→ %d 页 × %d" % (total, n_pages, PAGE_SIZE))
-        hyc_all.extend(r for r in page1 if is_hyc(r))
-        print("  [页 1/%d] 本页华阳城 %d 行，累计 %d" % (n_pages, len(hyc_all), len(hyc_all)))
 
-        done = 1
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-            futs = {pool.submit(fetch_page, hdr, pi): pi for pi in range(2, n_pages + 1)}
-            for fut in as_completed(futs):
-                pi = futs[fut]
-                try:
-                    _, rl = fut.result()
-                    got = [r for r in rl if is_hyc(r)]
-                    hyc_all.extend(got)
-                    done += 1
-                    print("  [页 %d/%d] 本页华阳城 %d 行，累计 %d（%.0fs）"
-                          % (pi, n_pages, len(got), len(hyc_all), time.time() - t0))
-                except Exception as e:
-                    print("  [页 %d] 失败: %s" % (pi, e))
+        hit_pages, raw = [], []
+        p1 = [r for r in page1 if is_hyc(r)]
+        if p1:
+            hit_pages.append(1)
+        raw.extend(p1)
+        print("  [页 1/%d] 本页华阳城 %d 行，累计 %d" % (n_pages, len(p1), len(raw)))
 
-        raw_n = len(hyc_all)
-        hyc_all = dedup(hyc_all)
-        print("  [去重] %d → %d 行" % (raw_n, len(hyc_all)))
+        rest = fetch_pages(hdr, range(2, n_pages + 1))
+        for pi in sorted(rest):
+            got = [r for r in rest[pi] if is_hyc(r)]
+            if got:
+                hit_pages.append(pi)
+            raw.extend(got)
+            print("  [页 %d/%d] 本页华阳城 %d 行，累计 %d（%.0fs）"
+                  % (pi, n_pages, len(got), len(raw), time.time() - t0))
+
+        print("  [全量] 扫描完成：华阳城原始 %d 行，命中页 %s / 共 %d 页（%.0fs）"
+              % (len(raw), hit_pages, n_pages, time.time() - t0))
+        write_page_map(hit_pages, n_pages, total, raw)
+
+        hyc_all = dedup(raw)
+        print("  [去重] %d → %d 行" % (len(raw), len(hyc_all)))
         try:
             atomic_write_json(OUT_WAREHOUSE, {"fetched_at": time.time(),
                                               "store": STORE_NAME, "records": hyc_all})
