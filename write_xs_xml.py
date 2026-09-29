@@ -158,7 +158,8 @@ def load_rows(src):
                 cells[18] = str(float(cells[12]) - float(cells[13]))
             except (ValueError, TypeError):
                 pass
-        key = (cells[0].strip(), cells[5].strip())  # 出库单号+SKU编码
+        # 去重（2026-09-30 修复，同 shop 仓）：key = 整行签名，完全相同的行才算导出重复。
+        key = tuple(cells)
         if key in seen:
             continue
         seen.add(key)

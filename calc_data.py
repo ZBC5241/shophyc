@@ -172,9 +172,11 @@ def load_xlsx(path):
                 cells.append(c.strftime("%Y-%m-%d"))
             else:
                 cells.append(str(c))
-        key = (cells[0].strip(), cells[5].strip())  # 出库单号 + SKU编码
+        # 去重（2026-09-30 修复，同 shop 仓）：key = 整行签名。旧 key（出库单号+SKU编码）会把
+        # 同单同SKU但入库属性不同的合法两行误删。完全相同的行才是用友导出重复，保留首行。
+        key = tuple(cells)
         if key in seen:
-            continue  # 跳过重复行
+            continue  # 跳过完全相同的重复行
         seen.add(key)
         rows.append(cells)
     return rows
