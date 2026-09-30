@@ -46,7 +46,7 @@ RC=$?
 
 # ① 失败重试（60 秒后 1 次；互斥锁天然防与下一档重叠）
 if [ "$RC" -ne 0 ]; then
-  echo "[retry] 首次失败 RC=$RC，60 秒后自动重试 1 次" >> "$LOG"
+  echo "[retry] 首次失败 RC=${RC}，60 秒后自动重试 1 次" >> "$LOG"
   sleep 60
   bash "$HERE/update_hyc.sh" >> "$LOG" 2>&1
   RC=$?
