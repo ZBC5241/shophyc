@@ -9,7 +9,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "10-01",
-  "fetchTime": "21:38",
+  "fetchTime": "21:51",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -18,9 +18,9 @@
    "田蕊"
   ],
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
-  "sourceRows": 33,
-  "dayRows": 33,
-  "generatedAt": "2026-10-01 21:38:19"
+  "sourceRows": 37,
+  "dayRows": 37,
+  "generatedAt": "2026-10-01 21:51:23"
  },
  "store": {
   "performance": {
@@ -1220,8 +1220,8 @@
     }
    ],
    "idle": [],
-   "totalOrders": 33,
-   "totalGross": 39057.7342
+   "totalOrders": 37,
+   "totalGross": 40187.7342
   },
   "advices": [
    {
@@ -1272,6 +1272,42 @@
      "cost": 8700.0,
      "costRatio": 0.8788757663645153,
      "cat": "手机",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "华为 Pura90 Pro MLN-AL00  12GB+512GB  椰青白",
+     "code": "XSCK26100101989",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 5699.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 5699.0,
+     "profit": 599.0,
+     "cost": 5100.0,
+     "costRatio": 0.8948938410247412,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "华为 WATCH6 LEB-AL00 42mm(粉色氟橡胶表带) 晨曦金",
+     "code": "XSCK26100102015",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 2799.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 2799.0,
+     "profit": 531.0,
+     "cost": 2268.0,
+     "costRatio": 0.8102893890675241,
+     "cat": "穿戴",
      "isReturn": false,
      "isBundle": true
     },
@@ -1351,6 +1387,42 @@
      "emp": "乔玉宇",
      "product": "华为-手提袋-中",
      "code": "XSCK26100101593",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 0.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 0.0,
+     "profit": 0.0,
+     "cost": 0.0,
+     "costRatio": null,
+     "cat": "其他",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "华为-手提袋-中",
+     "code": "XSCK26100101989",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 0.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 0.0,
+     "profit": 0.0,
+     "cost": 0.0,
+     "costRatio": null,
+     "cat": "其他",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "华为-手提袋-中",
+     "code": "XSCK26100102015",
      "channel": "自然客流",
      "bizType": "",
      "member": "",
@@ -1852,7 +1924,7 @@
      "isBundle": false
     }
    ],
-   "totalAmount": 116302.97,
+   "totalAmount": 124800.97,
    "patterns": [
     {
      "name": "张梅B",
@@ -2251,6 +2323,23 @@
     "code": "LS028100472610010020",
     "member": "庞鹏",
     "phone": "134****2278"
+   },
+   {
+    "date": "2026-10-01",
+    "name": "华为 Pura90 Pro MLN-AL00  12GB+512GB  椰青白",
+    "qty": 1.0,
+    "origPrice": 5699.0,
+    "discPrice": 0.0,
+    "amount": 5699.0,
+    "profit": 599.0,
+    "gpr": 0.1051,
+    "so": "",
+    "cost": 5100.0,
+    "emp": "乔玉宇",
+    "sku": "01.001.076.001.006",
+    "code": "LS028100472610010024",
+    "member": "李梦娇",
+    "phone": "153****5616"
    }
   ],
   "PC": [],
@@ -2324,6 +2413,23 @@
     "code": "LS028100472610010023",
     "member": "徐磊",
     "phone": "133****3905"
+   },
+   {
+    "date": "2026-10-01",
+    "name": "华为 WATCH6 LEB-AL00 42mm(粉色氟橡胶表带) 晨曦金",
+    "qty": 1.0,
+    "origPrice": 2799.0,
+    "discPrice": 0.0,
+    "amount": 2799.0,
+    "profit": 531.0,
+    "gpr": 0.1897,
+    "so": "",
+    "cost": 2268.0,
+    "emp": "乔玉宇",
+    "sku": "08.001.042.002.001",
+    "code": "LS028100472610010025",
+    "member": "冯生强",
+    "phone": "187****0505"
    }
   ],
   "音频": [
@@ -2433,6 +2539,23 @@
     "code": "LS028100472610010023",
     "member": "徐磊",
     "phone": "133****3905"
+   },
+   {
+    "date": "2026-10-01",
+    "name": "华为 WATCH6 LEB-AL00 42mm(粉色氟橡胶表带) 晨曦金",
+    "qty": 1.0,
+    "origPrice": 2799.0,
+    "discPrice": 0.0,
+    "amount": 2799.0,
+    "profit": 531.0,
+    "gpr": 0.1897,
+    "so": "",
+    "cost": 2268.0,
+    "emp": "乔玉宇",
+    "sku": "08.001.042.002.001",
+    "code": "LS028100472610010025",
+    "member": "冯生强",
+    "phone": "187****0505"
    }
   ],
   "增值": [
@@ -2703,6 +2826,66 @@
   },
   {
    "code": "XSCK26100101593",
+   "type": "华为",
+   "emp": "乔玉宇",
+   "product": "华为-手提袋-中",
+   "sku": "17.002.001.002",
+   "qty": 5.0,
+   "origPrice": 0.0,
+   "discPrice": 0.0,
+   "amount": 0.0,
+   "profit": 0.0,
+   "cost": 0.0,
+   "gpr": null,
+   "cat": "其他"
+  },
+  {
+   "code": "XSCK26100101989",
+   "type": "Pura90 Pro",
+   "emp": "乔玉宇",
+   "product": "华为 Pura90 Pro MLN-AL00  12GB+512GB  椰青白",
+   "sku": "01.001.076.001.006",
+   "qty": 1.0,
+   "origPrice": 5699.0,
+   "discPrice": 0.0,
+   "amount": 5699.0,
+   "profit": 599.0,
+   "cost": 5100.0,
+   "gpr": 0.10510615897525882,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26100101989",
+   "type": "华为",
+   "emp": "乔玉宇",
+   "product": "华为-手提袋-中",
+   "sku": "17.002.001.002",
+   "qty": 2.0,
+   "origPrice": 0.0,
+   "discPrice": 0.0,
+   "amount": 0.0,
+   "profit": 0.0,
+   "cost": 0.0,
+   "gpr": null,
+   "cat": "其他"
+  },
+  {
+   "code": "XSCK26100102015",
+   "type": "WATCH6",
+   "emp": "乔玉宇",
+   "product": "华为 WATCH6 LEB-AL00 42mm(粉色氟橡胶表带) 晨曦金",
+   "sku": "08.001.042.002.001",
+   "qty": 1.0,
+   "origPrice": 2799.0,
+   "discPrice": 0.0,
+   "amount": 2799.0,
+   "profit": 531.0,
+   "cost": 2268.0,
+   "gpr": 0.18971061093247588,
+   "cat": "穿戴"
+  },
+  {
+   "code": "XSCK26100102015",
    "type": "华为",
    "emp": "乔玉宇",
    "product": "华为-手提袋-中",
