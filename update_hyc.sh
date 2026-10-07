@@ -36,6 +36,15 @@ PY="/Users/mac/.workbuddy/binaries/python/envs/default/bin/python"
 #    随后管线继续用**旧明细**出数 —— 历史事故根因。
 #    定时入口 run_hyc_scheduled.sh 已设一份；这里内置，保证手动跑同样安全。
 export NODE_PATH="${NODE_PATH:-/Users/mac/.workbuddy/binaries/node/workspace/node_modules}"
+# 🔴 node 二进制动态探测（2026-10-07 事故：旧版写死 22.22.2-3 被 runtime 升级清理，
+#    导致 Playwright 起不来、华阳城停更一天）。不再写死版本号：
+#    取 versions/*/bin/node 中版本最高且存在的，支持 NODE_BIN 环境变量覆盖。
+if [ -z "${NODE_BIN:-}" ]; then
+  NODE_BIN="$(ls /Users/mac/.workbuddy/binaries/node/versions/*/bin/node 2>/dev/null | sort -V | tail -1)"
+fi
+if [ -z "${NODE_BIN:-}" ] || [ ! -x "${NODE_BIN:-}" ]; then
+  echo "❌ 找不到可用 node 二进制（探测过 /Users/mac/.workbuddy/binaries/node/versions/*/bin/node），终止"; exit 1
+fi
 MGR_DL="/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc_mgr"   # 经理号导出的全公司明细
 MAOLI_HYC="/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc/华阳城门店毛利明细表-华为终端.xlsx"
 TASK_XLSX="/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
@@ -104,7 +113,7 @@ fi
 if [ -z "$SKIP_FETCH" ]; then
   echo "===== 1/5 拉全公司门店毛利明细（经理号） ====="
   PREV_MT="$(stat -f%m "$(ls -t "$MGR_DL"/*.xlsx 2>/dev/null | head -1)" 2>/dev/null || echo 0)"
-  PROFIT_DL="$MGR_DL" /Users/mac/.workbuddy/binaries/node/versions/22.22.2-3/bin/node fetch_profit_mgr.cjs 2>&1 | tail -3
+  PROFIT_DL="$MGR_DL" "$NODE_BIN" fetch_profit_mgr.cjs 2>&1 | tail -3
   SRC="$(ls -t "$MGR_DL"/*.xlsx 2>/dev/null | head -1)"
   if [ -z "$SRC" ]; then echo "❌ 未拿到毛利明细，终止"; exit 1; fi
   echo "  源文件: $SRC"
