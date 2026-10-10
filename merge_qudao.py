@@ -17,7 +17,7 @@ import build_data as bd
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASE, "data.json")
-XLSX = sys.argv[2] if len(sys.argv) > 2 else "/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+XLSX = sys.argv[2] if len(sys.argv) > 2 else "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
 
 AUG_CACHE = os.path.join(BASE, "sa_aug_cache.json")   # 8 月华阳城切片（纯HTTP 抓取后本地筛得）
 
@@ -355,7 +355,7 @@ def build_qudao_from_cache():
     _tk = _wbf[[s for s in _wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
     tasks = {}
     _qd = _wbf["渠道挂账"] if "渠道挂账" in _wbf.sheetnames else None
-    for r in range(4, 8):
+    for r in range(4, 9):
         nm = _tk.cell(r, 2).value
         if nm and str(nm).strip():
             nm = str(nm).strip()

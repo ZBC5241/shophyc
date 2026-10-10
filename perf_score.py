@@ -30,7 +30,7 @@
 
 用法：
     from perf_score import compute_perf
-    res = compute_perf("/path/华阳城9月任务进度.xlsx")   # -> {姓名: 分数 or None}
+    res = compute_perf("/path/华阳城10月任务进度.xlsx")   # -> {姓名: 分数 or None}
 """
 import openpyxl
 
@@ -71,7 +71,7 @@ def compute_perf(xlsx):
     # ---------- 1. 人员 & 任务量 ----------
     tk = _task_sheet(wb)
     people = []                                  # [(姓名, 月度任务行号)]
-    for r in range(4, 8):
+    for r in range(4, 9):
         nm = tk.cell(r, 2).value
         if nm and str(nm).strip() and str(nm).strip() != "合计":
             people.append((str(nm).strip(), r))
@@ -166,7 +166,7 @@ def compute_perf(xlsx):
 if __name__ == "__main__":
     import sys, json
     p = sys.argv[1] if len(sys.argv) > 1 else \
-        "/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+        "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
     res = compute_perf(p)
     print(json.dumps(res, ensure_ascii=False, indent=2))
     vals = [v for v in res.values() if v is not None]

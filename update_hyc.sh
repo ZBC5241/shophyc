@@ -47,7 +47,7 @@ if [ -z "${NODE_BIN:-}" ] || [ ! -x "${NODE_BIN:-}" ]; then
 fi
 MGR_DL="/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc_mgr"   # 经理号导出的全公司明细
 MAOLI_HYC="/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc/华阳城门店毛利明细表-华为终端.xlsx"
-TASK_XLSX="/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+TASK_XLSX="/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
 
 NO_PUSH=""; SKIP_FETCH=""; FORCE=""; SKIP_SA=""; SA_ARGS=""
 for a in "$@"; do

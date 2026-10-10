@@ -25,7 +25,7 @@ import tempfile
 import zipfile
 import xml.etree.ElementTree as ET
 
-DEFAULT_XLSX = "/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+DEFAULT_XLSX = "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
 SHEET = "月度任务"
 SALES_ROWS = [4, 5, 6, 7]          # 张梅B / 李俊琪 / 王莹莹B / 张赫桐（r8=合计，不动）
 R_NS = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"

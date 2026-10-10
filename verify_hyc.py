@@ -6,7 +6,7 @@ verify_hyc.py —— 华阳城看板数字对照校验（独立复算底表 SUMI
 不依赖 Excel：直接按《华阳城销售》sheet 的真实公式语义，从过滤后的
 「华阳城门店毛利明细表」独立复算每人每项，再与 data.json 逐格对照。
 
-覆盖《华阳城销售》!C/G/K/O/S/W/AA/AM 列口径（行 4~8，即 4 名销售 + 田蕊）：
+覆盖《华阳城销售》!C/G/K/O/S/W/AA/AM 列口径（行 4~10，即 5 名销售 + 田蕊（2026-10 五人版））：
   毛利 C = SUMIFS(XS!N, XS!P=姓名)
   手机 G = SUMIFS(XS!I, XS!P=姓名, XS!D="01手机")
   PC   K = ... D="05电脑"
@@ -28,7 +28,7 @@ XLSX = sys.argv[1] if len(sys.argv) > 1 else \
     "/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc/华阳城门店毛利明细表-华为终端.xlsx"
 DATA = sys.argv[2] if len(sys.argv) > 2 else os.path.join(BASE, "data.json")
 
-PEOPLE = ["张梅B", "李俊琪", "王莹莹B", "张赫桐", "田蕊"]
+PEOPLE = ["张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"]
 METRICS = [
     ("毛利", None, None, 13),      # Σ 毛利列(14)
     ("手机", 3, "01手机", 8),

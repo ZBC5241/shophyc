@@ -35,7 +35,7 @@ def load_people(xlsx):
     wbf = _opx.load_workbook(xlsx, data_only=False)
     tk = wbf[[s for s in wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
     task_people, task_rows = [], {}
-    for r in range(4, 8):                   # B4~B7
+    for r in range(4, 9):                   # B4~B8（2026-10 五人）
         nm = tk.cell(r, 2).value
         if nm and str(nm).strip():
             nm = str(nm).strip()
@@ -45,17 +45,17 @@ def load_people(xlsx):
             task_people.append(nm)
             task_rows[nm] = r
     PEOPLE_ORDER = task_people + ["田蕊"]
-    # P1: 任务行号直接用月任务行号，田蕊=8
+    # P1: 任务行号直接用月任务行号，田蕊=9（2026-10 五人版）
     P1_ROWS = dict(task_rows)
-    P1_ROWS["田蕊"] = 8
+    P1_ROWS["田蕊"] = 9
     # P2: 任务行号 + 10，田蕊=18
-    P2_ROWS = {n: r + 10 for n, r in task_rows.items()}
-    P2_ROWS["田蕊"] = 18
+    P2_ROWS = {n: r + 11 for n, r in task_rows.items()}
+    P2_ROWS["田蕊"] = 20
     # P3: 任务行号 + 24，田蕊=32
-    P3_ROWS = {n: r + 24 for n, r in task_rows.items()}
-    P3_ROWS["田蕊"] = 32
+    P3_ROWS = {n: r + 27 for n, r in task_rows.items()}
+    P3_ROWS["田蕊"] = 36
     # P4: 任务行号 + 34，无田蕊
-    P4_ROWS = {n: r + 34 for n, r in task_rows.items()}
+    P4_ROWS = {n: r + 38 for n, r in task_rows.items()}
 
 
 SHEET = "华阳城销售"
@@ -67,22 +67,22 @@ TASK_XLSX_DEFAULT = "/Users/mac/Desktop/华阳城销售/华阳城9月任务进�
 
 # 以下 P1~P4 行号映射由 load_people() 动态设置
 P1_ROWS = {}
-P1_TOTAL_ROW = 9
+P1_TOTAL_ROW = 10
 P1_BLOCKS = [("毛利", 1), ("手机", 5), ("PC", 9), ("平板", 13), ("穿戴", 17),
              ("音频", 21), ("HD", 25), ("智慧办公", 29), ("音频穿戴", 33), ("销额", 37)]
 P1_SCORE_COL = 41                  # 绩效
 
 P2_ROWS = {}
-P2_TOTAL_ROW = 19
+P2_TOTAL_ROW = 21
 
 P3_ROWS = {}
-P3_TOTAL_ROW = 33
-P3_LABEL_ROW = 26                  # 项目名所在行
-P3_TITLE_CELL = (25, 2)            # B25 = "08-09达成"
+P3_TOTAL_ROW = 37
+P3_LABEL_ROW = 29                  # 项目名所在行
+P3_TITLE_CELL = (28, 2)            # B25 = "08-09达成"
 
 P4_ROWS = {}                       # 每日缺口（不含田蕊）
-P4_TOTAL_ROW = 42
-P4_LABEL_ROW = 36
+P4_TOTAL_ROW = 47
+P4_LABEL_ROW = 40
 
 
 def num(v):

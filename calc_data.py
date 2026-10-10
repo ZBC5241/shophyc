@@ -208,7 +208,7 @@ def load_people(xlsx):
     wbf = openpyxl.load_workbook(xlsx, data_only=False)
     tk = wbf[[s for s in wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
     task_people, task_row = [], {}
-    for r in range(4, 8):                   # B4~B7
+    for r in range(4, 9):                   # B4~B8（2026-10 五人：+乔玉宇）
         nm = tk.cell(r, 2).value             # B 列 = 姓名
         if nm and str(nm).strip():
             nm = str(nm).strip()
@@ -237,11 +237,11 @@ def load_manual(xlsx):
 
     # --- 乐机收（底表 2026-09 已从"乐回收"改名，T12 标题以底表为准，本脚本不写标题）：
     #     华阳城销售 T/U 列固定单元格常量（数据持久化由 xlsx 文件承担）
-    #     行号动态映射：月任务行号 + 10，田蕊固定 18（人员变动只改底表）
+    #     行号动态映射：月任务行号 + 11，田蕊固定 20（2026-10 五人版底表）
     #     T13=单量, U13=增值；T19/U19 是 SUM 公式（不必动），自动求和
     ws = wbf["华阳城销售"]
-    P2_ROWS = {n: r + 10 for n, r in TASK_ROW.items()}
-    P2_ROWS["田蕊"] = 18
+    P2_ROWS = {n: r + 11 for n, r in TASK_ROW.items()}
+    P2_ROWS["田蕊"] = 20
     lehui = {}
     for name, row in P2_ROWS.items():
         lehui[name] = {"orders": num(ws.cell(row, 20).value),    # T 单量
@@ -1038,7 +1038,7 @@ def build_day_details(rxs):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("detail", help="明细文件路径（.tsv 或 .xlsx）")
-    ap.add_argument("--xlsx", default="/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx")
+    ap.add_argument("--xlsx", default="/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx")
     ap.add_argument("--day", help="当日达成基准日，默认取明细里的最大日期")
     ap.add_argument("-o", "--out", default=os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "data.json"))

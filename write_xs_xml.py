@@ -34,7 +34,7 @@ import zipfile
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-DEFAULT_XLSX = "/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+DEFAULT_XLSX = "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
 XS_SHEET_FILE = "xl/worksheets/sheet4.xml"  # XS = 第4个sheet
 
 
@@ -315,7 +315,7 @@ def main():
     hdr = [c.value for c in next(ws2.iter_rows(min_row=1, max_row=1))]
     assert hdr[:5] == HEADERS[:5], f"表头异常: {hdr[:5]}"
     assert n == len(rows), f"行数不符: {n} vs {len(rows)}"
-    emp4 = {"张梅B", "李俊琪", "王莹莹B", "张赫桐", "田蕊"}
+    emp4 = {"张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"}
     vals = [(r[3], r[13], r[15]) for r in ws2.iter_rows(min_row=2, values_only=True) if r[0] is not None]
     g4 = sum(float(v[1] or 0) for v in vals if v[2] in emp4)
     assert g4 <= gross + 0.01, \
@@ -327,8 +327,8 @@ def main():
     n_rxs = sum(1 for r in wb2["RXS"].iter_rows(min_row=2, values_only=True) if r[0] is not None)
     assert n_rxs == len(rows_today), f"RXS 行数不符: {n_rxs} vs {len(rows_today)}"
     print(f"✓ RXS 已同步: {n_rxs} 行（{data_max} 当日流水）")
-    aa = wb2["华阳城销售"]["AA14"].value
-    assert hasattr(aa, "text") and "SUMIFS" in aa.text, "AA14公式丢失"
+    aa = wb2["华阳城销售"]["AA15"].value
+    assert hasattr(aa, "text") and "SUMIFS" in aa.text, "AA15公式丢失"
     cf_count = sum(
         len(re.findall(r"<conditionalFormatting", z.read(f).decode("utf-8", "ignore")))
         for z in [zipfile.ZipFile(target)]
