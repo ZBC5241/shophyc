@@ -63,7 +63,11 @@ def main():
     for r in it:
         if not r or not r[0] or not str(r[0]).strip():
             continue
-        key = (str(r[0]).strip(), str(r[5]).strip())   # 出库单号 + SKU 编码
+        # 整行签名去重（2026-10-11 修）：原 key=(单号,SKU) 会把「同单同款多件」
+        # 误去重成一件（真两件单价/毛利不同，如 100/83+99/82），导致 verify 少算、
+        # 误报与底表不一致（差值逐笔对账=被误去重的第二件，铁证）。
+        # 改为整行签名：仅完全相同的导出噪音行才去重，真多件全保留。
+        key = tuple(str(x).strip() if x is not None else "" for x in r)
         if key in seen:
             continue
         seen.add(key)

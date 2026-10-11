@@ -287,9 +287,24 @@ def load_manual(xlsx):
         except Exception as e:
             print("   ⚠️ 绩效公式重算失败（看板该卡将空缺）:", e)
 
-    # --- 表头标签（静态文本） ---
-    lab_day = [ws.cell(26, c).value for c in range(2, 16)]
-    lab_gap = [ws.cell(36, c).value for c in range(2, 16)]
+    # --- 表头标签（动态定位，2026-10-11）：人员增删会让「今日达成/每日任务」
+    #     区块整体上下移（乔玉宇增删曾使标签行 26→28、36→39），行号硬编码必炸。
+    #     锚点：B列=「手机」的标签行，且下一行 B 列=「完成」（今日达成）或「任务」（每日任务）。
+    day_row = gap_row = None
+    for r in range(1, 61):
+        if str(ws.cell(r, 2).value or "").strip() == "手机":
+            nxt = str(ws.cell(r + 1, 2).value or "").strip()
+            if nxt == "完成" and day_row is None:
+                day_row = r
+            elif nxt == "任务" and gap_row is None:
+                gap_row = r
+    if day_row is None or gap_row is None:
+        raise RuntimeError(
+            "找不到「今日达成/每日任务」标签行（锚点: B列=手机+下行完成/任务），底表结构变化，宁可失败不猜错")
+    if str(ws.cell(day_row, 3).value or "").strip() != "毛利":
+        raise RuntimeError("今日达成标签行校验失败（C列应=毛利），实际=%r" % ws.cell(day_row, 3).value)
+    lab_day = [ws.cell(day_row, c).value for c in range(2, 16)]
+    lab_gap = [ws.cell(gap_row, c).value for c in range(2, 16)]
     # 晨哥口径：底表「今日达成/每日任务」部分标签仍写「电信积分」，
     # 但 9 月新底表已改按「合约」考核（当日达成 K28=SUMIFS(RXS!M,E:*入网*)=入网积分，
     # 每日任务 K38 引用 $D14=合约缺口单数）。代码层统一映射为「合约」（不碰桌面真表）。
