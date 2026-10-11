@@ -128,7 +128,7 @@ def read_emp_channel():
     口径：与「渠道挂账」完成列公式一致（SUMIFS 从销售分析表提取白名单渠道净额，
           垫付/预订也算——晨哥 2026-08-19 拍板），保证逐人渠道明细合计 == 渠道挂账完成额；
           仅白名单获客渠道；按单据日期过滤 8 月切片；员工名单按底表
-          「月任务」B4:B7+田蕊 过滤（2026-09-05 动态化改造，离职人员不再入榜）。
+          底表现役名单过滤（2026-10-11 起 hyc_taskmap 动态发现，离职人员不再入榜）。
     来源优先级：
       1) sa_aug_cache.json（纯HTTP 抓取的 8 月全量切片，最新最全）
       2) xlsx「销售分析」sheet（用户导出，兑底）
@@ -143,16 +143,12 @@ def read_emp_channel():
     # sa_lookup 保持全量不过滤（品类明细补单号/会员/电话需要离职人员的历史流水）。
     active = set()
     try:
-        _wbf = openpyxl.load_workbook(XLSX, data_only=False)
-        _tk = _wbf[[s for s in _wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
-        for _r in range(4, 8):
-            _nm = _tk.cell(_r, 2).value
-            if _nm and str(_nm).strip():
-                active.add(str(_nm).strip())
-        _wbf.close()
+        import hyc_taskmap as _htm
+        _tmx = _htm.discover(XLSX)
+        active.update(_tmx["task_people"])
+        active.add(_tmx["helper"])
     except Exception as e:
         print("  [员工×渠道] 底表现役名单读取失败，退回不过滤: %s" % e)
-    active.add("田蕊")
 
     # —— 来源 1：sa_aug_cache.json（用友云 8 月切片，最全）——
     if os.path.exists(AUG_CACHE):
@@ -351,12 +347,13 @@ def build_qudao_from_cache():
     # 渠道任务额从底表「渠道挂账」sheet B 列按姓名读取（2026-09-10 晨哥更新为 41400/人），
     # 缺名/无值回退 32000，保证人员变动后仍可运行
     import openpyxl as _opx
+    import hyc_taskmap as _htm
+    _tmx = _htm.discover(XLSX)
     _wbf = _opx.load_workbook(XLSX, data_only=False)
-    _tk = _wbf[[s for s in _wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
     tasks = {}
     _qd = _wbf["渠道挂账"] if "渠道挂账" in _wbf.sheetnames else None
-    for r in range(4, 9):
-        nm = _tk.cell(r, 2).value
+    for nm in _tmx["task_people"]:
+        r = _tmx["task_rows"][nm]
         if nm and str(nm).strip():
             nm = str(nm).strip()
             t = 32000.0

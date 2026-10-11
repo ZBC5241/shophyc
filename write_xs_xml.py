@@ -315,7 +315,12 @@ def main():
     hdr = [c.value for c in next(ws2.iter_rows(min_row=1, max_row=1))]
     assert hdr[:5] == HEADERS[:5], f"表头异常: {hdr[:5]}"
     assert n == len(rows), f"行数不符: {n} vs {len(rows)}"
-    emp4 = {"张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"}
+    try:
+        import hyc_taskmap
+        _tm = hyc_taskmap.discover(DEFAULT_XLSX)
+        emp4 = set(_tm["people_order"])
+    except Exception:
+        emp4 = {"张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"}
     vals = [(r[3], r[13], r[15]) for r in ws2.iter_rows(min_row=2, values_only=True) if r[0] is not None]
     g4 = sum(float(v[1] or 0) for v in vals if v[2] in emp4)
     assert g4 <= gross + 0.01, \

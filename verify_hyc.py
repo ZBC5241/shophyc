@@ -28,7 +28,16 @@ XLSX = sys.argv[1] if len(sys.argv) > 1 else \
     "/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc/华阳城门店毛利明细表-华为终端.xlsx"
 DATA = sys.argv[2] if len(sys.argv) > 2 else os.path.join(BASE, "data.json")
 
-PEOPLE = ["张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"]
+def _load_people():
+    """现役名单从底表动态发现（hyc_taskmap），人员增减零改动。"""
+    try:
+        import hyc_taskmap
+        tm = hyc_taskmap.discover("/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx")
+        return tm["people_order"]
+    except Exception:
+        return ["张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"]
+
+PEOPLE = _load_people()
 METRICS = [
     ("毛利", None, None, 13),      # Σ 毛利列(14)
     ("手机", 3, "01手机", 8),

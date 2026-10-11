@@ -71,10 +71,15 @@ def compute_perf(xlsx):
     # ---------- 1. 人员 & 任务量 ----------
     tk = _task_sheet(wb)
     people = []                                  # [(姓名, 月度任务行号)]
-    for r in range(4, 9):
-        nm = tk.cell(r, 2).value
-        if nm and str(nm).strip() and str(nm).strip() != "合计":
-            people.append((str(nm).strip(), r))
+    try:
+        import hyc_taskmap
+        _tm = hyc_taskmap.discover(xlsx)
+        people = [(n, r) for n, r in _tm["task_rows"].items()]
+    except Exception:
+        for r in range(4, 9):                    # 兜底：旧逻辑
+            nm = tk.cell(r, 2).value
+            if nm and str(nm).strip() and str(nm).strip() != "合计":
+                people.append((str(nm).strip(), r))
     if not people:
         return {}
 

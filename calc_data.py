@@ -29,6 +29,7 @@ HEADERS = ["出库单号", "单据类型", "出库日期", "商品分类", "商�
            "SO激励", "业务员", "库区", "销售出库单门店", "销售成本"]
 
 # 人员名单（动态，由 load_people() 从底表「月任务」sheet B4:B7 读取）
+TASKMAP = None          # hyc_taskmap.discover() 结果缓存（2026-10-11 动态化）
 PEOPLE_ORDER = []       # 全员（含田蕊，末尾追加）
 TASK_PEOPLE = []        # 有任务的人员（不含田蕊）
 TASK_ROW = {}           # {name: 月任务表行号}
@@ -201,25 +202,17 @@ def day_of(r):
 
 # ============================ 动态读取人员名单 ============================
 def load_people(xlsx):
-    """从底表「月任务」sheet B4:B7 动态读取人员名单（空名跳过）。
-    田蕊固定追加（不背任务）。设置模块级 PEOPLE_ORDER / TASK_PEOPLE / TASK_ROW。
+    """从底表动态发现结构（hyc_taskmap：A 列公式反向解析，结构/人员变化零改动）。
+    田蕊类辅助角色自动识别（不背任务）。设置模块级 PEOPLE_ORDER / TASK_PEOPLE / TASK_ROW。
     """
     global PEOPLE_ORDER, TASK_PEOPLE, TASK_ROW
-    wbf = openpyxl.load_workbook(xlsx, data_only=False)
-    tk = wbf[[s for s in wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
-    task_people, task_row = [], {}
-    for r in range(4, 9):                   # B4~B8（2026-10 五人：+乔玉宇）
-        nm = tk.cell(r, 2).value             # B 列 = 姓名
-        if nm and str(nm).strip():
-            nm = str(nm).strip()
-            # 底表「合计」行是汇总值（已并入 store.qcs 顶层），不当人员 tab
-            if nm == "合计":
-                continue
-            task_people.append(nm)
-            task_row[nm] = r
-    PEOPLE_ORDER = task_people + ["田蕊"]
-    TASK_PEOPLE = task_people
-    TASK_ROW = task_row
+    global TASKMAP
+    import hyc_taskmap
+    TASKMAP = hyc_taskmap.discover(xlsx)
+    tm = TASKMAP
+    PEOPLE_ORDER = tm["people_order"]
+    TASK_PEOPLE = tm["task_people"]
+    TASK_ROW = tm["task_rows"]
 
 
 # ============================ 读表格里的手工项 ============================
@@ -237,11 +230,12 @@ def load_manual(xlsx):
 
     # --- 乐机收（底表 2026-09 已从"乐回收"改名，T12 标题以底表为准，本脚本不写标题）：
     #     华阳城销售 T/U 列固定单元格常量（数据持久化由 xlsx 文件承担）
-    #     行号动态映射：月任务行号 + 11，田蕊固定 20（2026-10 五人版底表）
-    #     T13=单量, U13=增值；T19/U19 是 SUM 公式（不必动），自动求和
+    #     行号由 hyc_taskmap 动态发现（P2 块），结构变化零改动
+    #     T=单量, U=增值（公司净利），V=增值率（备用，可空）
     ws = wbf["华阳城销售"]
-    P2_ROWS = {n: r + 11 for n, r in TASK_ROW.items()}
-    P2_ROWS["田蕊"] = 20
+    P2_ROWS = dict(TASKMAP["P2_ROWS"])
+    if TASKMAP["P2_TIANRUI"]:
+        P2_ROWS[TASKMAP["P2_TIANRUI"][0]] = TASKMAP["P2_TIANRUI"][1]
     lehui = {}
     for name, row in P2_ROWS.items():
         lehui[name] = {"orders": num(ws.cell(row, 20).value),    # T 单量

@@ -8,7 +8,7 @@
       仅做必要的格式清洗（#DIV/0! -> null，"85%" -> 0.85，去千分位）
 
 用法：
-    python build_data.py /path/to/华阳城9月任务进度.xlsx [输出.json]
+    python build_data.py /path/to/华阳城10月任务进度.xlsx [输出.json]
 """
 import sys, os, json, datetime, calendar
 import openpyxl
@@ -24,38 +24,22 @@ def _is_formula(cell):
 
 
 def load_people(xlsx):
-    """从底表「月任务」sheet B4:B7 动态读取人员名单（空名跳过），
-    田蕊固定追加（不背任务）。设置模块级 PEOPLE_ORDER / P1~P4_ROWS。
-    行号映射规律：
-      月任务 row 4~7  → P1: row4~8(田蕊=8)  P2: row14~18(田蕊=18)
-                       P3: row28~32(田蕊=32) P4: row38~41(无田蕊)
+    """底表结构自动发现（hyc_taskmap：A 列公式反向解析），结构/人员变化零改动。
+    设置模块级 PEOPLE_ORDER / P1~P4_ROWS。
     """
     global PEOPLE_ORDER, P1_ROWS, P2_ROWS, P3_ROWS, P4_ROWS
-    import openpyxl as _opx
-    wbf = _opx.load_workbook(xlsx, data_only=False)
-    tk = wbf[[s for s in wbf.sheetnames if s.endswith("月任务") or s.endswith("度任务")][0]]
-    task_people, task_rows = [], {}
-    for r in range(4, 9):                   # B4~B8（2026-10 五人）
-        nm = tk.cell(r, 2).value
-        if nm and str(nm).strip():
-            nm = str(nm).strip()
-            # 底表「合计」行是汇总值（已并入顶层卡片），不当人员 tab
-            if nm == "合计":
-                continue
-            task_people.append(nm)
-            task_rows[nm] = r
-    PEOPLE_ORDER = task_people + ["田蕊"]
-    # P1: 任务行号直接用月任务行号，田蕊=9（2026-10 五人版）
-    P1_ROWS = dict(task_rows)
-    P1_ROWS["田蕊"] = 9
-    # P2: 任务行号 + 10，田蕊=18
-    P2_ROWS = {n: r + 11 for n, r in task_rows.items()}
-    P2_ROWS["田蕊"] = 20
-    # P3: 任务行号 + 24，田蕊=32
-    P3_ROWS = {n: r + 27 for n, r in task_rows.items()}
-    P3_ROWS["田蕊"] = 36
-    # P4: 任务行号 + 34，无田蕊
-    P4_ROWS = {n: r + 38 for n, r in task_rows.items()}
+    import hyc_taskmap
+    tm = hyc_taskmap.discover(xlsx)
+    PEOPLE_ORDER = tm["people_order"]
+    P1_ROWS = dict(tm["P1_ROWS"])
+    P2_ROWS = dict(tm["P2_ROWS"])
+    P3_ROWS = dict(tm["P3_ROWS"])
+    if tm["P4_ROWS"]:
+        P4_ROWS = dict(tm["P4_ROWS"])
+    elif tm["P4_TIANRUI"]:
+        P4_ROWS = {tm["P4_TIANRUI"][0]: tm["P4_TIANRUI"][1]}
+    else:
+        P4_ROWS = {}
 
 
 SHEET = "华阳城销售"
@@ -63,7 +47,7 @@ SHEET = "华阳城销售"
 # ---------- 表格坐标（1-based 行号，0-based 列索引） ----------
 ROW_TIME = 1                       # 时间进度行：B1=日期, I1=进度
 PEOPLE_ORDER = []                   # 动态填充
-TASK_XLSX_DEFAULT = "/Users/mac/Desktop/华阳城销售/华阳城9月任务进度.xlsx"
+TASK_XLSX_DEFAULT = "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
 
 # 以下 P1~P4 行号映射由 load_people() 动态设置
 P1_ROWS = {}
@@ -161,7 +145,7 @@ def read_labels(ws, label_row, start=1, end=15):
     return out
 
 
-# 渠道挂账「完成额」严格对齐《华阳城9月任务进度.xlsx》「渠道挂账」sheet 的 C 列数组公式：
+# 渠道挂账「完成额」严格对齐《华阳城10月任务进度.xlsx》「渠道挂账」sheet 的 C 列数组公式：
 #   =SUM(SUMIFS(销售分析!$AM:$AM, 销售分析!$G:$G, A{r}, 销售分析!$P:$P,
 #              {"三大地图","小红书","大众点评","异业","社区","企业上门购"}))
 # 即从「销售分析」sheet 按 营业员(G列)+6获客渠道(P列) 实时聚合 销售净额(AM列)。
