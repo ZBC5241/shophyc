@@ -9,7 +9,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "10-14",
-  "fetchTime": "17:20",
+  "fetchTime": "17:30",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -21,7 +21,7 @@
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
   "sourceRows": 584,
   "dayRows": 4,
-  "generatedAt": "2026-10-14 17:20:19"
+  "generatedAt": "2026-10-14 17:30:49"
  },
  "store": {
   "performance": {
@@ -8250,7 +8250,7 @@
    },
    {
     "date": "2026-10-10",
-    "name": "PuraX View 星联意外无忧两年期",
+    "name": "PuraX View Care+意外无忧两年期",
     "qty": 1.0,
     "origPrice": 899.0,
     "discPrice": 0.0,
@@ -8590,7 +8590,7 @@
    },
    {
     "date": "2026-10-10",
-    "name": "华为 Mate 90 Pro 星联（一年期）",
+    "name": "华为 Mate 90 Pro Care+（一年期）",
     "qty": 1.0,
     "origPrice": 500.0,
     "discPrice": 15.0,
@@ -9406,7 +9406,7 @@
    },
    {
     "date": "2026-10-06",
-    "name": "华为 Mate 90 Pro 星联（一年期）",
+    "name": "华为 Mate 90 Pro Care+（一年期）",
     "qty": 1.0,
     "origPrice": 499.0,
     "discPrice": 15.0,
@@ -9678,7 +9678,7 @@
    },
    {
     "date": "2026-10-05",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -9729,7 +9729,7 @@
    },
    {
     "date": "2026-10-05",
-    "name": "Mate XT2 星联意外无忧一年期",
+    "name": "Mate XT2 Care+意外无忧一年期",
     "qty": 1.0,
     "origPrice": 2999.0,
     "discPrice": 0.0,
@@ -10239,7 +10239,7 @@
    },
    {
     "date": "2026-10-04",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -10471,7 +10471,7 @@
    },
    {
     "date": "2026-10-03",
-    "name": "华为 Mate 90 Pro Max 星联（两年期）",
+    "name": "华为 Mate 90 Pro Max Care+（两年期）",
     "qty": 1.0,
     "origPrice": 1099.0,
     "discPrice": 0.0,
@@ -10505,7 +10505,7 @@
    },
    {
     "date": "2026-10-03",
-    "name": "华为 Mate 90 RS 非凡大师 星联（两年期）",
+    "name": "华为 Mate 90 RS 非凡大师 Care+（两年期）",
     "qty": 1.0,
     "origPrice": 1799.0,
     "discPrice": 0.0,
@@ -10590,7 +10590,7 @@
    },
    {
     "date": "2026-10-03",
-    "name": "华为 Mate 90 RS 非凡大师 星联（两年期）",
+    "name": "华为 Mate 90 RS 非凡大师 Care+（两年期）",
     "qty": 1.0,
     "origPrice": 1799.0,
     "discPrice": 0.0,
@@ -10624,7 +10624,7 @@
    },
    {
     "date": "2026-10-03",
-    "name": "华为 Mate 90 Pro 星联（一年期）",
+    "name": "华为 Mate 90 Pro Care+（一年期）",
     "qty": 1.0,
     "origPrice": 499.0,
     "discPrice": 20.0,
@@ -10896,7 +10896,7 @@
    },
    {
     "date": "2026-10-02",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -11202,7 +11202,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -11219,7 +11219,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -11253,7 +11253,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -11355,7 +11355,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Clip2 星联（一年期）",
+    "name": "华为 Clip2 Care+（一年期）",
     "qty": 1.0,
     "origPrice": 100.0,
     "discPrice": 0.0,
@@ -11576,7 +11576,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Mate 90 Pro Max 星联（两年期）",
+    "name": "华为 Mate 90 Pro Max Care+（两年期）",
     "qty": 1.0,
     "origPrice": 1099.0,
     "discPrice": 0.0,
@@ -11661,7 +11661,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Mate 90 Pro Max 星联（一年期）",
+    "name": "华为 Mate 90 Pro Max Care+（一年期）",
     "qty": 1.0,
     "origPrice": 599.0,
     "discPrice": 0.0,
@@ -11746,7 +11746,7 @@
    },
    {
     "date": "2026-10-01",
-    "name": "华为 Mate 90 Pro Max 星联（两年期）",
+    "name": "华为 Mate 90 Pro Max Care+（两年期）",
     "qty": 1.0,
     "origPrice": 1099.0,
     "discPrice": 0.0,
