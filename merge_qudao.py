@@ -359,7 +359,14 @@ def build_qudao_from_cache():
             t = 32000.0
             if _qd is not None:
                 for qr in range(4, _qd.max_row + 1):
-                    qnm = str(_qd.cell(qr, 1).value or "").strip()
+                    _qv = _qd.cell(qr, 1).value
+                    if isinstance(_qv, str) and _qv.startswith("="):
+                        # 2026-10-14 底表渠道挂账A列公式化（=月度任务!B{n}，WPS缓存为空），
+                        # 按姓名直接匹配失效 → 解析引用到「月度任务」B列取真名
+                        _m = _htm.MONTH_RE.match(_qv.strip())
+                        if _m:
+                            _qv = _wbf["月度任务"].cell(int(_m.group(1)), 2).value
+                    qnm = str(_qv or "").strip()
                     if qnm == nm:
                         _v = _qd.cell(qr, 2).value
                         if _v is not None and not (isinstance(_v, str) and _v.startswith("=")):

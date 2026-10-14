@@ -12,6 +12,11 @@
 """
 import sys, os, json, datetime, calendar
 import openpyxl
+try:
+    from hyc_taskmap import MONTH_RE as _MONTH_RE   # 解析「=月度任务!B{n}」跨表引用
+except ImportError:
+    import re as _re
+    _MONTH_RE = _re.compile(r"^\s*=?\s*'?月度任务'?!B(\d+)\s*$")
 
 
 def _days_in_month(d):
@@ -225,6 +230,14 @@ def read_qudao(wb, wb_f=None):
     people, t_task = [], 0.0
     for r in range(hrow + 1, ws.max_row + 1):
         nm = ws.cell(r, 1).value
+        if nm is None and ws_f is not None:
+            # 2026-10-14 底表A列公式化（=月度任务!B{n}）后 data_only 缓存为空，
+            # 从 wb_f 读公式并解析引用到「月度任务」B列取真名
+            _fv = ws_f.cell(r, 1).value
+            if isinstance(_fv, str) and _fv.startswith("="):
+                _m = _MONTH_RE.match(_fv.strip())
+                if _m and "月度任务" in wb.sheetnames:
+                    nm = wb["月度任务"].cell(int(_m.group(1)), 2).value
         if nm is None:
             continue
         nm = str(nm).strip()
