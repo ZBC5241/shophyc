@@ -9,7 +9,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "10-14",
-  "fetchTime": "22:08",
+  "fetchTime": "22:56",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -21,7 +21,7 @@
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
   "sourceRows": 607,
   "dayRows": 27,
-  "generatedAt": "2026-10-14 22:08:41"
+  "generatedAt": "2026-10-14 22:56:40"
  },
  "store": {
   "performance": {
@@ -8109,6 +8109,20 @@
    {
     "date": "2026-10-14",
     "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
+    "qty": 1.0,
+    "origPrice": 154.0,
+    "discPrice": 0.0,
+    "amount": 154.0,
+    "profit": 135.0074,
+    "gpr": 0.8767,
+    "so": "",
+    "cost": 18.99,
+    "emp": "张赫桐",
+    "sku": "15.001.003.014"
+   },
+   {
+    "date": "2026-10-14",
+    "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
     "qty": 2.0,
     "origPrice": 200.0,
     "discPrice": 0.0,
@@ -8122,20 +8136,6 @@
     "code": "LS028100472610140008",
     "member": "王海朋",
     "phone": "152****5183"
-   },
-   {
-    "date": "2026-10-14",
-    "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
-    "qty": 1.0,
-    "origPrice": 154.0,
-    "discPrice": 0.0,
-    "amount": 154.0,
-    "profit": 135.0074,
-    "gpr": 0.8767,
-    "so": "",
-    "cost": 18.99,
-    "emp": "张赫桐",
-    "sku": "15.001.003.014"
    },
    {
     "date": "2026-10-14",
@@ -12793,13 +12793,13 @@
    "emp": "张赫桐",
    "product": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
    "sku": "15.001.003.014",
-   "qty": 2.0,
-   "origPrice": 200.0,
+   "qty": 1.0,
+   "origPrice": 154.0,
    "discPrice": 0.0,
-   "amount": 200.0,
-   "profit": 162.0148,
-   "cost": 37.99,
-   "gpr": 0.8100740000000001,
+   "amount": 154.0,
+   "profit": 135.0074,
+   "cost": 18.99,
+   "gpr": 0.8766714285714285,
    "cat": "增值"
   },
   {
@@ -12808,13 +12808,13 @@
    "emp": "张赫桐",
    "product": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
    "sku": "15.001.003.014",
-   "qty": 1.0,
-   "origPrice": 154.0,
+   "qty": 2.0,
+   "origPrice": 200.0,
    "discPrice": 0.0,
-   "amount": 154.0,
-   "profit": 135.0074,
-   "cost": 18.99,
-   "gpr": 0.8766714285714285,
+   "amount": 200.0,
+   "profit": 162.0148,
+   "cost": 37.99,
+   "gpr": 0.8100740000000001,
    "cat": "增值"
   },
   {
