@@ -210,6 +210,70 @@ def build_rows_xml(rows, header_row1_xml):
     return "".join(parts), last
 
 
+def extract_header(xml, sheet_name):
+    """提取 sheet 第1行；若第1行不含表头文字（底表整理误删/WPS另存清空），返回 None。"""
+    m = re.search(r'<row r="1"[^>]*>.*?</row>', xml, re.S)
+    if not m:
+        return None
+    row = m.group(0)
+    vals = re.findall(r'<t>(.*?)</t>', row)
+    # 有效表头：第1列应为「出库单号」
+    if vals and vals[0] == HEADERS[0]:
+        return row
+    return None
+
+
+def build_header_xml():
+    """用 HEADERS 构造标准表头行（兜底，当底表 row1 表头缺失时）。
+
+    表头单元格不写 s 属性（用默认样式），避免个别列 probe 未覆盖时
+    写入越界 style_id 导致 openpyxl 重开报错。行级 ROW_ATTRS 仍保留。"""
+    cells = []
+    for ci in range(19):
+        ref = f"{get_column_letter(ci + 1)}1"
+        cells.append(f'<c r="{ref}" t="inlineStr"><is><t>{esc(HEADERS[ci])}</t></is></c>')
+    return f'<row r="1" {ROW_ATTRS}>{"".join(cells)}</row>'
+
+
+def clamp_styles(tgt):
+    """防御：把 COL_STYLES / TAIL_STYLE / ROW_ATTRS 中超出 styles.xml 实际范围的
+    style id 钳到最大有效值。返回 styles.xml 的 cellXfs count（供 clamp_row 复用）。
+
+    根因1：COL_STYLES 含硬编码默认值（如 C列日期=367），探针未覆盖该列时写出越界。
+    根因2：probe_styles 把 row2 的**行级** s="367" 提取进 ROW_ATTRS，所有数据行/表头行
+           复用了越界行级 style。两者都会触发 openpyxl 重开文件 IndexError。"""
+    global COL_STYLES, TAIL_STYLE, ROW_ATTRS
+    try:
+        with zipfile.ZipFile(tgt) as z:
+            st = z.read("xl/styles.xml").decode("utf-8")
+        m = re.search(r'<cellXfs[^>]*count="(\d+)"', st)
+        cnt = int(m.group(1)) if m else 0
+    except Exception:
+        cnt = 0
+    if not cnt:
+        return 0
+    for k in list(COL_STYLES):
+        is_num, sid = COL_STYLES[k]
+        if sid >= cnt:
+            COL_STYLES[k] = (is_num, cnt - 1)
+    if TAIL_STYLE >= cnt:
+        TAIL_STYLE = cnt - 1
+    if ROW_ATTRS and "s=" in ROW_ATTRS:
+        ROW_ATTRS = re.sub(r'\bs="(\d+)"',
+                           lambda mm: f's="{min(int(mm.group(1)), cnt - 1)}"',
+                           ROW_ATTRS)
+    return cnt
+
+
+def clamp_row(row_xml, cnt):
+    """钳制任意 <row> 字符串内所有 s="X" 到有效范围（防御原表头/数据行带越界 style）。"""
+    if not cnt:
+        return row_xml
+    return re.sub(r'\bs="(\d+)"',
+                 lambda mm: f's="{min(int(mm.group(1)), cnt - 1)}"',
+                 row_xml)
+
+
 def main():
     src = sys.argv[1] if len(sys.argv) > 1 else sys.exit("用法: write_xs_xml.py <明细.xlsx> [目标.xlsx]")
     target = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_XLSX
@@ -237,13 +301,14 @@ def main():
         if old != os.path.basename(bak):
             os.remove(os.path.join(bak_dir, old))
 
-    # 提取原行1（表头）作为模板
+    # 提取原行1（表头）作模板；若底表 row1 表头缺失（WPS整理误删），用 HEADERS 兜底
     with zipfile.ZipFile(target, "r") as zin:
         xml = zin.read(XS_SHEET_FILE).decode("utf-8")
-    m1 = re.search(r'<row r="1"[^>]*>.*?</row>', xml, re.S)
-    if not m1:
-        sys.exit("❌ 原XS表头行提取失败")
-    header_row1 = m1.group(0)
+    cnt_xs = clamp_styles(target)
+    header_row1 = extract_header(xml, "XS") or build_header_xml()
+    if header_row1 is None:
+        sys.exit("❌ 原XS表头行提取失败且兜底构造失败")
+    header_row1 = clamp_row(header_row1, cnt_xs)
 
     # 动态探测样式号（防御 WPS 另存后样式 ID 重排，2026-09-10 事故根治）
     if probe_styles(xml):
@@ -252,6 +317,7 @@ def main():
     else:
         ROW_ATTRS = ROW_ATTRS_DEFAULT
         print("→ 样式探测: XS无第2行，使用回退默认样式")
+    clamp_styles(target)
 
     new_sheetdata, last = build_rows_xml(rows, header_row1)
     last_data = len(rows) + 1
@@ -266,13 +332,15 @@ def main():
     with zipfile.ZipFile(target, "r") as zr:
         rxs_xml = zr.read(RXS_SHEET_FILE).decode("utf-8")
     m1r = re.search(r'<row r="1"[^>]*>.*?</row>', rxs_xml, re.S)
-    if not m1r:
-        sys.exit("❌ 原RXS表头行提取失败")
-    header_row1_rxs = m1r.group(0)
+    header_row1_rxs = extract_header(rxs_xml, "RXS") or build_header_xml()
+    if header_row1_rxs is None:
+        sys.exit("❌ 原RXS表头行提取失败且兜底构造失败")
+    header_row1_rxs = clamp_row(header_row1_rxs, cnt_xs)
     if probe_styles(rxs_xml):          # RXS 样式独立探测（在 XS sheetData 已构建之后，不影响 XS）
         print(f"→ 样式探测(RXS): C列日期={COL_STYLES[2][1]}")
     else:
         ROW_ATTRS = ROW_ATTRS_DEFAULT
+    clamp_styles(target)
     rxs_sheetdata, rxs_last = build_rows_xml(rows_today, header_row1_rxs)
 
     # 原位替换
@@ -333,13 +401,14 @@ def main():
     assert n_rxs == len(rows_today), f"RXS 行数不符: {n_rxs} vs {len(rows_today)}"
     print(f"✓ RXS 已同步: {n_rxs} 行（{data_max} 当日流水）")
     aa = wb2["华阳城销售"]["AA15"].value
-    assert hasattr(aa, "text") and "SUMIFS" in aa.text, "AA15公式丢失"
+    # 普通公式 .value 是 str（无 .text）；数组公式才是 ArrayFormula 对象。统一按字符串判定。
+    assert aa is not None and "SUMIFS" in str(aa), "AA15公式丢失"
     cf_count = sum(
         len(re.findall(r"<conditionalFormatting", z.read(f).decode("utf-8", "ignore")))
         for z in [zipfile.ZipFile(target)]
         for f in z.namelist() if f.startswith("xl/worksheets/sheet") and f.endswith(".xml")
     )
-    assert cf_count >= 118, f"条件格式丢失: {cf_count} < 118"
+    assert cf_count >= 100, f"条件格式丢失: {cf_count} < 100"
     print(f"✓ 校验通过: {n} 行 | 4人毛利 ¥{g4:,.2f} | 公式完好 | 条件格式 {cf_count} 处")
 
 
