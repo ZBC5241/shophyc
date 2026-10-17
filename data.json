@@ -1,15 +1,15 @@
 {
  "meta": {
   "storeName": "华为华阳城合作店",
-  "date": "2026-10-16",
-  "dayTitle": "10-16达成",
-  "timeProgress": 0.5161290322580645,
-  "remainDays": 16,
-  "refDate": "2026-10-16",
+  "date": "2026-10-17",
+  "dayTitle": "10-17达成",
+  "timeProgress": 0.5483870967741935,
+  "remainDays": 15,
+  "refDate": "2026-10-17",
   "isToday": true,
   "lagDays": 0,
-  "todayLabel": "10-16",
-  "fetchTime": "22:56",
+  "todayLabel": "10-17",
+  "fetchTime": "14:13",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -19,17 +19,17 @@
    "田蕊"
   ],
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
-  "sourceRows": 665,
-  "dayRows": 34,
-  "generatedAt": "2026-10-16 22:56:39"
+  "sourceRows": 666,
+  "dayRows": 1,
+  "generatedAt": "2026-10-17 14:13:50"
  },
  "store": {
   "performance": {
    "毛利": {
     "task": 370000.0,
-    "done": 235974.52289999995,
-    "gap": -134025.47710000005,
-    "rate": 0.6377689808108107
+    "done": 236473.52289999995,
+    "gap": -133526.47710000005,
+    "rate": 0.6391176294594594
    },
    "手机": {
     "task": 300.0,
@@ -63,9 +63,9 @@
    },
    "HD": {
     "task": 2.0,
-    "done": 1.0,
-    "gap": -1.0,
-    "rate": 0.5
+    "done": 2.0,
+    "gap": 0.0,
+    "rate": 1.0
    },
    "智慧办公": {
     "task": 43.0,
@@ -81,11 +81,11 @@
    },
    "销额": {
     "task": 2800000.0,
-    "done": 1626689.5000000002,
-    "gap": -1173310.4999999998,
-    "rate": 0.5809605357142859
+    "done": 1636188.5000000002,
+    "gap": -1163811.4999999998,
+    "rate": 0.5843530357142858
    },
-   "绩效": 57.75086100000001
+   "绩效": 58.621512833333334
   },
   "qcs": {
    "合约": {
@@ -132,10 +132,10 @@
     "rate": 0.72625473373494
    },
    "健康度": {
-    "coupon": 65305.700000000004,
-    "ratio": 0.2767489439005028,
-    "grossMargin": 0.14506426881098078,
-    "增值率": 0.03705632998799095
+    "coupon": 66220.7,
+    "ratio": 0.28003431076722884,
+    "grossMargin": 0.14452706573845245,
+    "增值率": 0.03684119702589281
    },
    "星联会员": {
     "优享": 30.0,
@@ -144,27 +144,27 @@
    }
   },
   "dailyDone": {
-   "手机": 6.0,
-   "毛利": 4697.59,
-   "增值": 3808.6099999999997,
-   "智慧办公": 1.0,
-   "音频穿戴": 2.0,
-   "HD": 0.0,
-   "会员": 2.0,
+   "手机": 0.0,
+   "毛利": 499.0,
+   "增值": 0.0,
+   "智慧办公": 0.0,
+   "音频穿戴": 0.0,
+   "HD": 1.0,
+   "会员": 0.0,
    "回收": 0.0,
-   "贴膜": 7.0,
-   "合约": 2,
-   "滞销": 2.0,
+   "贴膜": 0.0,
+   "合约": 0,
+   "滞销": 0.0,
    "星联会员": 0.0,
-   "销额": 32486.9
+   "销额": 9499.0
   },
   "dailyGap": {
    "手机": 10.0,
-   "毛利": 8385.0,
-   "增值": 1398.0,
+   "毛利": 8910.0,
+   "增值": 1492.0,
    "智慧办公": 5.0,
    "音频穿戴": 8.0,
-   "HD": 1.0,
+   "HD": 0,
    "回收": 5.0,
    "贴膜": 0,
    "合约": 4.0,
@@ -281,8 +281,8 @@
      "rate": 0.8645236000000005
     },
     "健康度": {
-     "coupon": 22804.910000000003,
-     "ratio": 0.3876805346380641,
+     "coupon": 23404.910000000003,
+     "ratio": 0.3978804574083289,
      "grossMargin": 0.14733479374109376,
      "增值率": 0.03897627321208399
     },
@@ -293,24 +293,24 @@
     }
    },
    "dailyDone": {
-    "手机": 1.0,
-    "毛利": 1627.8165999999999,
-    "增值": 1014.8366,
-    "智慧办公": 1.0,
+    "手机": 0.0,
+    "毛利": 0.0,
+    "增值": 0.0,
+    "智慧办公": 0.0,
     "音频穿戴": 0.0,
     "HD": 0.0,
     "会员": 0.0,
     "回收": 0.0,
-    "贴膜": 1.0,
-    "合约": 1,
+    "贴膜": 0.0,
+    "合约": 0,
     "滞销": 0.0,
     "星联会员": 0.0,
-    "销额": 7934.9
+    "销额": 0.0
    },
    "dailyGap": {
     "手机": 2.0,
-    "毛利": 1199.0,
-    "增值": 153.0,
+    "毛利": 1279.0,
+    "增值": 163.0,
     "智慧办公": 1.0,
     "音频穿戴": 2.0,
     "HD": 0,
@@ -324,9 +324,9 @@
    "performance": {
     "毛利": {
      "task": 78000.0,
-     "done": 64086.97459999998,
-     "gap": -13913.02540000002,
-     "rate": 0.8216278794871792
+     "done": 64585.97459999998,
+     "gap": -13414.02540000002,
+     "rate": 0.8280253153846151
     },
     "手机": {
      "task": 60.0,
@@ -360,9 +360,9 @@
     },
     "HD": {
      "task": 1.0,
-     "done": 0.0,
-     "gap": -1.0,
-     "rate": 0.0
+     "done": 1.0,
+     "gap": 0.0,
+     "rate": 1.0
     },
     "智慧办公": {
      "task": 9.0,
@@ -378,11 +378,11 @@
     },
     "销额": {
      "task": 600000.0,
-     "done": 425726.09,
-     "gap": -174273.90999999997,
-     "rate": 0.7095434833333334
+     "done": 435225.09,
+     "gap": -164774.90999999997,
+     "rate": 0.7253751500000001
     },
-    "绩效": 79.788225
+    "绩效": 85.012136
    },
    "qcs": {
     "合约": {
@@ -429,10 +429,10 @@
      "rate": 0.8543402555555559
     },
     "健康度": {
-     "coupon": 10416.91,
-     "ratio": 0.16254332592570228,
-     "grossMargin": 0.15053569913932213,
-     "增值率": 0.03612210987585939
+     "coupon": 10516.91,
+     "ratio": 0.16283581791765675,
+     "grossMargin": 0.14839671720212633,
+     "增值率": 0.035333727198494015
     },
     "星联会员": {
      "优享": 9.0,
@@ -441,27 +441,27 @@
     }
    },
    "dailyDone": {
-    "手机": 1.0,
-    "毛利": 1331.0,
-    "增值": 500.0,
+    "手机": 0.0,
+    "毛利": 499.0,
+    "增值": 0.0,
     "智慧办公": 0.0,
-    "音频穿戴": 1.0,
-    "HD": 0.0,
-    "会员": 1.0,
+    "音频穿戴": 0.0,
+    "HD": 1.0,
+    "会员": 0.0,
     "回收": 0.0,
     "贴膜": 0.0,
     "合约": 0,
     "滞销": 0.0,
     "星联会员": 0.0,
-    "销额": 5487.0
+    "销额": 9499.0
    },
    "dailyGap": {
     "手机": 1.0,
-    "毛利": 870.0,
-    "增值": 164.0,
+    "毛利": 895.0,
+    "增值": 175.0,
     "智慧办公": 1.0,
     "音频穿戴": 1.0,
-    "HD": 1.0,
+    "HD": 0,
     "回收": 1.0,
     "贴膜": 0,
     "合约": 1.0,
@@ -589,23 +589,23 @@
     }
    },
    "dailyDone": {
-    "手机": 2.0,
-    "毛利": -36.86480000000006,
-    "增值": 1476.1352,
+    "手机": 0.0,
+    "毛利": 0.0,
+    "增值": 0.0,
     "智慧办公": 0.0,
     "音频穿戴": 0.0,
     "HD": 0.0,
-    "会员": 1.0,
+    "会员": 0.0,
     "回收": 0.0,
-    "贴膜": 1.0,
-    "合约": 1,
-    "滞销": 2.0,
+    "贴膜": 0.0,
+    "合约": 0,
+    "滞销": 0.0,
     "星联会员": 0.0,
-    "销额": 11596.0
+    "销额": 0.0
    },
    "dailyGap": {
     "手机": 1.0,
-    "毛利": 457.0,
+    "毛利": 487.0,
     "增值": 0,
     "智慧办公": 1.0,
     "音频穿戴": 1.0,
@@ -753,8 +753,8 @@
    },
    "dailyGap": {
     "手机": 3.0,
-    "毛利": 3274.0,
-    "增值": 711.0,
+    "毛利": 3492.0,
+    "增值": 759.0,
     "智慧办公": 1.0,
     "音频穿戴": 2.0,
     "HD": 0,
@@ -873,8 +873,8 @@
      "rate": 0.4623351181818181
     },
     "健康度": {
-     "coupon": 3067.99,
-     "ratio": 0.18425595811269466,
+     "coupon": 3282.99,
+     "ratio": 0.19716833103249862,
      "grossMargin": 0.1500711550876816,
      "增值率": 0.04583681088787845
     },
@@ -885,24 +885,24 @@
     }
    },
    "dailyDone": {
-    "手机": 2.0,
-    "毛利": 1775.6382,
-    "增值": 817.6382,
+    "手机": 0.0,
+    "毛利": 0.0,
+    "增值": 0.0,
     "智慧办公": 0.0,
-    "音频穿戴": 1.0,
+    "音频穿戴": 0.0,
     "HD": 0.0,
     "会员": 0.0,
     "回收": 0.0,
-    "贴膜": 5.0,
+    "贴膜": 0.0,
     "合约": 0,
     "滞销": 0.0,
     "星联会员": 0.0,
-    "销额": 7469.0
+    "销额": 0.0
    },
    "dailyGap": {
     "手机": 3.0,
-    "毛利": 2585.0,
-    "增值": 370.0,
+    "毛利": 2757.0,
+    "增值": 395.0,
     "智慧办公": 1.0,
     "音频穿戴": 2.0,
     "HD": 0,
@@ -1059,11 +1059,11 @@
     "task": 18.0,
     "done": 2.0,
     "rate": 0.1111111111111111,
-    "lag": -0.4050179211469534,
+    "lag": -0.4372759856630824,
     "level": "danger",
     "lastDate": "2026-10-11",
-    "coldDays": 5,
-    "needPerDay": 1.0,
+    "coldDays": 6,
+    "needPerDay": 2.0,
     "sellers": {
      "张梅B": 1.0,
      "李俊琪": 1.0
@@ -1081,11 +1081,11 @@
     "task": 25.0,
     "done": 9.0,
     "rate": 0.36,
-    "lag": -0.15612903225806452,
+    "lag": -0.18838709677419352,
     "level": "warn",
     "lastDate": "2026-10-16",
-    "coldDays": 0,
-    "needPerDay": 1.0,
+    "coldDays": 1,
+    "needPerDay": 2.0,
     "sellers": {
      "张梅B": 2.0,
      "李俊琪": 1.0,
@@ -1103,10 +1103,10 @@
     "task": 130.0,
     "done": 60.0,
     "rate": 0.46153846153846156,
-    "lag": -0.05459057071960294,
-    "level": "mid",
+    "lag": -0.08684863523573194,
+    "level": "warn",
     "lastDate": "2026-10-16",
-    "coldDays": 0,
+    "coldDays": 1,
     "needPerDay": 5.0,
     "sellers": {
      "张梅B": 14.0,
@@ -1124,10 +1124,10 @@
     "task": 45.0,
     "done": 21.0,
     "rate": 0.4666666666666667,
-    "lag": -0.04946236559139783,
+    "lag": -0.08172043010752683,
     "level": "mid",
     "lastDate": "2026-10-13",
-    "coldDays": 3,
+    "coldDays": 4,
     "needPerDay": 2.0,
     "sellers": {
      "张梅B": 4.0,
@@ -1139,42 +1139,41 @@
     "zeroPeople": []
    },
    {
-    "key": "HD",
-    "name": "HD 智慧屏",
-    "unit": "台",
-    "task": 2.0,
-    "done": 1.0,
-    "rate": 0.5,
-    "lag": -0.016129032258064502,
-    "level": "mid",
-    "lastDate": "2026-10-09",
-    "coldDays": 7,
-    "needPerDay": 1.0,
-    "sellers": {
-     "王莹莹B": 1.0
-    },
-    "zeroPeople": [
-     "李俊琪"
-    ]
-   },
-   {
     "key": "手机",
     "name": "手机",
     "unit": "台",
     "task": 300.0,
     "done": 172.0,
     "rate": 0.5733333333333334,
-    "lag": 0.05720430107526886,
+    "lag": 0.024946236559139856,
     "level": "good",
     "lastDate": "2026-10-16",
-    "coldDays": 0,
-    "needPerDay": 8.0,
+    "coldDays": 1,
+    "needPerDay": 9.0,
     "sellers": {
      "张梅B": 37.0,
      "李俊琪": 46.0,
      "王莹莹B": 52.0,
      "张赫桐": 21.0,
      "乔玉宇": 15.0
+    },
+    "zeroPeople": []
+   },
+   {
+    "key": "HD",
+    "name": "HD 智慧屏",
+    "unit": "台",
+    "task": 2.0,
+    "done": 2.0,
+    "rate": 1.0,
+    "lag": 0.4516129032258065,
+    "level": "good",
+    "lastDate": "2026-10-17",
+    "coldDays": 0,
+    "needPerDay": 0.0,
+    "sellers": {
+     "李俊琪": 1.0,
+     "王莹莹B": 1.0
     },
     "zeroPeople": []
    }
@@ -1210,18 +1209,18 @@
     "weak": [
      "电脑"
     ],
-    "todayGross": -36.86480000000006,
-    "todayPhone": 2.0,
+    "todayGross": 0.0,
+    "todayPhone": 0.0,
     "rank": 1,
     "level": "good"
    },
    {
     "name": "李俊琪",
-    "score": 0.8116819908547008,
+    "score": 0.8148807088034187,
     "毛利": {
-     "done": 64086.97459999998,
+     "done": 64585.97459999998,
      "task": 78000.0,
-     "rate": 0.8216278794871792
+     "rate": 0.8280253153846151
     },
     "手机": {
      "done": 46.0,
@@ -1233,19 +1232,19 @@
      "task": 18000.0,
      "rate": 0.8543402555555559
     },
-    "毛利率": 0.15053569913932213,
-    "券占比": 0.16254332592570228,
+    "毛利率": 0.14839671720212633,
+    "券占比": 0.16283581791765675,
     "strong": [
      "手机",
-     "穿戴"
+     "穿戴",
+     "HD 智慧屏"
     ],
     "weak": [
      "电脑",
-     "平板",
-     "HD 智慧屏"
+     "平板"
     ],
-    "todayGross": 1331.0,
-    "todayPhone": 1.0,
+    "todayGross": 499.0,
+    "todayPhone": 0.0,
     "rank": 2,
     "level": "good"
    },
@@ -1268,16 +1267,15 @@
      "rate": 0.8645236000000005
     },
     "毛利率": 0.14733479374109376,
-    "券占比": 0.3876805346380641,
+    "券占比": 0.3978804574083289,
     "strong": [
-     "手机",
-     "穿戴"
+     "手机"
     ],
     "weak": [
      "电脑"
     ],
-    "todayGross": 1627.8165999999999,
-    "todayPhone": 1.0,
+    "todayGross": 0.0,
+    "todayPhone": 0.0,
     "rank": 3,
     "level": "good"
    },
@@ -1332,7 +1330,7 @@
      "rate": 0.4623351181818181
     },
     "毛利率": 0.1500711550876816,
-    "券占比": 0.18425595811269466,
+    "券占比": 0.19716833103249862,
     "strong": [],
     "weak": [
      "手机",
@@ -1341,59 +1339,53 @@
      "穿戴",
      "音频"
     ],
-    "todayGross": 1775.6382,
-    "todayPhone": 2.0,
+    "todayGross": 0.0,
+    "todayPhone": 0.0,
     "rank": 5,
-    "level": "warn"
+    "level": "danger"
    }
   ],
   "today": {
    "sold": [
     {
-     "name": "乔玉宇",
-     "orders": 14,
-     "gross": 1775.6382
-    },
-    {
-     "name": "张梅B",
-     "orders": 9,
-     "gross": 1627.8165999999999
-    },
-    {
      "name": "李俊琪",
-     "orders": 3,
-     "gross": 1331.0
-    },
-    {
-     "name": "王莹莹B",
-     "orders": 8,
-     "gross": -36.86480000000006
+     "orders": 1,
+     "gross": 499.0
     }
    ],
    "idle": [
-    "张赫桐"
+    "张梅B",
+    "王莹莹B",
+    "张赫桐",
+    "乔玉宇"
    ],
-   "totalOrders": 34,
-   "totalGross": 4697.59
+   "totalOrders": 1,
+   "totalGross": 499.0
   },
   "advices": [
    {
     "level": "warn",
     "icon": "🧊",
     "title": "断销品类",
-    "body": "电脑（5天，最后 10-11）、音频（3天，最后 10-13）、HD 智慧屏（7天，最后 10-09） 已经连续多天零动销。先查三件事：样机是否在位、有没有货、店员会不会讲卖点。"
+    "body": "电脑（6天，最后 10-11）、音频（4天，最后 10-13） 已经连续多天零动销。先查三件事：样机是否在位、有没有货、店员会不会讲卖点。"
    },
    {
     "level": "warn",
     "icon": "📉",
-    "title": "进度落后（时间已过 52%）",
-    "body": "电脑 还差 16台，日均要 1台。建议把这几项拆到人头，早会点名报进度。"
+    "title": "进度落后（时间已过 55%）",
+    "body": "电脑 还差 16台，日均要 2台。建议把这几项拆到人头，早会点名报进度。"
+   },
+   {
+    "level": "warn",
+    "icon": "👤",
+    "title": "需要重点帮扶",
+    "body": "乔玉宇（毛利 29%） 综合进度明显掉队。别只催结果，先看是客流少、接待量少，还是成交率低——三种病不同药。"
    },
    {
     "level": "warn",
     "icon": "⏰",
     "title": "今日还没开单",
-    "body": "张赫桐 今天暂无上账记录。先确认是没卖还是没及时上账，卖了要立刻补账。"
+    "body": "张梅B、王莹莹B、张赫桐、乔玉宇 今天暂无上账记录。先确认是没卖还是没及时上账，卖了要立刻补账。"
    },
    {
     "level": "good",
@@ -1405,625 +1397,31 @@
     "level": "good",
     "icon": "✅",
     "title": "进度健康",
-    "body": "手机 57% 已跑赢时间进度，保持节奏就行。"
+    "body": "手机 57%、HD 智慧屏 100% 已跑赢时间进度，保持节奏就行。"
    }
   ],
   "dealAnalysis": {
    "deals": [
     {
-     "emp": "乔玉宇",
-     "product": "华为 nova 16 SE CAS-AL50  8GB+256GB  天际白",
-     "code": "XSCK26101600914",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 2899.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 2899.0,
-     "profit": 637.0,
-     "cost": 2262.0,
-     "costRatio": 0.7802690582959642,
-     "cat": "手机",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为畅享90 Pro Max CHZ-AL00  8GB+256GB  飞天青",
-     "code": "XSCK26101601014",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 1899.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 1899.0,
-     "profit": 33.0,
-     "cost": 1866.0,
-     "costRatio": 0.9826224328593997,
-     "cat": "手机",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为 Watch GT7 TUM-B39 46mm (黑色易扣氟橡胶表带)疾影黑",
-     "code": "XSCK26101600886",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 1588.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 1588.0,
-     "profit": 288.0,
-     "cost": 1300.0,
-     "costRatio": 0.818639798488665,
-     "cat": "穿戴",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "Cooyee臻享套装mate90 pro Max御甲系列 白",
-     "code": "XSCK26101600410",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 300.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 300.0,
-     "profit": 215.0,
-     "cost": 85.0,
-     "costRatio": 0.2833333333333333,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "Cooyee臻享套装mate90-90pro御甲系列 白色",
-     "code": "XSCK26101600410",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 284.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 284.0,
-     "profit": 199.0,
-     "cost": 85.0,
-     "costRatio": 0.2992957746478873,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "COOYEE 华为GT6手表钢化膜 41mm 定位版",
-     "code": "XSCK26101601014",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 200.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 200.0,
-     "profit": 162.8837,
-     "cost": 37.12,
-     "costRatio": 0.1856,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "COOYEE 华为GT6手表钢化膜 46mm 定位版",
-     "code": "XSCK26101600893",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 100.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 100.0,
-     "profit": 80.1563,
-     "cost": 19.84,
-     "costRatio": 0.1984,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "COOYEE 华为GT6手表钢化膜 46mm 定位版",
-     "code": "XSCK26101601014",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 100.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 100.0,
-     "profit": 80.1563,
-     "cost": 19.84,
-     "costRatio": 0.1984,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "COOYEE 华为GT6手表钢化膜 41mm 定位版",
-     "code": "XSCK26101600423",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 99.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 99.0,
-     "profit": 80.4419,
-     "cost": 18.56,
-     "costRatio": 0.18747474747474746,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为-手提袋-小",
-     "code": "XSCK26101600423",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为-手提袋-小",
-     "code": "XSCK26101600886",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为-手提袋-中",
-     "code": "XSCK26101600893",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为-手提袋-中",
-     "code": "XSCK26101600914",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "乔玉宇",
-     "product": "华为-手提袋-中",
-     "code": "XSCK26101601014",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "张梅B",
-     "product": "华为 PuraX View VOL-AL00  12GB+512GB  跃影红",
-     "code": "XSCK26101600646",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 6718.98,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 6718.98,
-     "profit": 698.98,
-     "cost": 6020.0,
-     "costRatio": 0.8959693286778648,
-     "cat": "手机",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "张梅B",
-     "product": "华为 MatePad 11.5 TXZ-W20 8GB+256GB 柔光版  冰霜银  鸿蒙焕新版",
-     "code": "XSCK26101600878",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 2799.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 2799.0,
-     "profit": 326.0,
-     "cost": 2623.0,
-     "costRatio": 0.9371204001429082,
-     "cat": "平板",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "张梅B",
-     "product": "华为 WATCH FIT 5 NKI-B19  风信紫(淡紫色氟橡胶表带)",
-     "code": "XSCK26101600647",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 999.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 999.0,
-     "profit": 122.0,
-     "cost": 877.0,
-     "costRatio": 0.8778778778778779,
-     "cat": "穿戴",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "张梅B",
-     "product": "PuraX View Care+意外无忧一年期",
-     "code": "XSCK26101600646",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 479.02,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 479.02,
-     "profit": 191.608,
-     "cost": 0.0,
-     "costRatio": 0.0,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "张梅B",
-     "product": "华为 Mate X7 旋转支架保护壳 Delphi ACC-Stand PU Case  紫",
-     "code": "XSCK26101600649",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 199.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 199.0,
-     "profit": 49.0,
-     "cost": 150.0,
-     "costRatio": 0.7537688442211056,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "张梅B",
-     "product": "单卡新入网-购机赠费",
-     "code": "XSCK26101600656",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 199.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 199.0,
-     "profit": 796.0,
-     "cost": 0.0,
-     "costRatio": 0.0,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "张梅B",
-     "product": "RockSpace 柔性抗蓝光护眼膜 L码 290L-01Y(华为认证)-专供",
-     "code": "XSCK26101600768",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 39.9,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 39.9,
-     "profit": 27.2286,
-     "cost": 12.67,
-     "costRatio": 0.3175438596491228,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "张梅B",
-     "product": "5G半成卡",
-     "code": "XSCK26101600656",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "张梅B",
-     "product": "华为 WATCH6 Pro NIZ-AL00 46mm(棕色素皮复合表带)木星棕",
-     "code": "XSCK26101600001",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": -3499.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": -3499.0,
-     "profit": -583.0,
-     "cost": -2916.0,
-     "costRatio": null,
-     "cat": "穿戴",
-     "isReturn": true,
-     "isBundle": false
-    },
-    {
      "emp": "李俊琪",
-     "product": "华为 nova16 EMA-AL00U 12GB+512GB 幻彩贝母",
-     "code": "XSCK26101600924",
+     "product": "华为 智慧屏 V7 教育版 85吋 4K LCD 平面 Mini-LED 6GB+128GB 固定式 深空灰",
+     "code": "XSCK26101700155",
      "channel": "自然客流",
      "bizType": "",
      "member": "",
-     "origPrice": 3399.0,
+     "origPrice": 9499.0,
      "discount": 0,
      "discountRate": 0,
-     "amount": 3399.0,
-     "profit": 466.0,
-     "cost": 2933.0,
-     "costRatio": 0.8629008531921153,
-     "cat": "手机",
+     "amount": 9499.0,
+     "profit": 499.0,
+     "cost": 9000.0,
+     "costRatio": 0.9474681545425835,
+     "cat": "HD",
      "isReturn": false,
      "isBundle": false
-    },
-    {
-     "emp": "李俊琪",
-     "product": "华为 Watch GT7 NSU-B39 41mm(粉色易扣氟橡胶表带)樱语粉",
-     "code": "XSCK26101600747",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 1588.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 1588.0,
-     "profit": 365.0,
-     "cost": 1223.0,
-     "costRatio": 0.7701511335012594,
-     "cat": "穿戴",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "李俊琪",
-     "product": "星联优享-499",
-     "code": "XSCK26101600744",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 500.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 500.0,
-     "profit": 500.0,
-     "cost": 0.0,
-     "costRatio": 0.0,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "华为 Pura80 Ultra LMR-AL10(16GB+512GB)鎏光金",
-     "code": "XSCK26101600328",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 5999.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 5999.0,
-     "profit": -1396.0,
-     "cost": 7395.0,
-     "costRatio": 1.2327054509084847,
-     "cat": "手机",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "华为 Mate 70 Pro 优享版 PLR-AL80  12GB+512GB  云杉绿",
-     "code": "XSCK26101600258",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 4699.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 4699.0,
-     "profit": -117.0,
-     "cost": 4816.0,
-     "costRatio": 1.0248989146626941,
-     "cat": "手机",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "星联优享-499",
-     "code": "XSCK26101600262",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 500.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 500.0,
-     "profit": 500.0,
-     "cost": 0.0,
-     "costRatio": 0.0,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": false
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "Cooyee 华为mate80 pro Max-mate80 RS 高清钢化膜",
-     "code": "XSCK26101600680",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 199.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 199.0,
-     "profit": 180.1352,
-     "cost": 18.86,
-     "costRatio": 0.09477386934673367,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "单卡新入网-购机赠费",
-     "code": "XSCK26101600761",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 199.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 199.0,
-     "profit": 796.0,
-     "cost": 0.0,
-     "costRatio": 0.0,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "厂家-华为智选Hitick高速智能剃须刀7系Ai701钛银灰",
-     "code": "XSCK26101600680",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "华为-手提袋-中",
-     "code": "XSCK26101600680",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "其他",
-     "isReturn": false,
-     "isBundle": true
-    },
-    {
-     "emp": "王莹莹B",
-     "product": "5G半成卡",
-     "code": "XSCK26101600761",
-     "channel": "自然客流",
-     "bizType": "",
-     "member": "",
-     "origPrice": 0.0,
-     "discount": 0,
-     "discountRate": 0,
-     "amount": 0.0,
-     "profit": 0.0,
-     "cost": 0.0,
-     "costRatio": null,
-     "cat": "增值",
-     "isReturn": false,
-     "isBundle": true
     }
    ],
-   "totalAmount": 32486.899999999998,
+   "totalAmount": 9499.0,
    "patterns": [
     {
      "name": "王莹莹B",
@@ -2033,18 +1431,18 @@
      "avgPrice": 3907.551953125,
      "bundleRate": 0.328125,
      "avgDiscount": 0.06253193770813882,
-     "todayOrders": 8,
-     "action": "平均折扣 6%，注意控制让利节奏"
+     "todayOrders": 0,
+     "action": "今日暂无开单，先检查样机在位和话术准备；平均折扣 6%，注意控制让利节奏"
     },
     {
      "name": "李俊琪",
      "badge": "达标",
      "badgeColor": "var(--red)",
-     "orders": 98,
-     "avgPrice": 4445.154081632652,
-     "bundleRate": 0.24489795918367346,
-     "avgDiscount": 0.04382709608665704,
-     "todayOrders": 3,
+     "orders": 99,
+     "avgPrice": 4496.20303030303,
+     "bundleRate": 0.24242424242424243,
+     "avgDiscount": 0.04350943979672175,
+     "todayOrders": 1,
      "action": "搭售率偏低，每单必问配件/星联/贴膜"
     },
     {
@@ -2054,9 +1452,9 @@
      "orders": 100,
      "avgPrice": 4150.3979,
      "bundleRate": 0.25,
-     "avgDiscount": 0.09366274207732772,
-     "todayOrders": 9,
-     "action": "搭售率偏低，每单必问配件/星联/贴膜；平均折扣 9%，注意控制让利节奏"
+     "avgDiscount": 0.09188265734974208,
+     "todayOrders": 0,
+     "action": "今日暂无开单，先检查样机在位和话术准备；搭售率偏低，每单必问配件/星联/贴膜；平均折扣 9%，注意控制让利节奏"
     },
     {
      "name": "张赫桐",
@@ -2076,23 +1474,17 @@
      "orders": 46,
      "avgPrice": 2798.8697826086955,
      "bundleRate": 0.9347826086956522,
-     "avgDiscount": 0.04998851563213951,
-     "todayOrders": 14,
-     "action": "客单价 2799 元偏低，多推中高端机型提升毛利"
+     "avgDiscount": 0.05043939162505568,
+     "todayOrders": 0,
+     "action": "今日暂无开单，先检查样机在位和话术准备；客单价 2799 元偏低，多推中高端机型提升毛利；平均折扣 5%，注意控制让利节奏"
     }
    ],
    "issues": [
     {
-     "level": "danger",
-     "icon": "⚠️",
-     "title": "今日有退货",
-     "body": "华为 WATCH6 Pro NIZ-AL00 46mm(棕色素皮复合表带)木星棕，退货影响毛利。了解退货原因（质量/价格/冲动消费），做好售后挽留。"
-    },
-    {
      "level": "warn",
      "icon": "⏰",
      "title": "多人未开单",
-     "body": "张赫桐 今日暂无正向成交。没顾客时主动回访老客户，至少打 5 通电话。"
+     "body": "王莹莹B、张梅B、张赫桐、乔玉宇 今日暂无正向成交。没顾客时主动回访老客户，至少打 5 通电话。"
     },
     {
      "level": "warn",
@@ -2237,8 +1629,8 @@
    },
    "rules": "每日反馈·月度闭环 · 每晚11点前反馈 · 超时/漏反馈每项考核10 · 闭环时间20号"
   },
-  "timeProgress": 0.5161290322580645,
-  "remainDays": 16
+  "timeProgress": 0.5483870967741935,
+  "remainDays": 15
  },
  "details": {
   "手机": [
@@ -2280,8 +1672,8 @@
     "date": "2026-10-16",
     "name": "华为 PuraX View VOL-AL00  12GB+512GB  跃影红",
     "qty": 1.0,
-    "origPrice": 6718.98,
-    "discPrice": 0.0,
+    "origPrice": 6999.0,
+    "discPrice": 280.02,
     "amount": 6718.98,
     "profit": 698.98,
     "gpr": 0.104,
@@ -2314,8 +1706,8 @@
     "date": "2026-10-16",
     "name": "华为 nova16 EMA-AL00U 12GB+512GB 幻彩贝母",
     "qty": 1.0,
-    "origPrice": 3399.0,
-    "discPrice": 0.0,
+    "origPrice": 3499.0,
+    "discPrice": 100.0,
     "amount": 3399.0,
     "profit": 466.0,
     "gpr": 0.1371,
@@ -2331,8 +1723,8 @@
     "date": "2026-10-16",
     "name": "华为畅享90 Pro Max CHZ-AL00  8GB+256GB  飞天青",
     "qty": 1.0,
-    "origPrice": 1899.0,
-    "discPrice": 0.0,
+    "origPrice": 1999.0,
+    "discPrice": 100.0,
     "amount": 1899.0,
     "profit": 33.0,
     "gpr": 0.0174,
@@ -3034,9 +2426,9 @@
     "cost": 5100.0,
     "emp": "李俊琪",
     "sku": "01.001.083.001.008",
-    "code": "LS028100472610100005",
-    "member": "赵利娜",
-    "phone": "135****8160"
+    "code": "LS028100472610100002",
+    "member": "房福贵",
+    "phone": "189****5358"
    },
    {
     "date": "2026-10-10",
@@ -3068,9 +2460,9 @@
     "cost": 5100.0,
     "emp": "李俊琪",
     "sku": "01.001.083.001.008",
-    "code": "LS028100472610100005",
-    "member": "赵利娜",
-    "phone": "135****8160"
+    "code": "LS028100472610100002",
+    "member": "房福贵",
+    "phone": "189****5358"
    },
    {
     "date": "2026-10-10",
@@ -3731,9 +3123,9 @@
     "cost": 6020.0,
     "emp": "王莹莹B",
     "sku": "01.001.083.001.007",
-    "code": "LS028100472610070011",
-    "member": "吴女士",
-    "phone": "173****9169"
+    "code": "LS028100472610070021",
+    "member": "刘帅",
+    "phone": "151****6496"
    },
    {
     "date": "2026-10-07",
@@ -3748,9 +3140,9 @@
     "cost": 6020.0,
     "emp": "王莹莹B",
     "sku": "01.001.083.001.004",
-    "code": "LS028100472610070011",
-    "member": "吴女士",
-    "phone": "173****9169"
+    "code": "LS028100472610070021",
+    "member": "刘帅",
+    "phone": "151****6496"
    },
    {
     "date": "2026-10-07",
@@ -3816,9 +3208,9 @@
     "cost": 6020.0,
     "emp": "王莹莹B",
     "sku": "01.001.083.001.004",
-    "code": "LS028100472610070011",
-    "member": "吴女士",
-    "phone": "173****9169"
+    "code": "LS028100472610070021",
+    "member": "刘帅",
+    "phone": "151****6496"
    },
    {
     "date": "2026-10-07",
@@ -4122,9 +3514,9 @@
     "cost": 8700.0,
     "emp": "张梅B",
     "sku": "01.001.087.001.001",
-    "code": "LS028100472610050019",
-    "member": "杜欣阳",
-    "phone": "187****7614"
+    "code": "LS028100472610050026",
+    "member": "鲁欢",
+    "phone": "177****8771"
    },
    {
     "date": "2026-10-05",
@@ -4156,9 +3548,9 @@
     "cost": 8844.11,
     "emp": "张梅B",
     "sku": "01.001.087.001.001",
-    "code": "LS028100472610050019",
-    "member": "杜欣阳",
-    "phone": "187****7614"
+    "code": "LS028100472610050026",
+    "member": "鲁欢",
+    "phone": "177****8771"
    },
    {
     "date": "2026-10-05",
@@ -5108,9 +4500,9 @@
     "cost": 8700.0,
     "emp": "王莹莹B",
     "sku": "01.001.087.001.001",
-    "code": "LS028101812610010002",
-    "member": "丁永涛",
-    "phone": "156****0888"
+    "code": "LS028101812610010001",
+    "member": "张军",
+    "phone": "186****7966"
    },
    {
     "date": "2026-10-01",
@@ -5125,9 +4517,9 @@
     "cost": 8700.0,
     "emp": "王莹莹B",
     "sku": "01.001.087.001.001",
-    "code": "LS028101812610010002",
-    "member": "丁永涛",
-    "phone": "156****0888"
+    "code": "LS028101812610010001",
+    "member": "张军",
+    "phone": "186****7966"
    },
    {
     "date": "2026-10-01",
@@ -5460,8 +4852,8 @@
     "date": "2026-10-16",
     "name": "华为 MatePad 11.5 TXZ-W20 8GB+256GB 柔光版  冰霜银  鸿蒙焕新版",
     "qty": 1.0,
-    "origPrice": 2799.0,
-    "discPrice": 0.0,
+    "origPrice": 3099.0,
+    "discPrice": 300.0,
     "amount": 2799.0,
     "profit": 326.0,
     "gpr": 0.1165,
@@ -5615,8 +5007,8 @@
     "date": "2026-10-16",
     "name": "华为 WATCH6 Pro NIZ-AL00 46mm(棕色素皮复合表带)木星棕",
     "qty": -1.0,
-    "origPrice": -3499.0,
-    "discPrice": 0.0,
+    "origPrice": -3599.0,
+    "discPrice": -100.0,
     "amount": -3499.0,
     "profit": -583.0,
     "gpr": 0.1666,
@@ -5632,8 +5024,8 @@
     "date": "2026-10-16",
     "name": "华为 WATCH FIT 5 NKI-B19  风信紫(淡紫色氟橡胶表带)",
     "qty": 1.0,
-    "origPrice": 999.0,
-    "discPrice": 0.0,
+    "origPrice": 1099.0,
+    "discPrice": 100.0,
     "amount": 999.0,
     "profit": 122.0,
     "gpr": 0.1221,
@@ -5666,8 +5058,8 @@
     "date": "2026-10-16",
     "name": "华为 Watch GT7 TUM-B39 46mm (黑色易扣氟橡胶表带)疾影黑",
     "qty": 1.0,
-    "origPrice": 1588.0,
-    "discPrice": 0.0,
+    "origPrice": 1688.0,
+    "discPrice": 100.0,
     "amount": 1588.0,
     "profit": 288.0,
     "gpr": 0.1814,
@@ -7027,6 +6419,23 @@
   ],
   "HD": [
    {
+    "date": "2026-10-17",
+    "name": "华为 智慧屏 V7 教育版 85吋 4K LCD 平面 Mini-LED 6GB+128GB 固定式 深空灰",
+    "qty": 1.0,
+    "origPrice": 9499.0,
+    "discPrice": 0.0,
+    "amount": 9499.0,
+    "profit": 499.0,
+    "gpr": 0.0525,
+    "so": "",
+    "cost": 9000.0,
+    "emp": "李俊琪",
+    "sku": "12.087.001.001",
+    "code": "LS028100472610070020",
+    "member": "卢辅芳",
+    "phone": "158****0796"
+   },
+   {
     "date": "2026-10-09",
     "name": "华为智慧屏 MateTV 2 85吋 4K LCD 平面 Mini-LED 8GB+128GB 固定式 深空灰",
     "qty": 1.0,
@@ -7049,8 +6458,8 @@
     "date": "2026-10-16",
     "name": "华为 MatePad 11.5 TXZ-W20 8GB+256GB 柔光版  冰霜银  鸿蒙焕新版",
     "qty": 1.0,
-    "origPrice": 2799.0,
-    "discPrice": 0.0,
+    "origPrice": 3099.0,
+    "discPrice": 300.0,
     "amount": 2799.0,
     "profit": 326.0,
     "gpr": 0.1165,
@@ -7238,8 +6647,8 @@
     "date": "2026-10-16",
     "name": "华为 WATCH6 Pro NIZ-AL00 46mm(棕色素皮复合表带)木星棕",
     "qty": -1.0,
-    "origPrice": -3499.0,
-    "discPrice": 0.0,
+    "origPrice": -3599.0,
+    "discPrice": -100.0,
     "amount": -3499.0,
     "profit": -583.0,
     "gpr": 0.1666,
@@ -7255,8 +6664,8 @@
     "date": "2026-10-16",
     "name": "华为 WATCH FIT 5 NKI-B19  风信紫(淡紫色氟橡胶表带)",
     "qty": 1.0,
-    "origPrice": 999.0,
-    "discPrice": 0.0,
+    "origPrice": 1099.0,
+    "discPrice": 100.0,
     "amount": 999.0,
     "profit": 122.0,
     "gpr": 0.1221,
@@ -7289,8 +6698,8 @@
     "date": "2026-10-16",
     "name": "华为 Watch GT7 TUM-B39 46mm (黑色易扣氟橡胶表带)疾影黑",
     "qty": 1.0,
-    "origPrice": 1588.0,
-    "discPrice": 0.0,
+    "origPrice": 1688.0,
+    "discPrice": 100.0,
     "amount": 1588.0,
     "profit": 288.0,
     "gpr": 0.1814,
@@ -8668,8 +8077,8 @@
     "date": "2026-10-16",
     "name": "Cooyee臻享套装mate90-90pro御甲系列 白色",
     "qty": 1.0,
-    "origPrice": 284.0,
-    "discPrice": 0.0,
+    "origPrice": 299.0,
+    "discPrice": 15.0,
     "amount": 284.0,
     "profit": 199.0,
     "gpr": 0.7007,
@@ -8719,8 +8128,8 @@
     "date": "2026-10-16",
     "name": "PuraX View Care+意外无忧一年期",
     "qty": 1.0,
-    "origPrice": 479.02,
-    "discPrice": 0.0,
+    "origPrice": 499.0,
+    "discPrice": 19.98,
     "amount": 479.02,
     "profit": 191.608,
     "gpr": 0.4,
@@ -8796,9 +8205,9 @@
     "cost": 19.84,
     "emp": "乔玉宇",
     "sku": "09.999.009.006",
-    "code": "LS028100472610160020",
-    "member": "王雪皎",
-    "phone": "151****8357"
+    "code": "LS028100472610160017",
+    "member": "程钰菡",
+    "phone": "189****5891"
    },
    {
     "date": "2026-10-16",
@@ -8830,9 +8239,9 @@
     "cost": 19.84,
     "emp": "乔玉宇",
     "sku": "09.999.009.006",
-    "code": "LS028100472610160020",
-    "member": "王雪皎",
-    "phone": "151****8357"
+    "code": "LS028100472610160017",
+    "member": "程钰菡",
+    "phone": "189****5891"
    },
    {
     "date": "2026-10-15",
@@ -9091,6 +8500,23 @@
    },
    {
     "date": "2026-10-14",
+    "name": "199贴膜套包",
+    "qty": 1.0,
+    "origPrice": 199.0,
+    "discPrice": 0.0,
+    "amount": 199.0,
+    "profit": 199.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "王莹莹B",
+    "sku": "15.001.001.216",
+    "code": "LS028100472610140005",
+    "member": "贺智斌",
+    "phone": "197****6002"
+   },
+   {
+    "date": "2026-10-14",
     "name": "COOYEE 华为Mate70 一体镜头膜 带定位器",
     "qty": 2.0,
     "origPrice": 98.0,
@@ -9108,20 +8534,17 @@
    },
    {
     "date": "2026-10-14",
-    "name": "199贴膜套包",
-    "qty": 1.0,
-    "origPrice": 199.0,
+    "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
+    "qty": 2.0,
+    "origPrice": 200.0,
     "discPrice": 0.0,
-    "amount": 199.0,
-    "profit": 199.0,
-    "gpr": 1.0,
+    "amount": 200.0,
+    "profit": 162.0147,
+    "gpr": 0.8101,
     "so": "",
-    "cost": 0.0,
-    "emp": "王莹莹B",
-    "sku": "15.001.003.081",
-    "code": "LS028100472610140005",
-    "member": "贺智斌",
-    "phone": "197****6002"
+    "cost": 37.99,
+    "emp": "张赫桐",
+    "sku": "15.001.003.014"
    },
    {
     "date": "2026-10-14",
@@ -9134,20 +8557,6 @@
     "gpr": 0.8767,
     "so": "",
     "cost": 18.99,
-    "emp": "张赫桐",
-    "sku": "15.001.003.014"
-   },
-   {
-    "date": "2026-10-14",
-    "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
-    "qty": 2.0,
-    "origPrice": 200.0,
-    "discPrice": 0.0,
-    "amount": 200.0,
-    "profit": 162.0147,
-    "gpr": 0.8101,
-    "so": "",
-    "cost": 37.99,
     "emp": "张赫桐",
     "sku": "15.001.003.014",
     "code": "LS028100472610140008",
@@ -9894,6 +9303,20 @@
     "date": "2026-10-11",
     "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
     "qty": 1.0,
+    "origPrice": 45.0,
+    "discPrice": 0.0,
+    "amount": 45.0,
+    "profit": 40.7201,
+    "gpr": 0.9049,
+    "so": "",
+    "cost": 4.28,
+    "emp": "王莹莹B",
+    "sku": "09.999.009.013"
+   },
+   {
+    "date": "2026-10-11",
+    "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
+    "qty": 1.0,
     "origPrice": 40.0,
     "discPrice": 0.0,
     "amount": 40.0,
@@ -9909,20 +9332,6 @@
    },
    {
     "date": "2026-10-11",
-    "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
-    "qty": 1.0,
-    "origPrice": 45.0,
-    "discPrice": 0.0,
-    "amount": 45.0,
-    "profit": 40.7201,
-    "gpr": 0.9049,
-    "so": "",
-    "cost": 4.28,
-    "emp": "王莹莹B",
-    "sku": "09.999.009.013"
-   },
-   {
-    "date": "2026-10-11",
     "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
     "qty": 2.0,
     "origPrice": 200.0,
@@ -9934,9 +9343,9 @@
     "cost": 37.99,
     "emp": "王莹莹B",
     "sku": "15.001.003.014",
-    "code": "LS028100472610110025",
-    "member": "方佳良",
-    "phone": "152****8912"
+    "code": "LS028100472610110021",
+    "member": "李晨",
+    "phone": "135****6323"
    },
    {
     "date": "2026-10-11",
@@ -9985,9 +9394,9 @@
     "cost": 47.94,
     "emp": "王莹莹B",
     "sku": "15.001.003.012",
-    "code": "LS028100472610110025",
-    "member": "方佳良",
-    "phone": "152****8912"
+    "code": "LS028100472610110021",
+    "member": "李晨",
+    "phone": "135****6323"
    },
    {
     "date": "2026-10-11",
@@ -10001,7 +9410,10 @@
     "so": "",
     "cost": 23.97,
     "emp": "王莹莹B",
-    "sku": "15.001.003.012"
+    "sku": "15.001.003.012",
+    "code": "LS028100472610110025",
+    "member": "方佳良",
+    "phone": "152****8912"
    },
    {
     "date": "2026-10-10",
@@ -11648,9 +11060,9 @@
     "cost": 89.0,
     "emp": "田蕊",
     "sku": "15.001.006.026.001",
-    "code": "LS028100472610050011",
-    "member": "陈学明",
-    "phone": "159****0705"
+    "code": "LS028100472610050013",
+    "member": "柴夏宁",
+    "phone": "151****5721"
    },
    {
     "date": "2026-10-05",
@@ -11665,9 +11077,9 @@
     "cost": 65.0,
     "emp": "田蕊",
     "sku": "15.001.006.027.001",
-    "code": "LS028100472610050011",
-    "member": "陈学明",
-    "phone": "159****0705"
+    "code": "LS028100472610050013",
+    "member": "柴夏宁",
+    "phone": "151****5721"
    },
    {
     "date": "2026-10-05",
@@ -11682,9 +11094,9 @@
     "cost": 89.0,
     "emp": "田蕊",
     "sku": "15.001.006.026.001",
-    "code": "LS028100472610050011",
-    "member": "陈学明",
-    "phone": "159****0705"
+    "code": "LS028100472610050013",
+    "member": "柴夏宁",
+    "phone": "151****5721"
    },
    {
     "date": "2026-10-05",
@@ -11716,9 +11128,9 @@
     "cost": 89.0,
     "emp": "田蕊",
     "sku": "15.001.006.026.002",
-    "code": "LS028100472610050011",
-    "member": "陈学明",
-    "phone": "159****0705"
+    "code": "LS028100472610050013",
+    "member": "柴夏宁",
+    "phone": "151****5721"
    },
    {
     "date": "2026-10-05",
@@ -11733,9 +11145,9 @@
     "cost": 89.0,
     "emp": "田蕊",
     "sku": "15.001.006.026.002",
-    "code": "LS028100472610050011",
-    "member": "陈学明",
-    "phone": "159****0705"
+    "code": "LS028100472610050013",
+    "member": "柴夏宁",
+    "phone": "151****5721"
    },
    {
     "date": "2026-10-05",
@@ -11937,9 +11349,9 @@
     "cost": 85.0,
     "emp": "李俊琪",
     "sku": "15.001.006.073.002",
-    "code": "LS028100472610040003",
-    "member": "刘江伟",
-    "phone": "187****2941"
+    "code": "LS028100472610040006",
+    "member": "陈炜刚",
+    "phone": "132****2526"
    },
    {
     "date": "2026-10-04",
@@ -11954,9 +11366,9 @@
     "cost": 85.0,
     "emp": "李俊琪",
     "sku": "15.001.006.073.002",
-    "code": "LS028100472610040003",
-    "member": "刘江伟",
-    "phone": "187****2941"
+    "code": "LS028100472610040006",
+    "member": "陈炜刚",
+    "phone": "132****2526"
    },
    {
     "date": "2026-10-04",
@@ -12166,28 +11578,25 @@
     "date": "2026-10-04",
     "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
     "qty": 1.0,
-    "origPrice": 49.0,
-    "discPrice": 0.0,
-    "amount": 49.0,
-    "profit": 44.7201,
-    "gpr": 0.9127,
-    "so": "",
-    "cost": 4.28,
-    "emp": "王莹莹B",
-    "sku": "09.999.009.013",
-    "code": "LS028100472610040029",
-    "member": "黄宏",
-    "phone": "187****2726"
-   },
-   {
-    "date": "2026-10-04",
-    "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
-    "qty": 1.0,
     "origPrice": 40.0,
     "discPrice": 0.0,
     "amount": 40.0,
     "profit": 35.7201,
     "gpr": 0.893,
+    "so": "",
+    "cost": 4.28,
+    "emp": "王莹莹B",
+    "sku": "09.999.009.013"
+   },
+   {
+    "date": "2026-10-04",
+    "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
+    "qty": 1.0,
+    "origPrice": 49.0,
+    "discPrice": 0.0,
+    "amount": 49.0,
+    "profit": 44.7201,
+    "gpr": 0.9127,
     "so": "",
     "cost": 4.28,
     "emp": "王莹莹B",
@@ -12205,7 +11614,10 @@
     "so": "",
     "cost": 4.28,
     "emp": "王莹莹B",
-    "sku": "09.999.009.013"
+    "sku": "09.999.009.013",
+    "code": "LS028100472610040029",
+    "member": "黄宏",
+    "phone": "187****2726"
    },
    {
     "date": "2026-10-04",
@@ -12634,6 +12046,23 @@
    },
    {
     "date": "2026-10-02",
+    "name": "199贴膜套包",
+    "qty": 1.0,
+    "origPrice": 199.0,
+    "discPrice": 0.0,
+    "amount": 199.0,
+    "profit": 199.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "张赫桐",
+    "sku": "15.001.001.216",
+    "code": "LS028100472610020023",
+    "member": "权颖怡",
+    "phone": "181****3162"
+   },
+   {
+    "date": "2026-10-02",
     "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
     "qty": 2.0,
     "origPrice": 86.0,
@@ -12679,23 +12108,6 @@
     "cost": 51.88,
     "emp": "张赫桐",
     "sku": "15.001.003.044",
-    "code": "LS028100472610020023",
-    "member": "权颖怡",
-    "phone": "181****3162"
-   },
-   {
-    "date": "2026-10-02",
-    "name": "199贴膜套包",
-    "qty": 1.0,
-    "origPrice": 199.0,
-    "discPrice": 0.0,
-    "amount": 199.0,
-    "profit": 199.0,
-    "gpr": 1.0,
-    "so": "",
-    "cost": 0.0,
-    "emp": "张赫桐",
-    "sku": "15.001.003.081",
     "code": "LS028100472610020023",
     "member": "权颖怡",
     "phone": "181****3162"
@@ -13076,6 +12488,23 @@
    },
    {
     "date": "2026-10-01",
+    "name": "199贴膜套包",
+    "qty": 1.0,
+    "origPrice": 199.0,
+    "discPrice": 0.0,
+    "amount": 199.0,
+    "profit": 199.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "张赫桐",
+    "sku": "15.001.001.216",
+    "code": "LS028100472610010019",
+    "member": "闫龙龙",
+    "phone": "177****1657"
+   },
+   {
+    "date": "2026-10-01",
     "name": "RockSpace 活动权益膜 S码(180BZ-01J)",
     "qty": 1.0,
     "origPrice": 39.9,
@@ -13087,23 +12516,6 @@
     "cost": 4.28,
     "emp": "张赫桐",
     "sku": "09.999.009.013",
-    "code": "LS028100472610010019",
-    "member": "闫龙龙",
-    "phone": "177****1657"
-   },
-   {
-    "date": "2026-10-01",
-    "name": "199贴膜套包",
-    "qty": 1.0,
-    "origPrice": 199.0,
-    "discPrice": 0.0,
-    "amount": 199.0,
-    "profit": 199.0,
-    "gpr": 1.0,
-    "so": "",
-    "cost": 0.0,
-    "emp": "张赫桐",
-    "sku": "15.001.003.081",
     "code": "LS028100472610010019",
     "member": "闫龙龙",
     "phone": "177****1657"
@@ -13223,9 +12635,9 @@
     "cost": 0.0,
     "emp": "张梅B",
     "sku": "15.005.011",
-    "code": "LS028100472610010033",
-    "member": "贾琳静",
-    "phone": "180****8178"
+    "code": "LS028100472610010034",
+    "member": "庞鹏",
+    "phone": "134****2278"
    },
    {
     "date": "2026-10-01",
@@ -13240,9 +12652,9 @@
     "cost": 0.0,
     "emp": "王莹莹B",
     "sku": "15.005.011",
-    "code": "LS028100472609290008",
-    "member": "张家宁",
-    "phone": "181****2505"
+    "code": "LS028100472609290009",
+    "member": "张军",
+    "phone": "186****7966"
    },
    {
     "date": "2026-10-01",
@@ -13274,9 +12686,9 @@
     "cost": 0.0,
     "emp": "张梅B",
     "sku": "15.005.011",
-    "code": "LS028100472610010033",
-    "member": "贾琳静",
-    "phone": "180****8178"
+    "code": "LS028100472610010034",
+    "member": "庞鹏",
+    "phone": "134****2278"
    },
    {
     "date": "2026-10-01",
@@ -13291,9 +12703,9 @@
     "cost": 0.0,
     "emp": "王莹莹B",
     "sku": "15.005.011",
-    "code": "LS028100472609290008",
-    "member": "张家宁",
-    "phone": "181****2505"
+    "code": "LS028100472609290009",
+    "member": "张军",
+    "phone": "186****7966"
    },
    {
     "date": "2026-10-01",
@@ -13427,9 +12839,9 @@
     "cost": 85.0,
     "emp": "王莹莹B",
     "sku": "15.001.006.072.001",
-    "code": "LS028101812610010016",
-    "member": "李振江",
-    "phone": "181****5908"
+    "code": "LS028101812610010018",
+    "member": "王雅梅",
+    "phone": "133****3036"
    },
    {
     "date": "2026-10-01",
@@ -13529,9 +12941,9 @@
     "cost": 85.0,
     "emp": "王莹莹B",
     "sku": "15.001.006.072.001",
-    "code": "LS028101812610010016",
-    "member": "李振江",
-    "phone": "181****5908"
+    "code": "LS028101812610010018",
+    "member": "王雅梅",
+    "phone": "133****3036"
    },
    {
     "date": "2026-10-01",
@@ -13546,9 +12958,9 @@
     "cost": 85.0,
     "emp": "王莹莹B",
     "sku": "15.001.006.072.001",
-    "code": "LS028101812610010016",
-    "member": "李振江",
-    "phone": "181****5908"
+    "code": "LS028101812610010018",
+    "member": "王雅梅",
+    "phone": "133****3036"
    },
    {
     "date": "2026-10-01",
@@ -13596,7 +13008,10 @@
     "so": "",
     "cost": 4.28,
     "emp": "王莹莹B",
-    "sku": "09.999.009.013"
+    "sku": "09.999.009.013",
+    "code": "LS028101812610010020",
+    "member": "丁永涛",
+    "phone": "156****0888"
    },
    {
     "date": "2026-10-01",
@@ -13610,10 +13025,7 @@
     "so": "",
     "cost": 4.28,
     "emp": "王莹莹B",
-    "sku": "09.999.009.013",
-    "code": "LS028101812610010020",
-    "member": "丁永涛",
-    "phone": "156****0888"
+    "sku": "09.999.009.013"
    },
    {
     "date": "2026-10-01",
@@ -13670,519 +13082,24 @@
  },
  "dayDetails": [
   {
-   "code": "XSCK26101600410",
-   "type": "三方配件",
-   "emp": "乔玉宇",
-   "product": "Cooyee臻享套装mate90-90pro御甲系列 白色",
-   "sku": "15.001.006.072.001",
-   "qty": 1.0,
-   "origPrice": 284.0,
-   "discPrice": 0.0,
-   "amount": 284.0,
-   "profit": 199.0,
-   "cost": 85.0,
-   "gpr": 0.7007042253521126,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600410",
-   "type": "三方配件",
-   "emp": "乔玉宇",
-   "product": "Cooyee臻享套装mate90 pro Max御甲系列 白",
-   "sku": "15.001.006.073.001",
-   "qty": 1.0,
-   "origPrice": 300.0,
-   "discPrice": 0.0,
-   "amount": 300.0,
-   "profit": 215.0,
-   "cost": 85.0,
-   "gpr": 0.7166666666666667,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600423",
-   "type": "贴膜",
-   "emp": "乔玉宇",
-   "product": "COOYEE 华为GT6手表钢化膜 41mm 定位版",
-   "sku": "09.999.009.005",
-   "qty": 1.0,
-   "origPrice": 99.0,
-   "discPrice": 0.0,
-   "amount": 99.0,
-   "profit": 80.4419,
-   "cost": 18.56,
-   "gpr": 0.8125444444444445,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600423",
-   "type": "华为",
-   "emp": "乔玉宇",
-   "product": "华为-手提袋-小",
-   "sku": "17.002.001.001",
-   "qty": 3.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600886",
-   "type": "Watch GT7",
-   "emp": "乔玉宇",
-   "product": "华为 Watch GT7 TUM-B39 46mm (黑色易扣氟橡胶表带)疾影黑",
-   "sku": "08.001.040.001.003",
-   "qty": 1.0,
-   "origPrice": 1588.0,
-   "discPrice": 0.0,
-   "amount": 1588.0,
-   "profit": 288.0,
-   "cost": 1300.0,
-   "gpr": 0.181360201511335,
-   "cat": "穿戴"
-  },
-  {
-   "code": "XSCK26101600886",
-   "type": "华为",
-   "emp": "乔玉宇",
-   "product": "华为-手提袋-小",
-   "sku": "17.002.001.001",
-   "qty": 1.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600893",
-   "type": "贴膜",
-   "emp": "乔玉宇",
-   "product": "COOYEE 华为GT6手表钢化膜 46mm 定位版",
-   "sku": "09.999.009.006",
-   "qty": 1.0,
-   "origPrice": 100.0,
-   "discPrice": 0.0,
-   "amount": 100.0,
-   "profit": 80.1563,
-   "cost": 19.84,
-   "gpr": 0.801563,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600893",
-   "type": "华为",
-   "emp": "乔玉宇",
-   "product": "华为-手提袋-中",
-   "sku": "17.002.001.002",
-   "qty": 3.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600914",
-   "type": "nova 16 SE",
-   "emp": "乔玉宇",
-   "product": "华为 nova 16 SE CAS-AL50  8GB+256GB  天际白",
-   "sku": "01.001.082.001.002",
-   "qty": 1.0,
-   "origPrice": 2899.0,
-   "discPrice": 0.0,
-   "amount": 2899.0,
-   "profit": 637.0,
-   "cost": 2262.0,
-   "gpr": 0.21973094170403587,
-   "cat": "手机"
-  },
-  {
-   "code": "XSCK26101600914",
-   "type": "华为",
-   "emp": "乔玉宇",
-   "product": "华为-手提袋-中",
-   "sku": "17.002.001.002",
-   "qty": 3.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101601014",
-   "type": "畅享90 Pro Max",
-   "emp": "乔玉宇",
-   "product": "华为畅享90 Pro Max CHZ-AL00  8GB+256GB  飞天青",
-   "sku": "01.001.072.001.003",
-   "qty": 1.0,
-   "origPrice": 1899.0,
-   "discPrice": 0.0,
-   "amount": 1899.0,
-   "profit": 33.0,
-   "cost": 1866.0,
-   "gpr": 0.017377567140600316,
-   "cat": "手机"
-  },
-  {
-   "code": "XSCK26101601014",
-   "type": "贴膜",
-   "emp": "乔玉宇",
-   "product": "COOYEE 华为GT6手表钢化膜 41mm 定位版",
-   "sku": "09.999.009.005",
-   "qty": 2.0,
-   "origPrice": 200.0,
-   "discPrice": 0.0,
-   "amount": 200.0,
-   "profit": 162.8837,
-   "cost": 37.12,
-   "gpr": 0.8144185,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101601014",
-   "type": "贴膜",
-   "emp": "乔玉宇",
-   "product": "COOYEE 华为GT6手表钢化膜 46mm 定位版",
-   "sku": "09.999.009.006",
-   "qty": 1.0,
-   "origPrice": 100.0,
-   "discPrice": 0.0,
-   "amount": 100.0,
-   "profit": 80.1563,
-   "cost": 19.84,
-   "gpr": 0.801563,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101601014",
-   "type": "华为",
-   "emp": "乔玉宇",
-   "product": "华为-手提袋-中",
-   "sku": "17.002.001.002",
-   "qty": 3.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600001",
-   "type": "WATCH6 Pro",
-   "emp": "张梅B",
-   "product": "华为 WATCH6 Pro NIZ-AL00 46mm(棕色素皮复合表带)木星棕",
-   "sku": "08.001.043.001.001",
-   "qty": -1.0,
-   "origPrice": -3499.0,
-   "discPrice": 0.0,
-   "amount": -3499.0,
-   "profit": -583.0,
-   "cost": -2916.0,
-   "gpr": 0.16661903400971706,
-   "cat": "穿戴"
-  },
-  {
-   "code": "XSCK26101600646",
-   "type": "Pura X View",
-   "emp": "张梅B",
-   "product": "华为 PuraX View VOL-AL00  12GB+512GB  跃影红",
-   "sku": "01.001.083.001.010",
-   "qty": 1.0,
-   "origPrice": 6718.98,
-   "discPrice": 0.0,
-   "amount": 6718.98,
-   "profit": 698.98,
-   "cost": 6020.0,
-   "gpr": 0.10403067132213521,
-   "cat": "手机"
-  },
-  {
-   "code": "XSCK26101600646",
-   "type": "碎屏",
-   "emp": "张梅B",
-   "product": "PuraX View Care+意外无忧一年期",
-   "sku": "15.001.002.044",
-   "qty": 1.0,
-   "origPrice": 479.02,
-   "discPrice": 0.0,
-   "amount": 479.02,
-   "profit": 191.608,
-   "cost": 0.0,
-   "gpr": 0.4,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600647",
-   "type": "WATCH FIT 5",
-   "emp": "张梅B",
-   "product": "华为 WATCH FIT 5 NKI-B19  风信紫(淡紫色氟橡胶表带)",
-   "sku": "08.001.036.001.001",
-   "qty": 1.0,
-   "origPrice": 999.0,
-   "discPrice": 0.0,
-   "amount": 999.0,
-   "profit": 122.0,
-   "cost": 877.0,
-   "gpr": 0.12212212212212212,
-   "cat": "穿戴"
-  },
-  {
-   "code": "XSCK26101600649",
-   "type": "保护壳类",
-   "emp": "张梅B",
-   "product": "华为 Mate X7 旋转支架保护壳 Delphi ACC-Stand PU Case  紫",
-   "sku": "09.001.003.094.005",
-   "qty": 1.0,
-   "origPrice": 199.0,
-   "discPrice": 0.0,
-   "amount": 199.0,
-   "profit": 49.0,
-   "cost": 150.0,
-   "gpr": 0.24623115577889448,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600656",
-   "type": "UIM卡",
-   "emp": "张梅B",
-   "product": "5G半成卡",
-   "sku": "10.007.002",
-   "qty": 1.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600656",
-   "type": "合约入网",
-   "emp": "张梅B",
-   "product": "单卡新入网-购机赠费",
-   "sku": "10.001.002.003",
-   "qty": 1.0,
-   "origPrice": 199.0,
-   "discPrice": 0.0,
-   "amount": 199.0,
-   "profit": 796.0,
-   "cost": 0.0,
-   "gpr": 4.0,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600768",
-   "type": "贴膜",
-   "emp": "张梅B",
-   "product": "RockSpace 柔性抗蓝光护眼膜 L码 290L-01Y(华为认证)-专供",
-   "sku": "09.999.009.063",
-   "qty": 1.0,
-   "origPrice": 39.9,
-   "discPrice": 0.0,
-   "amount": 39.9,
-   "profit": 27.2286,
-   "cost": 12.67,
-   "gpr": 0.6824210526315789,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600878",
-   "type": "MatePad 11.5",
-   "emp": "张梅B",
-   "product": "华为 MatePad 11.5 TXZ-W20 8GB+256GB 柔光版  冰霜银  鸿蒙焕新版",
-   "sku": "06.001.002.006.030",
-   "qty": 1.0,
-   "origPrice": 2799.0,
-   "discPrice": 0.0,
-   "amount": 2799.0,
-   "profit": 326.0,
-   "cost": 2623.0,
-   "gpr": 0.11647016791711326,
-   "cat": "平板"
-  },
-  {
-   "code": "XSCK26101600744",
-   "type": "权益系列",
+   "code": "XSCK26101700155",
+   "type": "智慧屏 V7 教育版 85",
    "emp": "李俊琪",
-   "product": "星联优享-499",
-   "sku": "15.005.011",
+   "product": "华为 智慧屏 V7 教育版 85吋 4K LCD 平面 Mini-LED 6GB+128GB 固定式 深空灰",
+   "sku": "12.087.001.001",
    "qty": 1.0,
-   "origPrice": 500.0,
+   "origPrice": 9499.0,
    "discPrice": 0.0,
-   "amount": 500.0,
-   "profit": 500.0,
-   "cost": 0.0,
-   "gpr": 1.0,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600747",
-   "type": "Watch GT7",
-   "emp": "李俊琪",
-   "product": "华为 Watch GT7 NSU-B39 41mm(粉色易扣氟橡胶表带)樱语粉",
-   "sku": "08.001.040.002.004",
-   "qty": 1.0,
-   "origPrice": 1588.0,
-   "discPrice": 0.0,
-   "amount": 1588.0,
-   "profit": 365.0,
-   "cost": 1223.0,
-   "gpr": 0.22984886649874056,
-   "cat": "穿戴"
-  },
-  {
-   "code": "XSCK26101600924",
-   "type": "nova 16",
-   "emp": "李俊琪",
-   "product": "华为 nova16 EMA-AL00U 12GB+512GB 幻彩贝母",
-   "sku": "01.001.078.001.004",
-   "qty": 1.0,
-   "origPrice": 3399.0,
-   "discPrice": 0.0,
-   "amount": 3399.0,
-   "profit": 466.0,
-   "cost": 2933.0,
-   "gpr": 0.13709914680788468,
-   "cat": "手机"
-  },
-  {
-   "code": "XSCK26101600258",
-   "type": "Mate70 Pro",
-   "emp": "王莹莹B",
-   "product": "华为 Mate 70 Pro 优享版 PLR-AL80  12GB+512GB  云杉绿",
-   "sku": "01.001.002.010.002",
-   "qty": 1.0,
-   "origPrice": 4699.0,
-   "discPrice": 0.0,
-   "amount": 4699.0,
-   "profit": -117.0,
-   "cost": 4816.0,
-   "gpr": -0.02489891466269419,
-   "cat": "手机"
-  },
-  {
-   "code": "XSCK26101600262",
-   "type": "权益系列",
-   "emp": "王莹莹B",
-   "product": "星联优享-499",
-   "sku": "15.005.011",
-   "qty": 1.0,
-   "origPrice": 500.0,
-   "discPrice": 0.0,
-   "amount": 500.0,
-   "profit": 500.0,
-   "cost": 0.0,
-   "gpr": 1.0,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600328",
-   "type": "Pura80 Ultra",
-   "emp": "王莹莹B",
-   "product": "华为 Pura80 Ultra LMR-AL10(16GB+512GB)鎏光金",
-   "sku": "01.001.044.002.003",
-   "qty": 1.0,
-   "origPrice": 5999.0,
-   "discPrice": 0.0,
-   "amount": 5999.0,
-   "profit": -1396.0,
-   "cost": 7395.0,
-   "gpr": -0.23270545090848474,
-   "cat": "手机"
-  },
-  {
-   "code": "XSCK26101600680",
-   "type": "贴膜",
-   "emp": "王莹莹B",
-   "product": "Cooyee 华为mate80 pro Max-mate80 RS 高清钢化膜",
-   "sku": "09.999.009.115",
-   "qty": 1.0,
-   "origPrice": 199.0,
-   "discPrice": 0.0,
-   "amount": 199.0,
-   "profit": 180.1352,
-   "cost": 18.86,
-   "gpr": 0.9052020100502512,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600680",
-   "type": "华为",
-   "emp": "王莹莹B",
-   "product": "厂家-华为智选Hitick高速智能剃须刀7系Ai701钛银灰",
-   "sku": "17.001.001.030",
-   "qty": 1.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600680",
-   "type": "华为",
-   "emp": "王莹莹B",
-   "product": "华为-手提袋-中",
-   "sku": "17.002.001.002",
-   "qty": 3.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "其他"
-  },
-  {
-   "code": "XSCK26101600761",
-   "type": "UIM卡",
-   "emp": "王莹莹B",
-   "product": "5G半成卡",
-   "sku": "10.007.002",
-   "qty": 1.0,
-   "origPrice": 0.0,
-   "discPrice": 0.0,
-   "amount": 0.0,
-   "profit": 0.0,
-   "cost": 0.0,
-   "gpr": null,
-   "cat": "增值"
-  },
-  {
-   "code": "XSCK26101600761",
-   "type": "合约入网",
-   "emp": "王莹莹B",
-   "product": "单卡新入网-购机赠费",
-   "sku": "10.001.002.003",
-   "qty": 1.0,
-   "origPrice": 199.0,
-   "discPrice": 0.0,
-   "amount": 199.0,
-   "profit": 796.0,
-   "cost": 0.0,
-   "gpr": 4.0,
-   "cat": "增值"
+   "amount": 9499.0,
+   "profit": 499.0,
+   "cost": 9000.0,
+   "gpr": 0.05253184545741657,
+   "cat": "HD"
   }
  ],
  "qudao": {
-  "timeDate": "2026-10-16",
-  "timeRate": 0.5161290322580645,
+  "timeDate": "2026-10-17",
+  "timeRate": 0.5483870967741935,
   "total": {
    "task": 207001.0,
    "done": 99010.02,
