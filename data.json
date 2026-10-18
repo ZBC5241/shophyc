@@ -9,7 +9,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "10-18",
-  "fetchTime": "22:42",
+  "fetchTime": "23:13",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -21,7 +21,7 @@
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
   "sourceRows": 736,
   "dayRows": 29,
-  "generatedAt": "2026-10-18 22:42:18"
+  "generatedAt": "2026-10-18 23:13:22"
  },
  "store": {
   "performance": {
