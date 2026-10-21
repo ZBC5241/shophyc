@@ -5,11 +5,12 @@
   "dayTitle": "10-21达成",
   "timeProgress": 0.6774193548387096,
   "remainDays": 8,
+  "naturalRemainDays": 11,
   "refDate": "2026-10-21",
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "10-21",
-  "fetchTime": "10:25",
+  "fetchTime": "10:40",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -21,7 +22,7 @@
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
   "sourceRows": 781,
   "dayRows": 0,
-  "generatedAt": "2026-10-21 10:25:10"
+  "generatedAt": "2026-10-21 10:40:26"
  },
  "store": {
   "performance": {
