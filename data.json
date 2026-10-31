@@ -10,7 +10,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "10-31",
-  "fetchTime": "20:13",
+  "fetchTime": "20:38",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -20,23 +20,23 @@
    "田蕊"
   ],
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
-  "sourceRows": 1040,
-  "dayRows": 4,
-  "generatedAt": "2026-10-31 20:13:35"
+  "sourceRows": 1075,
+  "dayRows": 39,
+  "generatedAt": "2026-10-31 20:38:35"
  },
  "store": {
   "performance": {
    "毛利": {
     "task": 370000.0,
-    "done": 349616.5113999999,
-    "gap": -20383.4886000001,
-    "rate": 0.94490949027027
+    "done": 359825.9819999999,
+    "gap": -10174.018000000098,
+    "rate": 0.9725026540540538
    },
    "手机": {
     "task": 300.0,
-    "done": 261.0,
-    "gap": -39.0,
-    "rate": 0.87
+    "done": 273.0,
+    "gap": -27.0,
+    "rate": 0.91
    },
    "PC": {
     "task": 18.0,
@@ -58,9 +58,9 @@
    },
    "音频": {
     "task": 45.0,
-    "done": 32.0,
-    "gap": -13.0,
-    "rate": 0.7111111111111111
+    "done": 33.0,
+    "gap": -12.0,
+    "rate": 0.7333333333333333
    },
    "HD": {
     "task": 2.0,
@@ -76,17 +76,17 @@
    },
    "音频穿戴": {
     "task": 175.0,
-    "done": 124.0,
-    "gap": -51.0,
-    "rate": 0.7085714285714285
+    "done": 125.0,
+    "gap": -50.0,
+    "rate": 0.7142857142857143
    },
    "销额": {
     "task": 2800000.0,
-    "done": 2422825.4200000004,
-    "gap": -377174.5799999996,
-    "rate": 0.865294792857143
+    "done": 2503787.4300000006,
+    "gap": -296212.56999999937,
+    "rate": 0.8942097964285717
    },
-   "绩效": 68.9347125
+   "绩效": 69.07974066666667
   },
   "qcs": {
    "合约": {
@@ -96,20 +96,20 @@
     "rate": 0.8461538461538461
    },
    "会员搭售率": {
-    "terminal": 261.0,
-    "care": 68.0,
-    "gap": -11.0,
-    "rate": 0.26053639846743293
+    "terminal": 273.0,
+    "care": 72.0,
+    "gap": -10.0,
+    "rate": 0.26373626373626374
    },
    "回收搭售率": {
     "orders": 1.0,
-    "gap": -52.0,
-    "rate": 0.0038314176245210726
+    "gap": -54.0,
+    "rate": 0.003663003663003663
    },
    "贴膜率": {
-    "orders": 463.0,
-    "gap": 332.0,
-    "rate": 1.247978436657682
+    "orders": 481.0,
+    "gap": 344.0,
+    "rate": 1.2558746736292428
    },
    "考核机型": {
     "task": 15.0,
@@ -128,46 +128,46 @@
    },
    "增值": {
     "task": 83000.0,
-    "done": 91770.82140000002,
-    "gap": 8770.821400000015,
-    "rate": 1.105672546987952
+    "done": 94170.21200000003,
+    "gap": 11170.212000000029,
+    "rate": 1.1345808674698799
    },
    "健康度": {
     "coupon": 105223.05000000002,
-    "ratio": 0.3009670498073623,
-    "grossMargin": 0.14430115703507843,
-    "增值率": 0.03787760382669256
+    "ratio": 0.292427604630285,
+    "grossMargin": 0.14371267212568434,
+    "增值率": 0.03761110502899202
    },
    "星联会员": {
     "优享": 99.0,
-    "尊享": 5.0,
-    "合计": 104.0
+    "尊享": 9.0,
+    "合计": 108.0
    }
   },
   "dailyDone": {
-   "手机": 2.0,
-   "毛利": 1717.3899999999999,
-   "增值": 230.0,
+   "手机": 14.0,
+   "毛利": 11926.8606,
+   "增值": 2629.3906,
    "智慧办公": 0.0,
-   "音频穿戴": 0.0,
+   "音频穿戴": 1.0,
    "HD": 0.0,
-   "会员": 0.0,
+   "会员": 4.0,
    "回收": 0.0,
-   "贴膜": 3.0,
+   "贴膜": 19.0,
    "合约": 0,
    "滞销": 0.0,
-   "星联会员": 0.0,
-   "销额": 18829.010000000002
+   "星联会员": 4.0,
+   "销额": 99791.02
   },
   "dailyGap": {
    "手机": 74.0,
-   "毛利": 82766.0,
-   "增值": 15183.0,
+   "毛利": 82466.0,
+   "增值": 14882.0,
    "智慧办公": 25.0,
-   "音频穿戴": 56.0,
+   "音频穿戴": 55.0,
    "HD": 0,
-   "会员": 12.0,
-   "回收": 51.0,
+   "会员": 11.0,
+   "回收": 54.0,
    "贴膜": 0,
    "合约": 3.0,
    "滞销": 5.0,
@@ -329,15 +329,15 @@
    "performance": {
     "毛利": {
      "task": 78000.0,
-     "done": 101243.20150000001,
-     "gap": 23243.20150000001,
-     "rate": 1.297989762820513
+     "done": 106060.19180000002,
+     "gap": 28060.191800000015,
+     "rate": 1.359746048717949
     },
     "手机": {
      "task": 60.0,
-     "done": 75.0,
-     "gap": 15.0,
-     "rate": 1.25
+     "done": 81.0,
+     "gap": 21.0,
+     "rate": 1.35
     },
     "PC": {
      "task": 4.0,
@@ -359,9 +359,9 @@
     },
     "音频": {
      "task": 9.0,
-     "done": 6.0,
-     "gap": -3.0,
-     "rate": 0.6666666666666666
+     "done": 7.0,
+     "gap": -2.0,
+     "rate": 0.7777777777777778
     },
     "HD": {
      "task": 1.0,
@@ -377,17 +377,17 @@
     },
     "音频穿戴": {
      "task": 35.0,
-     "done": 32.0,
-     "gap": -3.0,
-     "rate": 0.9142857142857143
+     "done": 33.0,
+     "gap": -2.0,
+     "rate": 0.9428571428571428
     },
     "销额": {
      "task": 600000.0,
-     "done": 689614.1200000001,
-     "gap": 89614.12000000011,
-     "rate": 1.149356866666667
+     "done": 730183.1200000001,
+     "gap": 130183.12000000011,
+     "rate": 1.216971866666667
     },
-    "绩效": 101.238095
+    "绩效": 101.380952
    },
    "qcs": {
     "合约": {
@@ -397,20 +397,20 @@
      "rate": 1.0
     },
     "会员搭售率": {
-     "terminal": 75.0,
-     "care": 23.0,
-     "gap": 0.0,
-     "rate": 0.30666666666666664
+     "terminal": 81.0,
+     "care": 24.0,
+     "gap": -1.0,
+     "rate": 0.2962962962962963
     },
     "回收搭售率": {
      "orders": 0.0,
-     "gap": -15.0,
+     "gap": -17.0,
      "rate": 0.0
     },
     "贴膜率": {
-     "orders": 91.0,
-     "gap": 39.0,
-     "rate": 0.875
+     "orders": 98.0,
+     "gap": 43.0,
+     "rate": 0.8909090909090909
     },
     "考核机型": {
      "task": 4.0,
@@ -429,46 +429,46 @@
     },
     "增值": {
      "task": 18000.0,
-     "done": 26672.781500000012,
-     "gap": 8672.781500000012,
-     "rate": 1.481821194444445
+     "done": 27464.771800000013,
+     "gap": 9464.771800000013,
+     "rate": 1.5258206555555562
     },
     "健康度": {
      "coupon": 22786.880000000005,
-     "ratio": 0.22507071746442156,
-     "grossMargin": 0.14681138126928142,
-     "增值率": 0.03867783551183669
+     "ratio": 0.21484856488822607,
+     "grossMargin": 0.14525149773388352,
+     "增值率": 0.03761353973781263
     },
     "星联会员": {
      "优享": 28.0,
-     "尊享": 2.0,
-     "合计": 30.0
+     "尊享": 3.0,
+     "合计": 31.0
     }
    },
    "dailyDone": {
-    "手机": 1.0,
-    "毛利": 679.0,
-    "增值": 0.0,
+    "手机": 7.0,
+    "毛利": 5495.9903,
+    "增值": 791.9902999999999,
     "智慧办公": 0.0,
-    "音频穿戴": 0.0,
+    "音频穿戴": 1.0,
     "HD": 0.0,
-    "会员": 0.0,
+    "会员": 1.0,
     "回收": 0.0,
-    "贴膜": 0.0,
+    "贴膜": 5.0,
     "合约": 0,
     "滞销": 0.0,
-    "星联会员": 0.0,
-    "销额": 11599.0
+    "星联会员": 1.0,
+    "销额": 52168.0
    },
    "dailyGap": {
     "手机": 0,
     "毛利": 0,
     "增值": 0,
     "智慧办公": 6.0,
-    "音频穿戴": 3.0,
+    "音频穿戴": 2.0,
     "HD": 0,
-    "会员": 0,
-    "回收": 15.0,
+    "会员": 1.0,
+    "回收": 17.0,
     "贴膜": 0,
     "合约": 0,
     "滞销": 0,
@@ -479,15 +479,15 @@
    "performance": {
     "毛利": {
      "task": 78000.0,
-     "done": 102138.65489999996,
-     "gap": 24138.654899999965,
-     "rate": 1.3094699346153842
+     "done": 105904.00529999998,
+     "gap": 27904.005299999975,
+     "rate": 1.3577436576923074
     },
     "手机": {
      "task": 60.0,
-     "done": 70.0,
-     "gap": 10.0,
-     "rate": 1.1666666666666667
+     "done": 73.0,
+     "gap": 13.0,
+     "rate": 1.2166666666666666
     },
     "PC": {
      "task": 4.0,
@@ -533,9 +533,9 @@
     },
     "销额": {
      "task": 600000.0,
-     "done": 693489.6000000001,
-     "gap": 93489.6000000001,
-     "rate": 1.1558160000000002
+     "done": 721071.6000000001,
+     "gap": 121071.6000000001,
+     "rate": 1.2017860000000002
     },
     "绩效": 103.333333
    },
@@ -547,20 +547,20 @@
      "rate": 1.3333333333333333
     },
     "会员搭售率": {
-     "terminal": 70.0,
-     "care": 19.0,
-     "gap": -2.0,
-     "rate": 0.2714285714285714
+     "terminal": 73.0,
+     "care": 22.0,
+     "gap": 0.0,
+     "rate": 0.3013698630136986
     },
     "回收搭售率": {
      "orders": 0.0,
-     "gap": -14.0,
+     "gap": -15.0,
      "rate": 0.0
     },
     "贴膜率": {
-     "orders": 111.0,
-     "gap": 58.0,
-     "rate": 1.0571428571428572
+     "orders": 119.0,
+     "gap": 65.0,
+     "rate": 1.1018518518518519
     },
     "考核机型": {
      "task": 4.0,
@@ -579,36 +579,36 @@
     },
     "增值": {
      "task": 18000.0,
-     "done": 26808.844899999996,
-     "gap": 8808.844899999996,
-     "rate": 1.489380272222222
+     "done": 28115.9053,
+     "gap": 10115.905299999999,
+     "rate": 1.5619947388888888
     },
     "健康度": {
      "coupon": 27916.910000000007,
-     "ratio": 0.273323650358744,
-     "grossMargin": 0.14728217250842687,
-     "增值率": 0.038657890327410814
+     "ratio": 0.2636057996193654,
+     "grossMargin": 0.14687030428046252,
+     "增值率": 0.03899183562353585
     },
     "星联会员": {
      "优享": 20.0,
-     "尊享": 2.0,
-     "合计": 22.0
+     "尊享": 5.0,
+     "合计": 25.0
     }
    },
    "dailyDone": {
-    "手机": 0.0,
-    "毛利": 148.0,
-    "增值": 148.0,
+    "手机": 3.0,
+    "毛利": 3913.3504000000003,
+    "增值": 1455.0604,
     "智慧办公": 0.0,
     "音频穿戴": 0.0,
     "HD": 0.0,
-    "会员": 0.0,
+    "会员": 3.0,
     "回收": 0.0,
-    "贴膜": 2.0,
+    "贴膜": 10.0,
     "合约": 0,
     "滞销": 0.0,
-    "星联会员": 0.0,
-    "销额": 200.0
+    "星联会员": 3.0,
+    "销额": 27782.0
    },
    "dailyGap": {
     "手机": 0,
@@ -617,8 +617,8 @@
     "智慧办公": 3.0,
     "音频穿戴": 0,
     "HD": 0,
-    "会员": 2.0,
-    "回收": 14.0,
+    "会员": 0,
+    "回收": 15.0,
     "贴膜": 0,
     "合约": 0,
     "滞销": 1.0,
@@ -779,9 +779,9 @@
    "performance": {
     "毛利": {
      "task": 58000.0,
-     "done": 26582.528499999997,
-     "gap": -31417.471500000003,
-     "rate": 0.4583194568965517
+     "done": 26882.868399999996,
+     "gap": -31117.131600000004,
+     "rate": 0.46349773103448266
     },
     "手机": {
      "task": 60.0,
@@ -833,11 +833,11 @@
     },
     "销额": {
      "task": 400000.0,
-     "done": 180825.03000000003,
-     "gap": -219174.96999999997,
-     "rate": 0.4520625750000001
+     "done": 181209.03000000003,
+     "gap": -218790.96999999997,
+     "rate": 0.4530225750000001
     },
-    "绩效": 57.004711
+    "绩效": 57.732023
    },
    "qcs": {
     "合约": {
@@ -858,9 +858,9 @@
      "rate": 0.041666666666666664
     },
     "贴膜率": {
-     "orders": 49.0,
-     "gap": 31.0,
-     "rate": 1.4
+     "orders": 52.0,
+     "gap": 34.0,
+     "rate": 1.4857142857142858
     },
     "考核机型": {
      "task": 0.0,
@@ -879,15 +879,15 @@
     },
     "增值": {
      "task": 11000.0,
-     "done": 6973.798500000001,
-     "gap": -4026.201499999999,
-     "rate": 0.6339816818181819
+     "done": 7274.138400000001,
+     "gap": -3725.8615999999993,
+     "rate": 0.6612853090909092
     },
     "健康度": {
      "coupon": 5097.98,
-     "ratio": 0.19177934860485527,
-     "grossMargin": 0.14700690772732067,
-     "增值率": 0.03856655519426708
+     "ratio": 0.18963675766087523,
+     "grossMargin": 0.1483528078043351,
+     "增值率": 0.04014225118913776
     },
     "星联会员": {
      "优享": 6.0,
@@ -897,23 +897,23 @@
    },
    "dailyDone": {
     "手机": 1.0,
-    "毛利": 890.39,
-    "增值": 82.0,
+    "毛利": 1190.7299,
+    "增值": 382.3399,
     "智慧办公": 0.0,
     "音频穿戴": 0.0,
     "HD": 0.0,
     "会员": 0.0,
     "回收": 0.0,
-    "贴膜": 1.0,
+    "贴膜": 4.0,
     "合约": 0,
     "滞销": 0.0,
     "星联会员": 0.0,
-    "销额": 7030.01
+    "销额": 7414.01
    },
    "dailyGap": {
     "手机": 36.0,
-    "毛利": 31418.0,
-    "增值": 4027.0,
+    "毛利": 31118.0,
+    "增值": 3726.0,
     "智慧办公": 6.0,
     "音频穿戴": 24.0,
     "HD": 0,
@@ -929,14 +929,14 @@
    "performance": {
     "毛利": {
      "task": 0.0,
-     "done": 284.00970000000007,
-     "gap": 284.00970000000007,
+     "done": 1610.7997,
+     "gap": 1610.7997,
      "rate": null
     },
     "手机": {
      "task": 0.0,
-     "done": 5.0,
-     "gap": 5.0,
+     "done": 8.0,
+     "gap": 8.0,
      "rate": null
     },
     "PC": {
@@ -983,8 +983,8 @@
     },
     "销额": {
      "task": 0.0,
-     "done": 15432.91,
-     "gap": 15432.91,
+     "done": 27859.92,
+     "gap": 27859.92,
      "rate": null
     },
     "绩效": 0.0
@@ -997,20 +997,20 @@
      "rate": null
     },
     "会员搭售率": {
-     "terminal": 5.0,
+     "terminal": 8.0,
      "care": 1.0,
-     "gap": -1.0,
-     "rate": 0.2
+     "gap": -2.0,
+     "rate": 0.125
     },
     "回收搭售率": {
      "orders": 0.0,
-     "gap": -1.0,
+     "gap": -2.0,
      "rate": 0.0
     },
     "贴膜率": {
      "orders": 2.0,
-     "gap": -1.0,
-     "rate": 0.4
+     "gap": -2.0,
+     "rate": 0.25
     },
     "考核机型": {
      "task": 0.0,
@@ -1035,9 +1035,9 @@
     },
     "健康度": {
      "coupon": 5346.49,
-     "ratio": 18.825026046645586,
-     "grossMargin": 0.01840286115839463,
-     "增值率": -0.057045644664551254
+     "ratio": 3.319152592342797,
+     "grossMargin": 0.0578178149829576,
+     "增值率": -0.031600245083259385
     },
     "星联会员": {
      "优享": 2.0,
@@ -1046,8 +1046,8 @@
     }
    },
    "dailyDone": {
-    "手机": 0.0,
-    "毛利": 0.0,
+    "手机": 3.0,
+    "毛利": 1326.79,
     "增值": 0.0,
     "智慧办公": 0.0,
     "音频穿戴": 0.0,
@@ -1058,7 +1058,7 @@
     "合约": 0,
     "滞销": 0.0,
     "星联会员": 0.0,
-    "销额": 0.0
+    "销额": 12427.01
    },
    "dailyGap": {}
   }
@@ -1135,16 +1135,16 @@
     "name": "音频",
     "unit": "件",
     "task": 45.0,
-    "done": 32.0,
-    "rate": 0.7111111111111111,
-    "lag": -0.28888888888888886,
+    "done": 33.0,
+    "rate": 0.7333333333333333,
+    "lag": -0.2666666666666667,
     "level": "warn",
-    "lastDate": "2026-10-30",
-    "coldDays": 1,
-    "needPerDay": 13.0,
+    "lastDate": "2026-10-31",
+    "coldDays": 0,
+    "needPerDay": 12.0,
     "sellers": {
      "张梅B": 9.0,
-     "李俊琪": 6.0,
+     "李俊琪": 7.0,
      "王莹莹B": 11.0,
      "张赫桐": 5.0,
      "乔玉宇": 1.0
@@ -1156,17 +1156,17 @@
     "name": "手机",
     "unit": "台",
     "task": 300.0,
-    "done": 261.0,
-    "rate": 0.87,
-    "lag": -0.13,
+    "done": 273.0,
+    "rate": 0.91,
+    "lag": -0.08999999999999997,
     "level": "mid",
     "lastDate": "2026-10-31",
     "coldDays": 0,
-    "needPerDay": 39.0,
+    "needPerDay": 27.0,
     "sellers": {
      "张梅B": 65.0,
-     "李俊琪": 75.0,
-     "王莹莹B": 70.0,
+     "李俊琪": 81.0,
+     "王莹莹B": 73.0,
      "张赫桐": 22.0,
      "乔玉宇": 24.0
     },
@@ -1194,24 +1194,24 @@
   "people": [
    {
     "name": "李俊琪",
-    "score": 1.3203591202991454,
+    "score": 1.3900371554700857,
     "毛利": {
-     "done": 101243.20150000001,
+     "done": 106060.19180000002,
      "task": 78000.0,
-     "rate": 1.297989762820513
+     "rate": 1.359746048717949
     },
     "手机": {
-     "done": 75.0,
+     "done": 81.0,
      "task": 60.0,
-     "rate": 1.25
+     "rate": 1.35
     },
     "增值": {
-     "done": 26672.781500000012,
+     "done": 27464.771800000013,
      "task": 18000.0,
-     "rate": 1.481821194444445
+     "rate": 1.5258206555555562
     },
-    "毛利率": 0.14681138126928142,
-    "券占比": 0.22507071746442156,
+    "毛利率": 0.14525149773388352,
+    "券占比": 0.21484856488822607,
     "strong": [
      "手机",
      "穿戴",
@@ -1221,31 +1221,31 @@
      "电脑",
      "平板"
     ],
-    "todayGross": 679.0,
-    "todayPhone": 1.0,
+    "todayGross": 5495.9903,
+    "todayPhone": 7.0,
     "rank": 1,
     "level": "good"
    },
    {
     "name": "王莹莹B",
-    "score": 1.3026110217521367,
+    "score": 1.3562707766239315,
     "毛利": {
-     "done": 102138.65489999996,
+     "done": 105904.00529999998,
      "task": 78000.0,
-     "rate": 1.3094699346153842
+     "rate": 1.3577436576923074
     },
     "手机": {
-     "done": 70.0,
+     "done": 73.0,
      "task": 60.0,
-     "rate": 1.1666666666666667
+     "rate": 1.2166666666666666
     },
     "增值": {
-     "done": 26808.844899999996,
+     "done": 28115.9053,
      "task": 18000.0,
-     "rate": 1.489380272222222
+     "rate": 1.5619947388888888
     },
-    "毛利率": 0.14728217250842687,
-    "券占比": 0.273323650358744,
+    "毛利率": 0.14687030428046252,
+    "券占比": 0.2636057996193654,
     "strong": [
      "手机",
      "平板",
@@ -1256,8 +1256,8 @@
     "weak": [
      "电脑"
     ],
-    "todayGross": 148.0,
-    "todayPhone": 0.0,
+    "todayGross": 3913.3504000000003,
+    "todayPhone": 3.0,
     "rank": 2,
     "level": "good"
    },
@@ -1293,11 +1293,11 @@
    },
    {
     "name": "乔玉宇",
-    "score": 0.4759560648119122,
+    "score": 0.48400592733542314,
     "毛利": {
-     "done": 26582.528499999997,
+     "done": 26882.868399999996,
      "task": 58000.0,
-     "rate": 0.4583194568965517
+     "rate": 0.46349773103448266
     },
     "手机": {
      "done": 24.0,
@@ -1305,12 +1305,12 @@
      "rate": 0.4
     },
     "增值": {
-     "done": 6973.798500000001,
+     "done": 7274.138400000001,
      "task": 11000.0,
-     "rate": 0.6339816818181819
+     "rate": 0.6612853090909092
     },
-    "毛利率": 0.14700690772732067,
-    "券占比": 0.19177934860485527,
+    "毛利率": 0.1483528078043351,
+    "券占比": 0.18963675766087523,
     "strong": [],
     "weak": [
      "手机",
@@ -1318,7 +1318,7 @@
      "穿戴",
      "音频"
     ],
-    "todayGross": 890.39,
+    "todayGross": 1190.7299,
     "todayPhone": 1.0,
     "rank": 4,
     "level": "danger"
@@ -1359,27 +1359,32 @@
   "today": {
    "sold": [
     {
-     "name": "乔玉宇",
-     "orders": 2,
-     "gross": 890.39
-    },
-    {
      "name": "李俊琪",
-     "orders": 1,
-     "gross": 679.0
+     "orders": 15,
+     "gross": 5495.9903
     },
     {
      "name": "王莹莹B",
-     "orders": 1,
-     "gross": 148.0
+     "orders": 14,
+     "gross": 3913.3504000000003
+    },
+    {
+     "name": "田蕊",
+     "orders": 3,
+     "gross": 1326.79
+    },
+    {
+     "name": "乔玉宇",
+     "orders": 7,
+     "gross": 1190.7299
     }
    ],
    "idle": [
     "张梅B",
     "张赫桐"
    ],
-   "totalOrders": 4,
-   "totalGross": 1717.3899999999999
+   "totalOrders": 39,
+   "totalGross": 11926.8606
   },
   "advices": [
    {
@@ -1410,7 +1415,7 @@
     "level": "good",
     "icon": "🏆",
     "title": "本月标杆",
-    "body": "李俊琪 综合进度领先（毛利 130%、手机 125%）。让他在早会讲两句怎么谈的，比店长讲管用。"
+    "body": "李俊琪 综合进度领先（毛利 136%、手机 135%）。让他在早会讲两句怎么谈的，比店长讲管用。"
    },
    {
     "level": "good",
@@ -1437,7 +1442,25 @@
      "costRatio": 0.8833325395691447,
      "cat": "手机",
      "isReturn": false,
-     "isBundle": false
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "COOYEE 华为 mate70pro pro+3D热弯钢化膜",
+     "code": "XSCK26103101113",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 185.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 185.0,
+     "profit": 147.3399,
+     "cost": 37.66,
+     "costRatio": 0.20356756756756755,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
     },
     {
      "emp": "乔玉宇",
@@ -1454,6 +1477,96 @@
      "cost": 19.0,
      "costRatio": 0.18811881188118812,
      "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "Cooyee华为PuraX View前屏高清钢化膜",
+     "code": "XSCK26103101031",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 100.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 100.0,
+     "profit": 78.0,
+     "cost": 22.0,
+     "costRatio": 0.22,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "Cooyee华为PuraX View一体镜头膜",
+     "code": "XSCK26103101031",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 99.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 99.0,
+     "profit": 75.0,
+     "cost": 24.0,
+     "costRatio": 0.24242424242424243,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "华为-手提袋-小",
+     "code": "XSCK26103101027",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 0.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 0.0,
+     "profit": 0.0,
+     "cost": 0.0,
+     "costRatio": null,
+     "cat": "其他",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "乔玉宇",
+     "product": "华为-手提袋-小",
+     "code": "XSCK26103101031",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 0.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 0.0,
+     "profit": 0.0,
+     "cost": 0.0,
+     "costRatio": null,
+     "cat": "其他",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "华为 Mate XT2 ULTIMATE DESIGN LAP-AL10  16GB+512GB  玄黑",
+     "code": "XSCK26103100994",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 21999.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 21999.0,
+     "profit": 1759.0,
+     "cost": 20240.0,
+     "costRatio": 0.920041820082731,
+     "cat": "手机",
      "isReturn": false,
      "isBundle": false
     },
@@ -1476,6 +1589,330 @@
      "isBundle": false
     },
     {
+     "emp": "李俊琪",
+     "product": "华为 Pura90 Plus LCI-AL00 12GB+512GB 曜石黑",
+     "code": "XSCK26103100850",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 5500.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 5500.0,
+     "profit": 400.0,
+     "cost": 5100.0,
+     "costRatio": 0.9272727272727272,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "华为 nova16 EMA-AL00U 12GB+256GB 天际白",
+     "code": "XSCK26103100149",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 3199.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 3199.0,
+     "profit": 685.0,
+     "cost": 2514.0,
+     "costRatio": 0.7858705845576742,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "李俊琪",
+     "product": "华为 畅享100 Pro Max YEW-AL90  8GB+512GB  曜金黑",
+     "code": "XSCK26103100184",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 2799.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 2799.0,
+     "profit": 340.0,
+     "cost": 2459.0,
+     "costRatio": 0.878528045730618,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "李俊琪",
+     "product": "华为 畅享100 Pro Max YEW-AL90  8GB+512GB  流沙金",
+     "code": "XSCK26103100610",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 2799.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 2799.0,
+     "profit": 340.0,
+     "cost": 2459.0,
+     "costRatio": 0.878528045730618,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "李俊琪",
+     "product": "华为 畅享100 Pro CHZ-AL60  6GB+512GB  幻夜黑",
+     "code": "XSCK26103100388",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 2699.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 2699.0,
+     "profit": 409.0,
+     "cost": 2290.0,
+     "costRatio": 0.8484623934790663,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "李俊琪",
+     "product": "华为 FreeArc 耳机 T0021  暖云白 足球款",
+     "code": "XSCK26103100850",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 599.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 599.0,
+     "profit": 114.0,
+     "cost": 485.0,
+     "costRatio": 0.8096828046744574,
+     "cat": "音频",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "星联尊享-500",
+     "code": "XSCK26103100877",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 300.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 300.0,
+     "profit": 300.0,
+     "cost": 0.0,
+     "costRatio": 0.0,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "COOYEE 华为Pura80 pro-Pura80 Ultra 3D热弯钢化膜",
+     "code": "XSCK26103100850",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 199.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 199.0,
+     "profit": 162.0103,
+     "cost": 36.99,
+     "costRatio": 0.18587939698492464,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "Cooyee华为Pura X MAX前屏高清钢化膜",
+     "code": "XSCK26103100877",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 198.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 198.0,
+     "profit": 154.0412,
+     "cost": 43.96,
+     "costRatio": 0.22202020202020203,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "DEVIA智能机(105*180mm)Ultra基础款TPU高清防爆膜",
+     "code": "XSCK26103100877",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 129.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 129.0,
+     "profit": 126.8,
+     "cost": 2.2,
+     "costRatio": 0.017054263565891473,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "Cooyee华为Pura Xmax一体镜头膜 带定位器",
+     "code": "XSCK26103100877",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 99.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 99.0,
+     "profit": 75.0462,
+     "cost": 23.95,
+     "costRatio": 0.24191919191919192,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "COOYEE 华为Nova13 pro热弯全胶钢化膜",
+     "code": "XSCK26103100877",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 50.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 50.0,
+     "profit": -25.9074,
+     "cost": 75.91,
+     "costRatio": 1.5182,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "李俊琪",
+     "product": "印花玻璃水杯2件套",
+     "code": "XSCK26103100850",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 0.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 0.0,
+     "profit": -22.0,
+     "cost": 22.0,
+     "costRatio": null,
+     "cat": "其他",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "华为 PuraX Max 典藏版 HOP-AL10  16GB+1TB  橄榄金",
+     "code": "XSCK26103100635",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 13599.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 13599.0,
+     "profit": 880.91,
+     "cost": 12718.09,
+     "costRatio": 0.9352224428266784,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "华为 PuraX View VOL-AL00  12GB+512GB  亚麻灰",
+     "code": "XSCK26103101093",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 6999.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 6999.0,
+     "profit": 878.38,
+     "cost": 6120.62,
+     "costRatio": 0.8744992141734533,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "华为 Pura90 Pro MLN-AL00  12GB+512GB  粉红芭乐",
+     "code": "XSCK26103100634",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 5499.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 5499.0,
+     "profit": 699.0,
+     "cost": 5100.0,
+     "costRatio": 0.9274413529732679,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "星联尊享-500",
+     "code": "XSCK26103100641",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 300.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 300.0,
+     "profit": 300.0,
+     "cost": 0.0,
+     "costRatio": 0.0,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "星联尊享-500",
+     "code": "XSCK26103100605",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 200.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 200.0,
+     "profit": 200.0,
+     "cost": 0.0,
+     "costRatio": 0.0,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
      "emp": "王莹莹B",
      "product": "Cooyee华为Pura90Pro铝合金镜头膜 银色 带定位器",
      "code": "XSCK26103100605",
@@ -1491,31 +1928,229 @@
      "costRatio": 0.26,
      "cat": "增值",
      "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "星联尊享-500",
+     "code": "XSCK26103100612",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 200.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 200.0,
+     "profit": 200.0,
+     "cost": 0.0,
+     "costRatio": 0.0,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "Cooyee华为PuraX View一体镜头膜",
+     "code": "XSCK26103100612",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 200.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 200.0,
+     "profit": 152.0,
+     "cost": 48.0,
+     "costRatio": 0.24,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
+     "code": "XSCK26103100841",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 200.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 200.0,
+     "profit": 162.0142,
+     "cost": 37.99,
+     "costRatio": 0.18995,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "Cooyee华为Pura Xmax一体镜头膜 带定位器",
+     "code": "XSCK26103100605",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 100.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 100.0,
+     "profit": 76.0462,
+     "cost": 23.95,
+     "costRatio": 0.2395,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "Cooyee华为PuraX View前屏高清钢化膜",
+     "code": "XSCK26103100612",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 100.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 100.0,
+     "profit": 78.0,
+     "cost": 22.0,
+     "costRatio": 0.22,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "Cooyee华为PuraX View前屏高清钢化膜",
+     "code": "XSCK26103100612",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 99.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 99.0,
+     "profit": 77.0,
+     "cost": 22.0,
+     "costRatio": 0.2222222222222222,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "Cooyee华为Nova16一体镜头膜",
+     "code": "XSCK26103100841",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 86.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 86.0,
+     "profit": 62.0,
+     "cost": 24.0,
+     "costRatio": 0.27906976744186046,
+     "cat": "增值",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "王莹莹B",
+     "product": "华为-手提袋-小",
+     "code": "XSCK26103101093",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 0.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 0.0,
+     "profit": 0.0,
+     "cost": 0.0,
+     "costRatio": null,
+     "cat": "其他",
+     "isReturn": false,
+     "isBundle": true
+    },
+    {
+     "emp": "田蕊",
+     "product": "华为 PuraX View VOL-AL00  12GB+512GB  零度白",
+     "code": "XSCK26103100582",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 6929.01,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 6929.01,
+     "profit": 808.39,
+     "cost": 6120.62,
+     "costRatio": 0.8833325395691447,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "田蕊",
+     "product": "华为 nova16 EMA-AL00U 12GB+512GB 幻彩贝母",
+     "code": "XSCK26103100848",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 3399.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 3399.0,
+     "profit": 284.4,
+     "cost": 3114.6,
+     "costRatio": 0.9163283318623124,
+     "cat": "手机",
+     "isReturn": false,
+     "isBundle": false
+    },
+    {
+     "emp": "田蕊",
+     "product": "华为 畅享100 Pro CHZ-AL60  6GB+256GB  雀翎蓝",
+     "code": "XSCK26103100851",
+     "channel": "自然客流",
+     "bizType": "",
+     "member": "",
+     "origPrice": 2099.0,
+     "discount": 0,
+     "discountRate": 0,
+     "amount": 2099.0,
+     "profit": 234.0,
+     "cost": 1865.0,
+     "costRatio": 0.8885183420676512,
+     "cat": "手机",
+     "isReturn": false,
      "isBundle": false
     }
    ],
-   "totalAmount": 18829.010000000002,
+   "totalAmount": 99791.02,
    "patterns": [
     {
      "name": "李俊琪",
      "badge": "达标",
      "badgeColor": "var(--red)",
-     "orders": 163,
-     "avgPrice": 4410.086748466258,
-     "bundleRate": 0.25153374233128833,
+     "orders": 170,
+     "avgPrice": 4467.136117647059,
+     "bundleRate": 0.2529411764705882,
      "avgDiscount": 0.045521575420579295,
-     "todayOrders": 1,
+     "todayOrders": 15,
      "action": "搭售率偏低，每单必问配件/星联/贴膜"
     },
     {
      "name": "王莹莹B",
      "badge": "达标",
      "badgeColor": "var(--red)",
-     "orders": 186,
-     "avgPrice": 3747.9118279569893,
-     "bundleRate": 0.3279569892473118,
+     "orders": 192,
+     "avgPrice": 3774.445833333333,
+     "bundleRate": 0.3385416666666667,
      "avgDiscount": 0.06217812598517267,
-     "todayOrders": 1,
+     "todayOrders": 14,
      "action": "平均折扣 6%，注意控制让利节奏"
     },
     {
@@ -1533,12 +2168,12 @@
      "name": "乔玉宇",
      "badge": "落后",
      "badgeColor": "var(--green)",
-     "orders": 71,
-     "avgPrice": 2917.1835211267608,
-     "bundleRate": 0.9295774647887324,
+     "orders": 72,
+     "avgPrice": 2882.0004166666668,
+     "bundleRate": 0.9583333333333334,
      "avgDiscount": 0.048437145077619835,
-     "todayOrders": 2,
-     "action": "客单价 2917 元偏低，多推中高端机型提升毛利"
+     "todayOrders": 7,
+     "action": "客单价 2882 元偏低，多推中高端机型提升毛利"
     },
     {
      "name": "张赫桐",
@@ -1709,6 +2344,40 @@
   "手机": [
    {
     "date": "2026-10-31",
+    "name": "华为 nova16 EMA-AL00U 12GB+256GB 天际白",
+    "qty": 1.0,
+    "origPrice": 3199.0,
+    "discPrice": 0.0,
+    "amount": 3199.0,
+    "profit": 685.0,
+    "gpr": 0.2141,
+    "so": "",
+    "cost": 2514.0,
+    "emp": "李俊琪",
+    "sku": "01.001.078.001.007",
+    "code": "LS028100472610310001",
+    "member": "周小鸾",
+    "phone": "156****2256"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 畅享100 Pro Max YEW-AL90  8GB+512GB  曜金黑",
+    "qty": 1.0,
+    "origPrice": 2799.0,
+    "discPrice": 0.0,
+    "amount": 2799.0,
+    "profit": 340.0,
+    "gpr": 0.1215,
+    "so": "",
+    "cost": 2459.0,
+    "emp": "李俊琪",
+    "sku": "01.001.091.001.006",
+    "code": "LS028100472610310003",
+    "member": "魏东",
+    "phone": "159****1531"
+   },
+   {
+    "date": "2026-10-31",
     "name": "华为 PuraX Max HOP-AL00  12GB+512GB  零度白",
     "qty": 1.0,
     "origPrice": 11599.0,
@@ -1726,6 +2395,159 @@
    },
    {
     "date": "2026-10-31",
+    "name": "华为 畅享100 Pro CHZ-AL60  6GB+512GB  幻夜黑",
+    "qty": 1.0,
+    "origPrice": 2699.0,
+    "discPrice": 0.0,
+    "amount": 2699.0,
+    "profit": 409.0,
+    "gpr": 0.1515,
+    "so": "",
+    "cost": 2290.0,
+    "emp": "李俊琪",
+    "sku": "01.001.090.001.004",
+    "code": "LS028100472610310005",
+    "member": "张国风",
+    "phone": "132****6228"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 PuraX View VOL-AL00  12GB+512GB  零度白",
+    "qty": 1.0,
+    "origPrice": 6929.01,
+    "discPrice": 0.0,
+    "amount": 6929.01,
+    "profit": 808.39,
+    "gpr": 0.1167,
+    "so": "",
+    "cost": 6120.62,
+    "emp": "田蕊",
+    "sku": "01.001.083.001.004",
+    "code": "LS028100472610310006",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 畅享100 Pro Max YEW-AL90  8GB+512GB  流沙金",
+    "qty": 1.0,
+    "origPrice": 2799.0,
+    "discPrice": 0.0,
+    "amount": 2799.0,
+    "profit": 340.0,
+    "gpr": 0.1215,
+    "so": "",
+    "cost": 2459.0,
+    "emp": "李俊琪",
+    "sku": "01.001.091.001.007",
+    "code": "LS028100472610310003",
+    "member": "魏东",
+    "phone": "159****1531"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 Pura90 Pro MLN-AL00  12GB+512GB  粉红芭乐",
+    "qty": 1.0,
+    "origPrice": 5499.0,
+    "discPrice": 0.0,
+    "amount": 5499.0,
+    "profit": 699.0,
+    "gpr": 0.1271,
+    "so": "300",
+    "cost": 5100.0,
+    "emp": "王莹莹B",
+    "sku": "01.001.076.001.007",
+    "code": "LS028100472610310009",
+    "member": "陈娜娜",
+    "phone": "159****7329"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 PuraX Max 典藏版 HOP-AL10  16GB+1TB  橄榄金",
+    "qty": 1.0,
+    "origPrice": 13599.0,
+    "discPrice": 0.0,
+    "amount": 13599.0,
+    "profit": 880.91,
+    "gpr": 0.0648,
+    "so": "",
+    "cost": 12718.09,
+    "emp": "王莹莹B",
+    "sku": "01.001.074.002.010",
+    "code": "LS028100472610310010",
+    "member": "柯梦婕",
+    "phone": "177****7324"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 nova16 EMA-AL00U 12GB+512GB 幻彩贝母",
+    "qty": 1.0,
+    "origPrice": 3399.0,
+    "discPrice": 0.0,
+    "amount": 3399.0,
+    "profit": 284.4,
+    "gpr": 0.0837,
+    "so": "",
+    "cost": 3114.6,
+    "emp": "田蕊",
+    "sku": "01.001.078.001.004",
+    "code": "LS028100472610310014",
+    "member": "毛美绒",
+    "phone": "136****5626"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 Pura90 Plus LCI-AL00 12GB+512GB 曜石黑",
+    "qty": 1.0,
+    "origPrice": 5500.0,
+    "discPrice": 0.0,
+    "amount": 5500.0,
+    "profit": 400.0,
+    "gpr": 0.0727,
+    "so": "",
+    "cost": 5100.0,
+    "emp": "李俊琪",
+    "sku": "01.001.092.001.005",
+    "code": "LS028101812610310002",
+    "member": "侯嘉欣",
+    "phone": "156****0323"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 畅享100 Pro CHZ-AL60  6GB+256GB  雀翎蓝",
+    "qty": 1.0,
+    "origPrice": 2099.0,
+    "discPrice": 0.0,
+    "amount": 2099.0,
+    "profit": 234.0,
+    "gpr": 0.1115,
+    "so": "",
+    "cost": 1865.0,
+    "emp": "田蕊",
+    "sku": "01.001.090.001.002",
+    "code": "LS028100472610310015",
+    "member": "陈利",
+    "phone": "136****3874"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 Mate XT2 ULTIMATE DESIGN LAP-AL10  16GB+512GB  玄黑",
+    "qty": 1.0,
+    "origPrice": 21999.0,
+    "discPrice": 0.0,
+    "amount": 21999.0,
+    "profit": 1759.0,
+    "gpr": 0.08,
+    "so": "",
+    "cost": 20240.0,
+    "emp": "李俊琪",
+    "sku": "01.001.084.001.003",
+    "code": "LS028100472610310017",
+    "member": "关文侠",
+    "phone": "176****8658"
+   },
+   {
+    "date": "2026-10-31",
     "name": "华为 PuraX View VOL-AL00  12GB+512GB  零度白",
     "qty": 1.0,
     "origPrice": 6929.01,
@@ -1740,6 +2562,23 @@
     "code": "LS028100472610310018",
     "member": "吴倩",
     "phone": "153****4911"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "华为 PuraX View VOL-AL00  12GB+512GB  亚麻灰",
+    "qty": 1.0,
+    "origPrice": 6999.0,
+    "discPrice": 0.0,
+    "amount": 6999.0,
+    "profit": 878.38,
+    "gpr": 0.1255,
+    "so": "",
+    "cost": 6120.62,
+    "emp": "王莹莹B",
+    "sku": "01.001.083.001.007",
+    "code": "LS028101812610280003",
+    "member": "弋霄飞",
+    "phone": "130****1115"
    },
    {
     "date": "2026-10-30",
@@ -8445,6 +9284,23 @@
   ],
   "音频": [
    {
+    "date": "2026-10-31",
+    "name": "华为 FreeArc 耳机 T0021  暖云白 足球款",
+    "qty": 1.0,
+    "origPrice": 599.0,
+    "discPrice": 0.0,
+    "amount": 599.0,
+    "profit": 114.0,
+    "gpr": 0.1903,
+    "so": "",
+    "cost": 485.0,
+    "emp": "李俊琪",
+    "sku": "07.001.001.002.004",
+    "code": "LS028101812610310002",
+    "member": "侯嘉欣",
+    "phone": "156****0323"
+   },
+   {
     "date": "2026-10-30",
     "name": "华为 FreeClip2 耳机 T0027 摩登黑",
     "qty": 1.0,
@@ -9328,6 +10184,23 @@
    }
   ],
   "音频穿戴": [
+   {
+    "date": "2026-10-31",
+    "name": "华为 FreeArc 耳机 T0021  暖云白 足球款",
+    "qty": 1.0,
+    "origPrice": 599.0,
+    "discPrice": 0.0,
+    "amount": 599.0,
+    "profit": 114.0,
+    "gpr": 0.1903,
+    "so": "",
+    "cost": 485.0,
+    "emp": "李俊琪",
+    "sku": "07.001.001.002.004",
+    "code": "LS028101812610310002",
+    "member": "侯嘉欣",
+    "phone": "156****0323"
+   },
    {
     "date": "2026-10-30",
     "name": "华为 FreeClip2 耳机 T0027 摩登黑",
@@ -11468,6 +12341,23 @@
   "增值": [
    {
     "date": "2026-10-31",
+    "name": "星联尊享-500",
+    "qty": 1.0,
+    "origPrice": 200.0,
+    "discPrice": 0.0,
+    "amount": 200.0,
+    "profit": 200.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "王莹莹B",
+    "sku": "15.005.022",
+    "code": "LS028100472610310013",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
     "name": "Cooyee华为Pura90Pro铝合金镜头膜 银色 带定位器",
     "qty": 2.0,
     "origPrice": 200.0,
@@ -11482,6 +12372,292 @@
     "code": "LS028100472610310013",
     "member": "李峰",
     "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为Pura Xmax一体镜头膜 带定位器",
+    "qty": 1.0,
+    "origPrice": 100.0,
+    "discPrice": 0.0,
+    "amount": 100.0,
+    "profit": 76.0462,
+    "gpr": 0.7605,
+    "so": "",
+    "cost": 23.95,
+    "emp": "王莹莹B",
+    "sku": "15.001.003.046",
+    "code": "LS028100472610310007",
+    "member": "柯梦婕",
+    "phone": "177****7324"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "星联尊享-500",
+    "qty": 1.0,
+    "origPrice": 200.0,
+    "discPrice": 0.0,
+    "amount": 200.0,
+    "profit": 200.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "王莹莹B",
+    "sku": "15.005.022",
+    "code": "LS028100472610310013",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为PuraX View前屏高清钢化膜",
+    "qty": 1.0,
+    "origPrice": 100.0,
+    "discPrice": 0.0,
+    "amount": 100.0,
+    "profit": 78.0,
+    "gpr": 0.78,
+    "so": "",
+    "cost": 22.0,
+    "emp": "王莹莹B",
+    "sku": "15.001.003.070",
+    "code": "LS028100472610310007",
+    "member": "柯梦婕",
+    "phone": "177****7324"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为PuraX View前屏高清钢化膜",
+    "qty": 1.0,
+    "origPrice": 99.0,
+    "discPrice": 0.0,
+    "amount": 99.0,
+    "profit": 77.0,
+    "gpr": 0.7778,
+    "so": "",
+    "cost": 22.0,
+    "emp": "王莹莹B",
+    "sku": "15.001.003.070"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为PuraX View一体镜头膜",
+    "qty": 2.0,
+    "origPrice": 200.0,
+    "discPrice": 0.0,
+    "amount": 200.0,
+    "profit": 152.0,
+    "gpr": 0.76,
+    "so": "",
+    "cost": 48.0,
+    "emp": "王莹莹B",
+    "sku": "15.001.003.071",
+    "code": "LS028100472610310013",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "星联尊享-500",
+    "qty": 1.0,
+    "origPrice": 300.0,
+    "discPrice": 0.0,
+    "amount": 300.0,
+    "profit": 300.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "王莹莹B",
+    "sku": "15.005.022",
+    "code": "LS028100472610310011",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
+    "qty": 2.0,
+    "origPrice": 200.0,
+    "discPrice": 0.0,
+    "amount": 200.0,
+    "profit": 162.0142,
+    "gpr": 0.8101,
+    "so": "",
+    "cost": 37.99,
+    "emp": "王莹莹B",
+    "sku": "15.001.003.014",
+    "code": "LS028100472610310013",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为Nova16一体镜头膜",
+    "qty": 1.0,
+    "origPrice": 86.0,
+    "discPrice": 0.0,
+    "amount": 86.0,
+    "profit": 62.0,
+    "gpr": 0.7209,
+    "so": "",
+    "cost": 24.0,
+    "emp": "王莹莹B",
+    "sku": "15.001.003.052",
+    "code": "LS028100472610310013",
+    "member": "李峰",
+    "phone": "180****3193"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "COOYEE 华为Pura80 pro-Pura80 Ultra 3D热弯钢化膜",
+    "qty": 1.0,
+    "origPrice": 199.0,
+    "discPrice": 0.0,
+    "amount": 199.0,
+    "profit": 162.0103,
+    "gpr": 0.8141,
+    "so": "",
+    "cost": 36.99,
+    "emp": "李俊琪",
+    "sku": "09.999.009.105",
+    "code": "LS028101812610310002",
+    "member": "侯嘉欣",
+    "phone": "156****0323"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "星联尊享-500",
+    "qty": 1.0,
+    "origPrice": 300.0,
+    "discPrice": 0.0,
+    "amount": 300.0,
+    "profit": 300.0,
+    "gpr": 1.0,
+    "so": "",
+    "cost": 0.0,
+    "emp": "李俊琪",
+    "sku": "15.005.022",
+    "code": "LS028100472610310016",
+    "member": "李程翔",
+    "phone": "186****1335"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "COOYEE 华为Nova13 pro热弯全胶钢化膜",
+    "qty": 2.0,
+    "origPrice": 50.0,
+    "discPrice": 0.0,
+    "amount": 50.0,
+    "profit": -25.9074,
+    "gpr": -0.5181,
+    "so": "",
+    "cost": 75.91,
+    "emp": "李俊琪",
+    "sku": "09.999.009.084",
+    "code": "LS028100472610310016",
+    "member": "李程翔",
+    "phone": "186****1335"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为Pura X MAX前屏高清钢化膜",
+    "qty": 2.0,
+    "origPrice": 198.0,
+    "discPrice": 0.0,
+    "amount": 198.0,
+    "profit": 154.0412,
+    "gpr": 0.778,
+    "so": "",
+    "cost": 43.96,
+    "emp": "李俊琪",
+    "sku": "15.001.003.045",
+    "code": "LS028100472610310016",
+    "member": "李程翔",
+    "phone": "186****1335"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为Pura Xmax一体镜头膜 带定位器",
+    "qty": 1.0,
+    "origPrice": 99.0,
+    "discPrice": 0.0,
+    "amount": 99.0,
+    "profit": 75.0462,
+    "gpr": 0.758,
+    "so": "",
+    "cost": 23.95,
+    "emp": "李俊琪",
+    "sku": "15.001.003.046",
+    "code": "LS028100472610310016",
+    "member": "李程翔",
+    "phone": "186****1335"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "DEVIA智能机(105*180mm)Ultra基础款TPU高清防爆膜",
+    "qty": 1.0,
+    "origPrice": 129.0,
+    "discPrice": 0.0,
+    "amount": 129.0,
+    "profit": 126.8,
+    "gpr": 0.9829,
+    "so": "",
+    "cost": 2.2,
+    "emp": "李俊琪",
+    "sku": "15.001.003.069",
+    "code": "LS028100472610310016",
+    "member": "李程翔",
+    "phone": "186****1335"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为PuraX View前屏高清钢化膜",
+    "qty": 1.0,
+    "origPrice": 100.0,
+    "discPrice": 0.0,
+    "amount": 100.0,
+    "profit": 78.0,
+    "gpr": 0.78,
+    "so": "",
+    "cost": 22.0,
+    "emp": "乔玉宇",
+    "sku": "15.001.003.070",
+    "code": "LS028100472610310019",
+    "member": "吴倩",
+    "phone": "153****4911"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "Cooyee华为PuraX View一体镜头膜",
+    "qty": 1.0,
+    "origPrice": 99.0,
+    "discPrice": 0.0,
+    "amount": 99.0,
+    "profit": 75.0,
+    "gpr": 0.7576,
+    "so": "",
+    "cost": 24.0,
+    "emp": "乔玉宇",
+    "sku": "15.001.003.071",
+    "code": "LS028100472610310019",
+    "member": "吴倩",
+    "phone": "153****4911"
+   },
+   {
+    "date": "2026-10-31",
+    "name": "COOYEE 华为 mate70pro pro+3D热弯钢化膜",
+    "qty": 1.0,
+    "origPrice": 185.0,
+    "discPrice": 0.0,
+    "amount": 185.0,
+    "profit": 147.3399,
+    "gpr": 0.7964,
+    "so": "",
+    "cost": 37.66,
+    "emp": "乔玉宇",
+    "sku": "09.999.009.070",
+    "code": "LS028100472610310021",
+    "member": "吴倩",
+    "phone": "153****4911"
    },
    {
     "date": "2026-10-31",
@@ -19473,6 +20649,81 @@
    "cat": "手机"
   },
   {
+   "code": "XSCK26103101027",
+   "type": "华为",
+   "emp": "乔玉宇",
+   "product": "华为-手提袋-小",
+   "sku": "17.002.001.001",
+   "qty": 4.0,
+   "origPrice": 0.0,
+   "discPrice": 0.0,
+   "amount": 0.0,
+   "profit": 0.0,
+   "cost": 0.0,
+   "gpr": null,
+   "cat": "其他"
+  },
+  {
+   "code": "XSCK26103101031",
+   "type": "贴膜",
+   "emp": "乔玉宇",
+   "product": "Cooyee华为PuraX View前屏高清钢化膜",
+   "sku": "15.001.003.070",
+   "qty": 1.0,
+   "origPrice": 100.0,
+   "discPrice": 0.0,
+   "amount": 100.0,
+   "profit": 78.0,
+   "cost": 22.0,
+   "gpr": 0.78,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103101031",
+   "type": "贴膜",
+   "emp": "乔玉宇",
+   "product": "Cooyee华为PuraX View一体镜头膜",
+   "sku": "15.001.003.071",
+   "qty": 1.0,
+   "origPrice": 99.0,
+   "discPrice": 0.0,
+   "amount": 99.0,
+   "profit": 75.0,
+   "cost": 24.0,
+   "gpr": 0.7575757575757576,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103101031",
+   "type": "华为",
+   "emp": "乔玉宇",
+   "product": "华为-手提袋-小",
+   "sku": "17.002.001.001",
+   "qty": 3.0,
+   "origPrice": 0.0,
+   "discPrice": 0.0,
+   "amount": 0.0,
+   "profit": 0.0,
+   "cost": 0.0,
+   "gpr": null,
+   "cat": "其他"
+  },
+  {
+   "code": "XSCK26103101113",
+   "type": "贴膜",
+   "emp": "乔玉宇",
+   "product": "COOYEE 华为 mate70pro pro+3D热弯钢化膜",
+   "sku": "09.999.009.070",
+   "qty": 1.0,
+   "origPrice": 185.0,
+   "discPrice": 0.0,
+   "amount": 185.0,
+   "profit": 147.3399,
+   "cost": 37.66,
+   "gpr": 0.7964318918918919,
+   "cat": "增值"
+  },
+  {
    "code": "XSCK26103101113",
    "type": "贴膜",
    "emp": "乔玉宇",
@@ -19486,6 +20737,36 @@
    "cost": 19.0,
    "gpr": 0.8118811881188119,
    "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100149",
+   "type": "nova 16",
+   "emp": "李俊琪",
+   "product": "华为 nova16 EMA-AL00U 12GB+256GB 天际白",
+   "sku": "01.001.078.001.007",
+   "qty": 1.0,
+   "origPrice": 3199.0,
+   "discPrice": 0.0,
+   "amount": 3199.0,
+   "profit": 685.0,
+   "cost": 2514.0,
+   "gpr": 0.21412941544232572,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100184",
+   "type": "畅享100 Pro Max",
+   "emp": "李俊琪",
+   "product": "华为 畅享100 Pro Max YEW-AL90  8GB+512GB  曜金黑",
+   "sku": "01.001.091.001.006",
+   "qty": 1.0,
+   "origPrice": 2799.0,
+   "discPrice": 0.0,
+   "amount": 2799.0,
+   "profit": 340.0,
+   "cost": 2459.0,
+   "gpr": 0.12147195426938193,
+   "cat": "手机"
   },
   {
    "code": "XSCK26103100284",
@@ -19503,6 +20784,201 @@
    "cat": "手机"
   },
   {
+   "code": "XSCK26103100388",
+   "type": "畅享100 Pro",
+   "emp": "李俊琪",
+   "product": "华为 畅享100 Pro CHZ-AL60  6GB+512GB  幻夜黑",
+   "sku": "01.001.090.001.004",
+   "qty": 1.0,
+   "origPrice": 2699.0,
+   "discPrice": 0.0,
+   "amount": 2699.0,
+   "profit": 409.0,
+   "cost": 2290.0,
+   "gpr": 0.15153760652093368,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100610",
+   "type": "畅享100 Pro Max",
+   "emp": "李俊琪",
+   "product": "华为 畅享100 Pro Max YEW-AL90  8GB+512GB  流沙金",
+   "sku": "01.001.091.001.007",
+   "qty": 1.0,
+   "origPrice": 2799.0,
+   "discPrice": 0.0,
+   "amount": 2799.0,
+   "profit": 340.0,
+   "cost": 2459.0,
+   "gpr": 0.12147195426938193,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100850",
+   "type": "Pura90 Plus",
+   "emp": "李俊琪",
+   "product": "华为 Pura90 Plus LCI-AL00 12GB+512GB 曜石黑",
+   "sku": "01.001.092.001.005",
+   "qty": 1.0,
+   "origPrice": 5500.0,
+   "discPrice": 0.0,
+   "amount": 5500.0,
+   "profit": 400.0,
+   "cost": 5100.0,
+   "gpr": 0.07272727272727272,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100850",
+   "type": "FreeArc",
+   "emp": "李俊琪",
+   "product": "华为 FreeArc 耳机 T0021  暖云白 足球款",
+   "sku": "07.001.001.002.004",
+   "qty": 1.0,
+   "origPrice": 599.0,
+   "discPrice": 0.0,
+   "amount": 599.0,
+   "profit": 114.0,
+   "cost": 485.0,
+   "gpr": 0.19031719532554256,
+   "cat": "音频"
+  },
+  {
+   "code": "XSCK26103100850",
+   "type": "贴膜",
+   "emp": "李俊琪",
+   "product": "COOYEE 华为Pura80 pro-Pura80 Ultra 3D热弯钢化膜",
+   "sku": "09.999.009.105",
+   "qty": 1.0,
+   "origPrice": 199.0,
+   "discPrice": 0.0,
+   "amount": 199.0,
+   "profit": 162.0103,
+   "cost": 36.99,
+   "gpr": 0.8141221105527638,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100850",
+   "type": "华为",
+   "emp": "李俊琪",
+   "product": "印花玻璃水杯2件套",
+   "sku": "17.002.001.007",
+   "qty": 2.0,
+   "origPrice": 0.0,
+   "discPrice": 0.0,
+   "amount": 0.0,
+   "profit": -22.0,
+   "cost": 22.0,
+   "gpr": null,
+   "cat": "其他"
+  },
+  {
+   "code": "XSCK26103100877",
+   "type": "权益系列",
+   "emp": "李俊琪",
+   "product": "星联尊享-500",
+   "sku": "15.005.022",
+   "qty": 1.0,
+   "origPrice": 300.0,
+   "discPrice": 0.0,
+   "amount": 300.0,
+   "profit": 300.0,
+   "cost": 0.0,
+   "gpr": 1.0,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100877",
+   "type": "贴膜",
+   "emp": "李俊琪",
+   "product": "COOYEE 华为Nova13 pro热弯全胶钢化膜",
+   "sku": "09.999.009.084",
+   "qty": 2.0,
+   "origPrice": 50.0,
+   "discPrice": 0.0,
+   "amount": 50.0,
+   "profit": -25.9074,
+   "cost": 75.91,
+   "gpr": -0.5181479999999999,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100877",
+   "type": "贴膜",
+   "emp": "李俊琪",
+   "product": "Cooyee华为Pura X MAX前屏高清钢化膜",
+   "sku": "15.001.003.045",
+   "qty": 2.0,
+   "origPrice": 198.0,
+   "discPrice": 0.0,
+   "amount": 198.0,
+   "profit": 154.0412,
+   "cost": 43.96,
+   "gpr": 0.7779858585858586,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100877",
+   "type": "贴膜",
+   "emp": "李俊琪",
+   "product": "Cooyee华为Pura Xmax一体镜头膜 带定位器",
+   "sku": "15.001.003.046",
+   "qty": 1.0,
+   "origPrice": 99.0,
+   "discPrice": 0.0,
+   "amount": 99.0,
+   "profit": 75.0462,
+   "cost": 23.95,
+   "gpr": 0.7580424242424242,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100877",
+   "type": "贴膜",
+   "emp": "李俊琪",
+   "product": "DEVIA智能机(105*180mm)Ultra基础款TPU高清防爆膜",
+   "sku": "15.001.003.069",
+   "qty": 1.0,
+   "origPrice": 129.0,
+   "discPrice": 0.0,
+   "amount": 129.0,
+   "profit": 126.8,
+   "cost": 2.2,
+   "gpr": 0.9829457364341085,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100994",
+   "type": "Mate XT2",
+   "emp": "李俊琪",
+   "product": "华为 Mate XT2 ULTIMATE DESIGN LAP-AL10  16GB+512GB  玄黑",
+   "sku": "01.001.084.001.003",
+   "qty": 1.0,
+   "origPrice": 21999.0,
+   "discPrice": 0.0,
+   "amount": 21999.0,
+   "profit": 1759.0,
+   "cost": 20240.0,
+   "gpr": 0.07995817991726897,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100605",
+   "type": "权益系列",
+   "emp": "王莹莹B",
+   "product": "星联尊享-500",
+   "sku": "15.005.022",
+   "qty": 1.0,
+   "origPrice": 200.0,
+   "discPrice": 0.0,
+   "amount": 200.0,
+   "profit": 200.0,
+   "cost": 0.0,
+   "gpr": 1.0,
+   "cat": "增值"
+  },
+  {
    "code": "XSCK26103100605",
    "type": "贴膜",
    "emp": "王莹莹B",
@@ -19516,6 +20992,231 @@
    "cost": 52.0,
    "gpr": 0.74,
    "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100605",
+   "type": "贴膜",
+   "emp": "王莹莹B",
+   "product": "Cooyee华为Pura Xmax一体镜头膜 带定位器",
+   "sku": "15.001.003.046",
+   "qty": 1.0,
+   "origPrice": 100.0,
+   "discPrice": 0.0,
+   "amount": 100.0,
+   "profit": 76.0462,
+   "cost": 23.95,
+   "gpr": 0.760462,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100612",
+   "type": "权益系列",
+   "emp": "王莹莹B",
+   "product": "星联尊享-500",
+   "sku": "15.005.022",
+   "qty": 1.0,
+   "origPrice": 200.0,
+   "discPrice": 0.0,
+   "amount": 200.0,
+   "profit": 200.0,
+   "cost": 0.0,
+   "gpr": 1.0,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100612",
+   "type": "贴膜",
+   "emp": "王莹莹B",
+   "product": "Cooyee华为PuraX View前屏高清钢化膜",
+   "sku": "15.001.003.070",
+   "qty": 1.0,
+   "origPrice": 100.0,
+   "discPrice": 0.0,
+   "amount": 100.0,
+   "profit": 78.0,
+   "cost": 22.0,
+   "gpr": 0.78,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100612",
+   "type": "贴膜",
+   "emp": "王莹莹B",
+   "product": "Cooyee华为PuraX View前屏高清钢化膜",
+   "sku": "15.001.003.070",
+   "qty": 1.0,
+   "origPrice": 99.0,
+   "discPrice": 0.0,
+   "amount": 99.0,
+   "profit": 77.0,
+   "cost": 22.0,
+   "gpr": 0.7777777777777778,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100612",
+   "type": "贴膜",
+   "emp": "王莹莹B",
+   "product": "Cooyee华为PuraX View一体镜头膜",
+   "sku": "15.001.003.071",
+   "qty": 2.0,
+   "origPrice": 200.0,
+   "discPrice": 0.0,
+   "amount": 200.0,
+   "profit": 152.0,
+   "cost": 48.0,
+   "gpr": 0.76,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100634",
+   "type": "Pura90 Pro",
+   "emp": "王莹莹B",
+   "product": "华为 Pura90 Pro MLN-AL00  12GB+512GB  粉红芭乐",
+   "sku": "01.001.076.001.007",
+   "qty": 1.0,
+   "origPrice": 5499.0,
+   "discPrice": 0.0,
+   "amount": 5499.0,
+   "profit": 699.0,
+   "cost": 5100.0,
+   "gpr": 0.127114020731042,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100635",
+   "type": "Pura X Max",
+   "emp": "王莹莹B",
+   "product": "华为 PuraX Max 典藏版 HOP-AL10  16GB+1TB  橄榄金",
+   "sku": "01.001.074.002.010",
+   "qty": 1.0,
+   "origPrice": 13599.0,
+   "discPrice": 0.0,
+   "amount": 13599.0,
+   "profit": 880.91,
+   "cost": 12718.09,
+   "gpr": 0.06477755717332156,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100641",
+   "type": "权益系列",
+   "emp": "王莹莹B",
+   "product": "星联尊享-500",
+   "sku": "15.005.022",
+   "qty": 1.0,
+   "origPrice": 300.0,
+   "discPrice": 0.0,
+   "amount": 300.0,
+   "profit": 300.0,
+   "cost": 0.0,
+   "gpr": 1.0,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100841",
+   "type": "贴膜",
+   "emp": "王莹莹B",
+   "product": "Cooyee华为Nova15 Pro/Ultra高清钢化膜",
+   "sku": "15.001.003.014",
+   "qty": 2.0,
+   "origPrice": 200.0,
+   "discPrice": 0.0,
+   "amount": 200.0,
+   "profit": 162.0142,
+   "cost": 37.99,
+   "gpr": 0.810071,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103100841",
+   "type": "贴膜",
+   "emp": "王莹莹B",
+   "product": "Cooyee华为Nova16一体镜头膜",
+   "sku": "15.001.003.052",
+   "qty": 1.0,
+   "origPrice": 86.0,
+   "discPrice": 0.0,
+   "amount": 86.0,
+   "profit": 62.0,
+   "cost": 24.0,
+   "gpr": 0.7209302325581395,
+   "cat": "增值"
+  },
+  {
+   "code": "XSCK26103101093",
+   "type": "Pura X View",
+   "emp": "王莹莹B",
+   "product": "华为 PuraX View VOL-AL00  12GB+512GB  亚麻灰",
+   "sku": "01.001.083.001.007",
+   "qty": 1.0,
+   "origPrice": 6999.0,
+   "discPrice": 0.0,
+   "amount": 6999.0,
+   "profit": 878.38,
+   "cost": 6120.62,
+   "gpr": 0.12550078582654664,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103101093",
+   "type": "华为",
+   "emp": "王莹莹B",
+   "product": "华为-手提袋-小",
+   "sku": "17.002.001.001",
+   "qty": 3.0,
+   "origPrice": 0.0,
+   "discPrice": 0.0,
+   "amount": 0.0,
+   "profit": 0.0,
+   "cost": 0.0,
+   "gpr": null,
+   "cat": "其他"
+  },
+  {
+   "code": "XSCK26103100582",
+   "type": "Pura X View",
+   "emp": "田蕊",
+   "product": "华为 PuraX View VOL-AL00  12GB+512GB  零度白",
+   "sku": "01.001.083.001.004",
+   "qty": 1.0,
+   "origPrice": 6929.01,
+   "discPrice": 0.0,
+   "amount": 6929.01,
+   "profit": 808.39,
+   "cost": 6120.62,
+   "gpr": 0.1166674604308552,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100848",
+   "type": "nova 16",
+   "emp": "田蕊",
+   "product": "华为 nova16 EMA-AL00U 12GB+512GB 幻彩贝母",
+   "sku": "01.001.078.001.004",
+   "qty": 1.0,
+   "origPrice": 3399.0,
+   "discPrice": 0.0,
+   "amount": 3399.0,
+   "profit": 284.4,
+   "cost": 3114.6,
+   "gpr": 0.08367166813768755,
+   "cat": "手机"
+  },
+  {
+   "code": "XSCK26103100851",
+   "type": "畅享100 Pro",
+   "emp": "田蕊",
+   "product": "华为 畅享100 Pro CHZ-AL60  6GB+256GB  雀翎蓝",
+   "sku": "01.001.090.001.002",
+   "qty": 1.0,
+   "origPrice": 2099.0,
+   "discPrice": 0.0,
+   "amount": 2099.0,
+   "profit": 234.0,
+   "cost": 1865.0,
+   "gpr": 0.11148165793234874,
+   "cat": "手机"
   }
  ],
  "qudao": {
