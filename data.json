@@ -10,7 +10,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "11-01",
-  "fetchTime": "20:38",
+  "fetchTime": "21:08",
   "employees": [
    "张梅B",
    "李俊琪",
@@ -22,7 +22,7 @@
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
   "sourceRows": 8,
   "dayRows": 8,
-  "generatedAt": "2026-11-01 20:38:32"
+  "generatedAt": "2026-11-01 21:08:30"
  },
  "store": {
   "performance": {
@@ -2096,6 +2096,38 @@
    }
   ],
   "empChannel": {
+   "李俊琪": [
+    {
+     "channel": "三大地图",
+     "amount": 0.0,
+     "bills": 0
+    },
+    {
+     "channel": "小红书",
+     "amount": 0.0,
+     "bills": 0
+    },
+    {
+     "channel": "大众点评",
+     "amount": 0.0,
+     "bills": 0
+    },
+    {
+     "channel": "异业",
+     "amount": 0.0,
+     "bills": 0
+    },
+    {
+     "channel": "社区",
+     "amount": 0.0,
+     "bills": 0
+    },
+    {
+     "channel": "企业上门购",
+     "amount": 0.0,
+     "bills": 0
+    }
+   ],
    "张梅B": [
     {
      "channel": "三大地图",
@@ -2194,6 +2226,7 @@
    ]
   },
   "channelItems": {
+   "李俊琪": {},
    "张梅B": {},
    "王莹莹B": {},
    "乔玉宇": {}
