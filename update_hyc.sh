@@ -47,7 +47,12 @@ if [ -z "${NODE_BIN:-}" ] || [ ! -x "${NODE_BIN:-}" ]; then
 fi
 MGR_DL="/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc_mgr"   # 经理号导出的全公司明细
 MAOLI_HYC="/Users/mac/.local/share/TeleAgent/playwright-mcp/hyc/华阳城门店毛利明细表-华为终端.xlsx"
-TASK_XLSX="/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+# 【18号 2026-11-12】底表文件名会随月份改（10月→11月…），写死路径会让每轮拉数失败。
+# 与 shop/run_pipeline.sh 同款：按修改时间自动取《华阳城*任务进度.xlsx》最新一份。
+TASK_XLSX="$(ls -t /Users/mac/Desktop/华阳城销售/华阳城*任务进度.xlsx 2>/dev/null | grep -v '~\$' | head -1)"
+if [ -z "$TASK_XLSX" ] || [ ! -f "$TASK_XLSX" ]; then
+  echo "❌ 找不到华阳城底表（/Users/mac/Desktop/华阳城销售/华阳城*任务进度.xlsx），终止"; exit 1
+fi
 
 NO_PUSH=""; SKIP_FETCH=""; FORCE=""; SKIP_SA=""; SA_ARGS=""
 for a in "$@"; do
@@ -164,7 +169,7 @@ fi
 echo "===== 5/5 跑管线（写XS → 复算 → 渠道 → 建页 → 推送） ====="
 # --no-sa：sa_aug_cache.json 已由 fetch_sales_analysis_hyc.py 以本店口径写好，
 #          不能让 update_sa_cache.py 用 sa_xlsx 覆盖。
-"$PY" run_pipeline.py "$MAOLI_HYC" sa_hyc_month.json --no-sa $NO_PUSH
+"$PY" run_pipeline.py "$MAOLI_HYC" sa_hyc_month.json --no-sa --task-xlsx "$TASK_XLSX" $NO_PUSH
 RC=$?
 
 echo

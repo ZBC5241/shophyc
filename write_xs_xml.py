@@ -34,7 +34,13 @@ import zipfile
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-DEFAULT_XLSX = "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+def _latest_task_xlsx():
+    """【18号 2026-11-12】底表按月改名后写死路径会停更，按 mtime 自动取最新一份。"""
+    import glob
+    xs = [p for p in glob.glob("/Users/mac/Desktop/华阳城销售/华阳城*任务进度.xlsx") if "~$" not in p]
+    return max(xs, key=os.path.getmtime) if xs else "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+
+DEFAULT_XLSX = _latest_task_xlsx()
 XS_SHEET_FILE = "xl/worksheets/sheet4.xml"  # XS = 第4个sheet
 
 

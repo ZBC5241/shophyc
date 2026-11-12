@@ -31,8 +31,11 @@ DATA = sys.argv[2] if len(sys.argv) > 2 else os.path.join(BASE, "data.json")
 def _load_people():
     """现役名单从底表动态发现（hyc_taskmap），人员增减零改动。"""
     try:
+        import glob as _glob
         import hyc_taskmap
-        tm = hyc_taskmap.discover("/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx")
+        _xs = [p for p in _glob.glob("/Users/mac/Desktop/华阳城销售/华阳城*任务进度.xlsx") if "~$" not in p]
+        _xlsx = max(_xs, key=os.path.getmtime) if _xs else "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+        tm = hyc_taskmap.discover(_xlsx)
         return tm["people_order"]
     except Exception:
         return ["张梅B", "李俊琪", "王莹莹B", "张赫桐", "乔玉宇", "田蕊"]
