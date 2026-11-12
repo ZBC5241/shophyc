@@ -216,12 +216,21 @@ def get_sheet_path(z, sheet_name):
 
 
 def import_into(target, rows):
-    # 【18号 2026-11-12】底表「渠道挂账」C 列 SUMIFS 按 A 列新名单匹配 G 列营业员；
-    # 用友导出的营业员仍是旧名(张梅B/王莹莹B)，写入前统一改名，否则 Excel 里渠道完成会整片漏算。
+    # 【18号 2026-11-12 23:00】写入侧不再固定归一到「不带 B」，而是对齐底表「月度任务」
+    # B 列当前写法。晨哥可能把底表改成带 B 或不带 B；渠道挂账 A 列公式引用月度任务 B 列，
+    # 只有 G 列写法跟它一致，Excel 的 SUMIFS 才匹配得到，否则渠道完成整片漏算。
     # 只改 G 列展示名，不动金额/渠道/日期等任何业务值。
+    try:
+        import hyc_taskmap as _htm
+        _canon = {norm_name(n): str(n).strip()
+                  for n in _htm.discover(target)["task_people"] if n}
+    except Exception as _e:
+        print("  [写入侧] 底表名单读取失败，退回固定归一: %s" % _e)
+        _canon = {}
     for _row in rows:
         if isinstance(_row, list) and len(_row) > 6:
-            _row[6] = norm_name(_row[6])
+            _v = str(_row[6] or "").strip()
+            _row[6] = _canon.get(norm_name(_v), norm_name(_v))
     zin = zipfile.ZipFile(target)
     path = get_sheet_path(zin, SHEET)
     xml = zin.read(path).decode("utf-8")

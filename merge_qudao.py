@@ -150,8 +150,10 @@ def read_emp_channel():
     try:
         import hyc_taskmap as _htm
         _tmx = _htm.discover(XLSX)
-        active.update(_tmx["task_people"])
-        active.add(_tmx["helper"])
+        # 【18号 2026-11-12 23:00】名单与流水必须归一到同一口径：底表「月度任务」可能带 B
+        # （张梅B），用友流水可能不带 B，反之亦然；两边都 norm_name 才不会整片漏算。
+        active.update(norm_name(x) for x in _tmx["task_people"])
+        active.add(norm_name(_tmx["helper"]))
     except Exception as e:
         print("  [员工×渠道] 底表现役名单读取失败，退回不过滤: %s" % e)
 
@@ -372,7 +374,7 @@ def build_qudao_from_cache():
                         if _m:
                             _qv = _wbf["月度任务"].cell(int(_m.group(1)), 2).value
                     qnm = str(_qv or "").strip()
-                    if qnm == nm:
+                    if norm_name(qnm) == norm_name(nm):
                         _v = _qd.cell(qr, 2).value
                         if _v is not None and not (isinstance(_v, str) and _v.startswith("=")):
                             try:
@@ -380,7 +382,7 @@ def build_qudao_from_cache():
                             except (TypeError, ValueError):
                                 pass
                         break
-            tasks[nm] = t
+            tasks[norm_name(nm)] = t   # 【18号 2026-11-12 23:00】键归一，与下方 agg 的 norm_name 同口径
     _wbf.close()
 
     agg = {}
