@@ -11,13 +11,18 @@ merge_qudao.py —— 把《华阳城X月任务进度.xlsx》的「渠道挂账�
 用法：
   python merge_qudao.py [data.json] [xlsx路径]
 """
-import sys, os, json
+import sys, os, json, glob
 import openpyxl
 import build_data as bd
+from hyc_taskmap import norm_name   # 【18号 2026-11-12】用友旧人名(带B)对齐底表新名单
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = sys.argv[1] if len(sys.argv) > 1 else os.path.join(BASE, "data.json")
-XLSX = sys.argv[2] if len(sys.argv) > 2 else "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+# 底表按月改名，独立运行时也能自动找到最新那份（管线正常走传参）
+def _default_xlsx():
+    xs = [p for p in glob.glob("/Users/mac/Desktop/华阳城销售/华阳城*任务进度.xlsx") if "~$" not in p]
+    return max(xs, key=os.path.getmtime) if xs else "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+XLSX = sys.argv[2] if len(sys.argv) > 2 else _default_xlsx()
 
 AUG_CACHE = os.path.join(BASE, "sa_aug_cache.json")   # 8 月华阳城切片（纯HTTP 抓取后本地筛得）
 
@@ -156,7 +161,7 @@ def read_emp_channel():
             recs = json.load(open(AUG_CACHE, encoding="utf-8")).get("records", [])
             n_emp = 0
             for r in recs:
-                p = str(r.get("iEmployeeid_name") or "").strip()
+                p = norm_name(r.get("iEmployeeid_name"))   # 旧名带B → 底表新名
                 c = str(r.get("retailVouchHeaderDefineCharacter__HWHKQD_name") or "").strip()
                 if not p or not c:
                     continue
@@ -230,7 +235,7 @@ def read_emp_channel():
                 if isinstance(bd, (_dt.datetime, _dt.date)):
                     if (bd.year, bd.month) != _exp:
                         continue
-                p = str(ws.cell(r, COL_G).value or "").strip()
+                p = norm_name(ws.cell(r, COL_G).value)   # 旧名带B → 底表新名
                 c = str(ws.cell(r, COL_P).value or "").strip()
                 if not p or not c:
                     continue
@@ -386,7 +391,7 @@ def build_qudao_from_cache():
         ch = str(r.get("retailVouchHeaderDefineCharacter__HWHKQD_name") or "").strip()
         if ch not in bd.QUDAO_CHANNELS:
             continue
-        p = str(r.get("iEmployeeid_name") or "").strip()
+        p = norm_name(r.get("iEmployeeid_name"))   # 【18号 2026-11-12】旧名带B → 底表新名，否则张梅/王莹莹渠道整片漏算
         if not p:
             continue
         agg[p] = agg.get(p, 0.0) + _num(r.get("fNetMoney"))

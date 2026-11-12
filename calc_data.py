@@ -150,6 +150,7 @@ def load_xlsx(path):
     含空行和重复行，需过滤去重（出库单号+SKU编码）。
     """
     import warnings
+    from hyc_taskmap import norm_name   # 【18号 2026-11-12】业务员旧名带 B，统一对齐当前底表名单
     warnings.filterwarnings("ignore", message="Workbook contains no default style")
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb.active
@@ -175,6 +176,8 @@ def load_xlsx(path):
                 cells.append(str(c))
         # 去重（2026-09-30 修复，同 shop 仓）：key = 整行签名。旧 key（出库单号+SKU编码）会把
         # 同单同SKU但入库属性不同的合法两行误删。完全相同的行才是用友导出重复，保留首行。
+        # 把用友里的旧业务员名归一到当前底表名单（张梅B→张梅 等），否则按人名汇总时整片漏算
+        cells[C["P"]] = norm_name(cells[C["P"]])
         key = tuple(cells)
         if key in seen:
             continue  # 跳过完全相同的重复行

@@ -22,6 +22,7 @@ verify_hyc.py —— 华阳城看板数字对照校验（独立复算底表 SUMI
 import sys, os, json, collections
 import warnings
 import openpyxl
+import hyc_taskmap
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 XLSX = sys.argv[1] if len(sys.argv) > 1 else \
@@ -75,7 +76,7 @@ def main():
             continue
         seen.add(key)
         n_rows += 1
-        who = str(r[15] or "").strip()
+        who = hyc_taskmap.norm_name(r[15])   # 【18号 2026-11-12】旧名带B → 底表新名
         if who not in agg:
             continue
         cat = str(r[3] or "").strip()

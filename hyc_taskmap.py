@@ -28,6 +28,20 @@ import openpyxl
 
 MONTH_RE = re.compile(r"^\s*=?\s*'?月度任务'?!B(\d+)\s*$")
 
+# 【18号 2026-11-12】底表 11 月任务把人名后缀 B 去掉了（张梅B→张梅、王莹莹B→王莹莹），
+# 但用友毛利明细 / 销售分析里到 11-11 仍是旧名。两边不对齐会让整片业绩漏算
+# （实测毛利明细 ¥85,809，看板只算 ¥44,025，漏 ¥41,784）。
+# 统一在「读取侧」做名字对照，不改底表、不改用友源文件；以后用友改名也能自动兼容。
+NAME_ALIASES = {
+    "张梅B":   "张梅",
+    "王莹莹B": "王莹莹",
+}
+
+def norm_name(name):
+    """把用友旧人名归一到当前底表名单；不在对照表里的原样返回。"""
+    s = str(name or "").strip()
+    return NAME_ALIASES.get(s, s)
+
 def _month_sheet(wb):
     names = [s for s in wb.sheetnames if s.endswith("月任务") or s.endswith("度任务")]
     if not names:

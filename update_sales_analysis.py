@@ -22,8 +22,13 @@ import zipfile
 import shutil
 import datetime
 import glob
+from hyc_taskmap import norm_name   # 【18号 2026-11-12】用友旧人名(带B)对齐底表新名单
 
-DEFAULT_XLSX = "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+def _default_xlsx():
+    xs = [p for p in glob.glob("/Users/mac/Desktop/华阳城销售/华阳城*任务进度.xlsx") if "~$" not in p]
+    return max(xs, key=os.path.getmtime) if xs else "/Users/mac/Desktop/华阳城销售/华阳城10月任务进度.xlsx"
+
+DEFAULT_XLSX = _default_xlsx()
 SHEET = "销售分析"
 NCOLS = 42  # A..AP
 
@@ -211,6 +216,12 @@ def get_sheet_path(z, sheet_name):
 
 
 def import_into(target, rows):
+    # 【18号 2026-11-12】底表「渠道挂账」C 列 SUMIFS 按 A 列新名单匹配 G 列营业员；
+    # 用友导出的营业员仍是旧名(张梅B/王莹莹B)，写入前统一改名，否则 Excel 里渠道完成会整片漏算。
+    # 只改 G 列展示名，不动金额/渠道/日期等任何业务值。
+    for _row in rows:
+        if isinstance(_row, list) and len(_row) > 6:
+            _row[6] = norm_name(_row[6])
     zin = zipfile.ZipFile(target)
     path = get_sheet_path(zin, SHEET)
     xml = zin.read(path).decode("utf-8")
