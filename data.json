@@ -10,7 +10,7 @@
   "isToday": true,
   "lagDays": 0,
   "todayLabel": "11-19",
-  "fetchTime": "21:51",
+  "fetchTime": "22:08",
   "employees": [
    "李俊琪",
    "张梅B",
@@ -22,7 +22,7 @@
   "sourceFile": "华阳城门店毛利明细表-华为终端.xlsx",
   "sourceRows": 481,
   "dayRows": 14,
-  "generatedAt": "2026-11-19 21:51:50"
+  "generatedAt": "2026-11-19 22:08:44"
  },
  "store": {
   "performance": {
@@ -6507,9 +6507,9 @@
     "cost": 0.0,
     "emp": "王莹莹",
     "sku": "15.005.011",
-    "code": "LS028100472611190004",
-    "member": "李玉静",
-    "phone": "151****8418"
+    "code": "LS028100472611190014",
+    "member": "王恒宽",
+    "phone": "181****3073"
    },
    {
     "date": "2026-11-19",
